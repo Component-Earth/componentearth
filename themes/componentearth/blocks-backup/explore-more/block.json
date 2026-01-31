@@ -1,0 +1,19 @@
+{
+	"name": "explore-more",
+	"title": "Explore More",
+    "viewScript": ["file:./script.js"],
+    "viewStyle": [],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["page"]
+	},
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_help": "preview.png"
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+	"name": "form-block",
+	"title": "Form Block",
+    "viewScript": [
+        "file:./script.js",
+		"owl"
+    ],
+    "viewStyle": [		
+		"splitting-style",	
+		"splitting-cells"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["page"]
+	},
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_help": "preview.png"
+            }
+        }
+    }
+}

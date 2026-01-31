@@ -1,0 +1,257 @@
+/* @layer components {
+} */
+
+.st-xxl {
+    @apply ~pt-[4.5rem]/[7.5rem];
+}
+
+.sb-xxl {
+    @apply ~pb-[4.5rem]/[7.5rem];
+}
+
+.st-xl {
+    @apply ~pt-[4rem]/[7rem];
+}
+
+.sb-xl {
+    @apply ~pb-[4rem]/[7rem];
+}
+
+.st-lg {
+    @apply ~pt-[3rem]/[5rem];
+}
+
+.sb-lg {
+    @apply ~pb-[3rem]/[5rem];
+}
+
+.st-md {
+    @apply ~pt-[2rem]/[4rem];
+}
+
+.sb-md {
+    @apply ~pb-[2rem]/[4rem];
+}
+
+.st-sm {
+    @apply ~pt-[1.5rem]/[2.5rem];
+}
+
+.sb-sm {
+    @apply ~pb-[1.5rem]/[2.5rem];
+}
+
+.st-xs {
+    @apply ~pt-[1rem]/[1.5rem];
+}
+
+.sb-xs {
+    @apply ~pb-[1rem]/[1.5rem];
+}
+
+.st-xxs {
+    @apply pt-[0.75rem];
+}
+
+.sb-xxs {
+    @apply pb-[0.75rem];
+}
+
+.st-none {
+    @apply !pt-0;
+}
+
+.sb-none {
+    @apply !pb-0;
+}
+
+
+.gap-xl {
+    @apply ~gap-[3.5rem]/[5rem] 2xl:gap-[5rem];
+}
+
+.p-xl {
+    @apply ~p-[3.5rem]/[5rem] 2xl:p-[5rem];
+}
+
+.px-xl {
+    @apply ~px-[3.5rem]/[5rem] 2xl:px-[5rem];
+}
+
+.py-xl {
+    @apply ~py-[3.5rem]/[5rem] 2xl:py-[5rem];
+}
+
+.pl-xl {
+    @apply ~pl-[3.5rem]/[5rem] 2xl:pl-[5rem];
+}
+
+.pr-xl {
+    @apply ~pr-[3.5rem]/[5rem] 2xl:pr-[5rem];
+}
+
+
+
+
+
+.gap-lg {
+    @apply ~gap-[2.5rem]/[3.5rem] 2xl:gap-[3.5rem];
+}
+
+.p-lg {
+    @apply ~p-[2.5rem]/[3.5rem] 2xl:p-[3.5rem];
+}
+
+.py-lg {
+    @apply ~py-[2.5rem]/[3.5rem] 2xl:py-[3.5rem];
+}
+
+.px-lg {
+    @apply ~px-[2.5rem]/[3.5rem] 2xl:px-[3.5rem];
+}
+
+.pt-lg {
+    @apply ~pt-[2.5rem]/[3.5rem] 2xl:pt-[3.5rem];
+}
+
+.pb-lg {
+    @apply ~pb-[2.5rem]/[3.5rem] 2xl:pb-[3.5rem];
+}
+
+.m-lg {
+    @apply ~m-[2.5rem]/[3.5rem] 2xl:m-[3.5rem];
+}
+
+.mx-lg {
+    @apply ~mx-[2.5rem]/[3.5rem] 2xl:mx-[3.5rem];
+}
+
+.my-lg {
+    @apply ~my-[2.5rem]/[3.5rem] 2xl:my-[3.5rem];
+}
+
+.mt-lg {
+    @apply ~mt-[2.5rem]/[3.5rem] 2xl:mt-[3.5rem];
+}
+
+.mb-lg {
+    @apply ~mb-[2.5rem]/[3.5rem] 2xl:mb-[3.5rem];
+}
+
+
+
+
+.gap-md {
+    @apply ~gap-[2rem]/[2.75rem] 2xl:gap-[2.75rem];
+}
+
+.p-md {
+    @apply ~p-[2rem]/[2.75rem] 2xl:p-[2.75rem];
+}
+
+.py-md {
+    @apply ~py-[2rem]/[2.75rem] 2xl:py-[2.75rem];
+}
+
+.px-md {
+    @apply ~px-[2rem]/[2.75rem] 2xl:px-[2.75rem];
+}
+
+.pl-md {
+    @apply ~pl-[2rem]/[2.75rem] 2xl:pl-[2.75rem];
+}
+
+.pr-md {
+    @apply ~pr-[2rem]/[2.75rem] 2xl:pr-[2.75rem];
+}
+
+.pt-md {
+    @apply ~pt-[2rem]/[2.75rem] 2xl:pt-[2.75rem];
+}
+
+.pb-md {
+    @apply ~pb-[2rem]/[2.75rem] 2xl:pb-[2.75rem];
+}
+
+.m-md {
+    @apply ~m-[2rem]/[2.75rem] 2xl:m-[2.75rem];
+}
+
+.mx-md {
+    @apply ~mx-[2rem]/[2.75rem] 2xl:mx-[2.75rem];
+}
+
+.my-md {
+    @apply ~my-[2rem]/[2.75rem] 2xl:my-[2.75rem];
+}
+
+.mt-md {
+    @apply ~mt-[2rem]/[2.75rem] 2xl:mt-[2.75rem];
+}
+
+.mb-md {
+    @apply ~mb-[2rem]/[2.75rem] 2xl:mb-[2.75rem];
+}
+
+
+
+
+.gap-sm {
+    @apply ~gap-[1.5rem]/[1.75rem] 2xl:gap-[1.75rem];
+}
+
+.p-sm {
+    @apply ~p-[1.5rem]/[1.75rem] 2xl:p-[1.75rem];
+}
+
+.px-sm {
+    @apply ~px-[1.5rem]/[1.75rem] 2xl:px-[1.75rem];
+}
+
+.py-sm {
+    @apply ~py-[1.5rem]/[1.75rem] 2xl:py-[1.75rem];
+}
+
+.pt-sm {
+    @apply ~pt-[1.5rem]/[1.75rem] 2xl:pt-[1.75rem];
+}
+
+.pb-sm {
+    @apply ~pb-[1.5rem]/[1.75rem] 2xl:pb-[1.75rem];
+}
+
+.m-sm {
+    @apply ~m-[1.5rem]/[1.75rem] 2xl:m-[1.75rem];
+}
+
+.mx-sm {
+    @apply ~mx-[1.5rem]/[1.75rem] 2xl:mx-[1.75rem];
+}
+
+.my-sm {
+    @apply ~my-[1.5rem]/[1.75rem] 2xl:my-[1.75rem];
+}
+
+.mt-sm {
+    @apply ~mt-[1.5rem]/[1.75rem] 2xl:mt-[1.75rem];
+}
+
+.mb-sm {
+    @apply ~mb-[1.5rem]/[1.75rem] 2xl:mb-[1.75rem];
+}
+
+
+.gap-xs {
+    @apply ~gap-[0.75rem]/[1rem] 2xl:gap-[1rem];
+}
+
+
+
+
+.gap-xxs {
+    @apply ~gap-[0.5rem]/[0.75rem] 2xl:gap-[0.75rem];
+}
+
+.mb-xxs {
+    @apply ~mb-[0.5rem]/[0.75rem] 2xl:mb-[0.75rem];
+}

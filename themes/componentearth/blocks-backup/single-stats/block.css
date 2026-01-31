@@ -1,0 +1,71 @@
+@layer components {
+    .single-stats {
+        /* Add your styles here */
+        @apply w-full;
+        .ss {        
+            &__item {
+                @apply flex gap-[0.25rem] flex-col items-start justify-start h-auto w-full;
+
+                &:not(:last-child) {
+                    @apply border-[#F4EDE9] max-lg:border-b max-lg:border-solid;
+                }
+
+                &:not(:last-child) {
+                    @apply lg:pb-0 pb-[1rem] px-0;                    
+                }
+                p {
+                    @apply text-[1rem] tracking-[-0.01rem] leading-[160%];
+                }
+            }
+        
+            &__counter {
+                @apply relative;
+        
+                h2 {
+                    @apply flex text-black font-primary-500;
+
+                    @apply ~text-[2rem]/[4.5rem] ~leading-[2rem]/[4.5rem] ~tracking-[-0.04rem]/[-0.0275rem];
+        
+                    &:first-of-type {
+                        @apply absolute top-0 left-0;
+                    }
+        
+                    &:last-of-type {
+                        span:first-of-type {
+                            @apply opacity-0;
+                        }
+                    }
+                }
+            }
+        
+            &__panel {
+                @apply max-lg:mt-0 ~mt-[2rem]/[3rem] block w-full;
+        
+                p {
+                    @apply dark:text-white;
+                }
+                .ss__normal {
+                    @apply !w-full;
+                }
+            }
+
+            &__normal {
+                @apply w-full flex max-lg:flex-wrap justify-between items-stretch;
+                
+
+                &.not-map {
+                    @apply max-lg:text-center max-lg:gap-x-[2.5%];
+
+                    .ss__item {
+                        @apply max-lg:!items-center max-lg:!w-[45%];
+
+                        &:nth-of-type(3),
+                        &:nth-of-type(4) {
+                            @apply max-lg:!pb-0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@layer components {
+    .cta-banner {
+        /* Add your styles here */
+
+        &.bg-pos {
+            background-position: center 0;                            
+            
+            &__single {
+                background-position: center 2rem;
+            }            
+        }
+    }
+}

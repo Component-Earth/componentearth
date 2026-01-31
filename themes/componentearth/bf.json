@@ -1,0 +1,36 @@
+{
+  "colors": {
+    "primary": "#65BD5A",
+    "primary-dark": "#42656D",
+    "primary-disabled": "#66788A",
+    "secondary": "#C8A3EF",
+    "secondary-disabled": "#66788A",
+    "tertiary": "#22434B",
+    "tertiary-disabled": "#66788A",
+    "primary-blue": "#39D4DF",
+    "primary-green": "#B1F3A9",
+    "primary-palegreen": "#EAFFE0",
+    "primary-mossgreen": "#AFDC9A",
+    "dark": "#1B1B1B",
+    "light": "#FCF2EB",
+    "transparent": "transparent",
+    "red": "#5d002a",
+    "grey": "#D9D9D9",
+    "green": "#374F2D"
+  },
+  "spacing": {
+    "space-left": "16px",
+    "space-right": "16px",
+    "space-left-md": "32px",
+    "space-right-md": "32px",
+    "space-left-xl": "56px",
+    "space-right-xl": "56px",
+    "space-top": "64px",
+    "space-bottom": "64px",
+    "space-top-md": "64px",
+    "space-bottom-md": "64px",
+    "space-top-xl": "112px",
+    "space-bottom-xl": "112px"
+  },
+  "corners": "8px"
+}

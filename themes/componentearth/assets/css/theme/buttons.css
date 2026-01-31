@@ -1,0 +1,54 @@
+@layer components {
+  .btn {
+    @apply flex items-center justify-center 
+      text-[0.875rem] leading-[130%] tracking-normal
+      py-[0.85rem] px-[1.75rem] border-[0.09375rem] rounded-[1.75rem]
+      transition-all duration-300 ease-in-out hover:opacity-90 font-tertiary-500;
+
+    p {
+      @apply text-base font-tertiary-500 leading-[100%];
+    }
+
+    &.btn-primary {
+      @apply text-[var(--font-color-light)] bg-[var(--font-color-dark)] border-[var(--font-color-dark)];
+
+      &:hover {
+        /* @apply text-[var(--font-color-light)] !bg-[var(--theme-color)] !border-[var(--theme-color)]; */
+        @apply text-[var(--font-color-light)] !bg-[#7A3300] !border-[#7A3300];
+         
+      }
+    }
+
+    &.btn-secondary {
+      @apply bg-transparent text-[var(--theme-color)] border-[var(--theme-color)];
+
+      &:hover {
+        @apply text-[var(--font-color-light)] bg-[var(--theme-color)];
+      }
+    }
+
+    &.btn-light {
+      @apply text-[var(--font-color-dark)] bg-[var(--font-color-light)] border-[var(--font-color-light)];
+
+      &:hover {
+        @apply text-[var(--font-color-light)] bg-[var(--font-color-dark)] border-[var(--font-color-dark)];
+      }
+    }
+
+    &--dark {
+      @apply rounded-[4.125rem];
+      background: linear-gradient(
+        95deg,
+        rgba(0, 0, 0, 0.52) 6.17%,
+        rgba(4, 4, 4, 0.32) 88.63%
+      );
+    }
+    &.btn-hover-black {
+      @apply hover:!bg-[--font-color-dark] hover:!border-[--font-color-dark] hover:!text-[--font-color-light] hover:!opacity-100;
+    }
+    
+    &.btn-hover-dark {
+      @apply hover:!bg-[--theme-color-dark] hover:!border-[--theme-color-dark] hover:!text-[--font-color-light] hover:!opacity-100;
+    }
+  }
+}

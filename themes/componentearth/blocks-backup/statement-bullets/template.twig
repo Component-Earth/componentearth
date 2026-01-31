@@ -1,0 +1,39 @@
+{% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+{% set pb = fields.padding_bottom and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+{% set bg_class = 'bg-white' %}
+
+<section class="{{ block.slug }} {{ bg_class }}">
+  {% if block.anchor %}
+    <div class="section-anchor" id="{{ block.anchor | default(block.id) }}"></div>
+  {% endif %}
+
+  {% if fields.list %}
+    <div class="container">
+      <div class="{{ pt }} {{ pb }}">
+        <div class="flex max-lg:flex-col max-lg:gap-[2.5rem] justify-between items-center">
+          {% if fields.paragraph|length > 0 %}                
+            <div class="para flex flex-col items-center max-w-[47.875rem] !pt-0 gap-md">            
+              <h3 class="lg:block hidden">{{ fields.paragraph }}</h3>            
+              <h4 class="lg:hidden block">{{ fields.paragraph }}</h4>            
+            </div>
+          {% endif %}
+          <ul class="flex flex-col flex-wrap w-full lg:items-start lg:justify-start ~gap-[0.5rem]/[1.75rem] max-lg:pl-0 lg:max-w-[26.8125rem]">
+            {% for item in fields.list %}
+              <li class="flex ~gap-[0.5rem]/[0.75rem] items-center before:hidden font-secondary text-[#57514E] text-[1.125rem] max-lg:p-0">                
+                <div class="w-[1rem] h-[1rem]">
+                    <svg class="object-contain w-full h-full" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="8" fill="#CC5500"/>
+                        <path d="M7.0577 11C6.99786 10.9998 6.9387 10.9879 6.8839 10.9651C6.8291 10.9422 6.77982 10.9089 6.73913 10.8672L4.61829 8.72083C4.53901 8.64045 4.49654 8.53341 4.50022 8.42324C4.5039 8.31308 4.55344 8.20881 4.63793 8.13339C4.72241 8.05797 4.83494 8.01757 4.95074 8.02107C5.06654 8.02458 5.17613 8.0717 5.25541 8.15208L7.05333 9.97458L10.7234 6.15521C10.7606 6.11108 10.8069 6.07467 10.8595 6.04821C10.9121 6.02174 10.9698 6.00578 11.0291 6.0013C11.0884 5.99682 11.148 6.00393 11.2043 6.02217C11.2606 6.04042 11.3124 6.06942 11.3565 6.1074C11.4006 6.14538 11.4361 6.19153 11.4607 6.24303C11.4854 6.29452 11.4987 6.35027 11.4999 6.40684C11.5011 6.46342 11.4901 6.51963 11.4676 6.57202C11.4452 6.62441 11.4117 6.67188 11.3692 6.71151L7.38062 10.863C7.34032 10.9055 7.29122 10.9396 7.23639 10.9632C7.18157 10.9868 7.12222 10.9993 7.06206 11H7.0577Z" fill="white"/>
+                    </svg>
+                </div>
+                {{ item.text }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+

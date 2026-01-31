@@ -1,0 +1,11 @@
+{
+	"name": "single-buttons",
+	"title": "Single - Buttons",
+    "viewScript": ["file:./script.js"],
+    "viewStyle": [],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["post", "blog", "resources", "press-release", "media-kit", "news-article"]
+    }
+}

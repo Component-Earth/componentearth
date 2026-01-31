@@ -1,0 +1,157 @@
+{% set custom_class = "bg-white" %}
+
+<section class="{{ block.slug ?? 'animated-text' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+
+    <div class="container">                               
+        <div class="flex flex-col items-start text-left gap-sm [&_ul]:list-none [&_ul]:flex  [&_ul]:gap-[1rem] [&_ul_li]:p-0 [&_ul_li]:before:hidden [&_ul_li]:font-mono [&_ul_li]:text-[0.75rem] [&_select]:min-w-[10rem]">           
+
+            <div class="ajax-filters w-full">
+                <form id="ajax-filter" class="flex max-md:flex-col ~gap-[1.25rem]/[2rem]">
+                    {% if categories %}
+                        <el-dropdown id="filter-rt" class="inline-block">
+                            <button class="font-mono inline-flex w-full items-center justify-between lg:w-[10rem] bg-white text-black border-b border-black border-solid text-[0.75rem] pb-[0.5rem]">
+                                <span>Resource Type</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="7" viewBox="0 0 13 7" fill="none">
+                                    <path d="M12.3391 0.367432L6.33909 5.90589L0.339142 0.367431" stroke="black"/>
+                                </svg>
+                            </button>
+
+                            <el-menu anchor="bottom start" popover class="m-0 w-56 origin-top-right bg-[#F4EDE9] p-0 transition [--anchor-gap:theme(spacing.2)] [transition-behavior:allow-discrete] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
+                                <div class="flex flex-col py-[1.0625rem] px-[0.9375rem]">
+                                    <a href="#" data-value="0" data-name="Resource Type" class="font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">Resource Type</a>
+                                    {% for category in categories %}
+                                        <a href="#" data-value="{{ category.term_id }}" data-name="{{ category.name}}" class="font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">{{ category.name }}</a>
+                                    {% endfor %}
+                                </div>
+                            </el-menu>
+                        </el-dropdown>
+                    {% endif %}
+                    
+                    {% if categories %}
+                        <el-dropdown id="filter-1" class="inline-block">
+                            <button class="font-mono inline-flex w-full items-center justify-between lg:w-[10rem] bg-white text-black border-b border-black border-solid text-[0.75rem] pb-[0.5rem]">
+                                Filter
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="7" viewBox="0 0 13 7" fill="none">
+                                    <path d="M12.3391 0.367432L6.33909 5.90589L0.339142 0.367431" stroke="black"/>
+                                </svg>
+                            </button>
+
+                            <el-menu anchor="bottom start" popover class="m-0 w-56 origin-top-right bg-[#F4EDE9] p-0 transition [--anchor-gap:theme(spacing.2)] [transition-behavior:allow-discrete] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
+                                <div class="flex flex-col py-[1.0625rem] px-[0.9375rem]">
+                                    <a href="#" data-value="0" class="font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">Filter</a>
+                                </div>
+                            </el-menu>
+                        </el-dropdown>
+                    {% endif %}
+                    
+                    {% if categories %}
+                        <el-dropdown id="filter-2" class="inline-block">
+                            <button class="font-mono inline-flex w-full items-center justify-between lg:w-[10rem] bg-white text-black border-b border-black border-solid text-[0.75rem] pb-[0.5rem]">
+                                Filter
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="7" viewBox="0 0 13 7" fill="none">
+                                    <path d="M12.3391 0.367432L6.33909 5.90589L0.339142 0.367431" stroke="black"/>
+                                </svg>
+                            </button>
+
+                            <el-menu anchor="bottom start" popover class="m-0 w-56 origin-top-right bg-[#F4EDE9] p-0 transition [--anchor-gap:theme(spacing.2)] [transition-behavior:allow-discrete] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
+                                <div class="flex flex-col py-[1.0625rem] px-[0.9375rem]">
+                                    <a href="#" data-value="0" class="font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">Filter</a>
+                                </div>
+                            </el-menu>
+                        </el-dropdown>
+                    {% endif %}
+                </form>
+            </div>
+            <div id="loading" class="hidden font-mono text-[1rem] text-black">Loading...</div>
+            <div id="site-content" class="w-full relative">                
+                {% set i = 0 %}
+
+                {% if (custom_query) %}
+                    <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-[1.75rem]">
+                        {% for list in custom_query.posts %}
+
+                            {% set custom_block = function('get_field', 'block', list.ID) %}
+                            {% set custom_excerpt = custom_block.excerpt %}
+
+                            {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', list.ID) %}
+                            {% set excerpt_sub = function('substr', excerpt, 0, 260) %}
+                            {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %}                            
+
+                            {% set terms = function('wp_get_post_terms', list.ID, 'resource-type') %}
+                            {% set post_date = function('get_the_date', 'M j, Y' ) %}
+
+                            {% set post_thumb_id = function('get_post_thumbnail_id', list.ID) %}
+                            {% set custom_image = function('wp_get_attachment_image_src', post_thumb_id, 'full') %}
+                            {% set image = custom_image ? custom_image[0] : "" %}  
+
+                            <div class="bg-[#F4EDE9] p-[1.75rem] gap-[1.75rem] flex flex-col relative group w-full">
+                                <a href="{{ function('the_permalink', list.ID) }}" class="absolute top-0 left-0 w-full h-full z-10"></a>
+                                {% if image != "" %}
+                                    <div class="h-[14.75rem] overflow-hidden">
+                                        <img src="{{ image }}" class="object-cover w-full h-full group-hover:scale-105 group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out" />
+                                    </div>
+                                {% endif %}
+                                <div class="flex flex-col justify-between gap-[1.75rem] {% if image != "" %} h-auto {% else %} h-full {% endif %}">
+                                    <div class="flex flex-col gap-[1.75rem]">
+                                        <div class="flex gap-[1rem] items-center justify-between">
+                                            <div class="flex ~gap-[0.5rem]/[1rem] flex-wrap items-center justify-start">
+                                                {% for term in terms %}
+                                                    {% set term_link = function('get_term_link', term ) %}
+                                                    <div class="bg-[#E09762] text-black px-[0.75rem] py-[0.25rem] font-mono text-[0.75rem] rounded-[1.5rem] text-center lowercase">{{ term.name }}</div>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="font-mono text-[0.75rem]">
+                                                {{ post_date }}
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-[0.75rem]">
+                                            <h6>{{ list.post_title }} </h6>
+                                            {% if result %}
+                                                <div class="font-secondary text-[0.875rem]">{{ result }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <a class="flex justify-between items-center w-full font-secondary-600 text-[1rem]" href="{{ function('the_permalink', list.ID) }}">
+                                        Learn more
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect x="19" y="11" width="2" height="2" fill="black"/>
+                                            <rect x="15" y="11" width="2" height="2" fill="black"/>
+                                            <rect opacity="0.8" x="13" y="11" width="2" height="2" fill="black"/>
+                                            <rect opacity="0.6" x="11" y="11" width="2" height="2" fill="black"/>
+                                            <rect opacity="0.5" x="9" y="11" width="2" height="2" fill="black"/>
+                                            <rect opacity="0.4" x="7" y="11" width="2" height="2" fill="black"/>
+                                            <rect opacity="0.2" x="5" y="11" width="2" height="2" fill="black"/>
+                                            <rect x="13" y="5" width="2" height="2" fill="black"/>
+                                            <rect x="15" y="7" width="2" height="2" fill="black"/>
+                                            <rect x="17" y="9" width="2" height="2" fill="black"/>
+                                            <rect x="13" y="17" width="2" height="2" fill="black"/>
+                                            <rect x="15" y="15" width="2" height="2" fill="black"/>
+                                            <rect x="17" y="13" width="2" height="2" fill="black"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if custom_query.max_num_pages > 1 %}
+                {% set custom_class = 'ahr_loadmore btn bg-black text-white font-mono !no-underline !leading-[1rem] text-[0.875rem] cursor-pointer' %}						                
+            
+                <div id="load-more" class="flex items-center justify-center w-full">
+                    <div class="ahr_loadmore btn {{ custom_class }} w-auto">
+                        Load more                        
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

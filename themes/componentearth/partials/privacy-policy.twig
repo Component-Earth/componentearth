@@ -1,0 +1,33 @@
+<section class="legal relative">
+    <div class="bg-[#F4EDE9] pt-[4.5rem] md:pt-[12rem] pb-[2.5rem] md:pb-[5rem]">
+        <div class="container w-full">
+            <div class="flex flex-col md:flex-row ~gap-[1rem]/[2rem] justify-between items-start md:items-end">
+                <div class="heading-title max-w-[45.3125rem]">
+                    <h1 class="h1">{{post.title}}</h1>
+                </div>
+                <div class="updated-wrapper">
+                    <p class="text-[0.75rem] leading-[140%] uppercase">Updated {{post.modified_date('F jS, Y')}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-[5rem] pb-[7.5rem]">
+        <div class="container">
+            <div class="transition-top mx-auto w-full max-w-[55.375rem]">
+                <div class="rich-content
+                    [&_p]:~text-[1rem]/[1.125rem] [&_p]:leading-[140%] [&_p]:font-secondary
+                    [&_h1]:font-secondary-500 [&_h1]:font-medium
+					[&_h2]:font-secondary-500 [&_h2]:font-medium
+					[&_h3]:font-secondary-500 [&_h3]:font-medium
+					[&_h4]:font-secondary-500 [&_h4]:font-medium
+					[&_h5]:font-secondary
+					[&_h6]:font-secondary
+                    [&_strong]:!font-secondary-500 [&_strong]:font-medium
+					[&_ul_li]:font-secondary [&_ol_li]:font-secondary">
+                    {{post.content}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

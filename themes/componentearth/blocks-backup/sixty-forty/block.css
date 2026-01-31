@@ -1,0 +1,33 @@
+@layer components {
+	.sixty-forty {
+		&.is-inverted {
+			.inner {
+				@apply md:flex-row-reverse;
+			}
+
+			.ticker {
+				@apply md:left-[unset] md:right-0;
+			}
+		}
+
+		.video-container {
+			@apply h-full w-full relative bg-black;
+		}
+
+		iframe {
+			@apply absolute center-xy h-full w-auto aspect-video;
+		}
+
+		@media (max-width: 1199px) {
+			.sb-xxl {
+				@apply pb-[6rem];
+			}
+		}
+
+		@media (max-width: 991px) {
+			.sb-xxl {
+				@apply pb-[3.5rem];
+			}
+		}
+	}
+}

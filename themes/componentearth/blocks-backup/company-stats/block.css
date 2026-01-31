@@ -1,0 +1,9 @@
+@layer components {
+    .company-stats {
+        /* Add your styles here */
+
+
+        background-image: url('../../img/png/bg-company-stats.png');
+        @apply bg-cover bg-no-repeat;
+    }
+}

@@ -1,0 +1,36 @@
+<section class="not-found relative lg:h-full lg:max-h-[45rem] pb-[7rem] lg:pb-0">
+	<div class="absolute z-0 top-0 left-0 w-full h-full bg-[lightgray]">
+		<img class="w-full h-full mix-blend-luminosity" src="/wp-content/themes/componentearth/assets/img/png/404-background.png" />
+	</div>
+	<div class="absolute z-1 top-0 left-0 w-full h-full bg-[--theme-color-dark] mix-blend-multiply"></div>
+	{# 404 layout here #}
+	<img class="absolute z-2 bottom-[2.75rem] right-[1.25rem] md:right-[2.875rem] max-w-[80%] md:max-w-[44.722%] w-full h-auto" src="/wp-content/themes/componentearth/assets/img/svg/404.svg" />
+	<div class="container items-start relative z-10 lg:h-screen py-[3.90625rem]">
+		<div class="flex flex-col gap-[2rem] max-w-[39.6875rem] w-full items-start">
+			<div class="heading-wrapper flex flex-col gap-[1rem]">
+				<h2 class="~text-[2.75rem]/[3.25rem] leading-[120%]
+					font-primary-500 text-[var(--font-color-light)]">{{ ib_heading }}</h2>
+
+				<div class="flex flex-col items-center justify-center gap-[1.5rem] max-w-[44rem] 
+					[&_p]:~text-[1rem]/[1.125rem] [&_p]:leading-[140%] [&_p]:font-secondary
+					[&_h1]:font-secondary-500 [&_h1]:~tracking-[-0.0675rem]/[-0.075rem]
+					[&_h2]:font-secondary-500 [&_h2]:~tracking-[-0.0675rem]/[-0.075rem]
+					[&_h3]:font-secondary-500 [&_h3]:~tracking-[-0.0675rem]/[-0.075rem]
+					[&_h4]:font-secondary-500 [&_h4]:~tracking-[-0.0675rem]/[-0.075rem] 
+					[&_h5]:font-secondary-500 [&_h5]:~tracking-[-0.0675rem]/[-0.075rem]
+					[&_h6]:font-secondary-500 [&_h6]:~tracking-[-0.0675rem]/[-0.075rem] text-[var(--font-color-light)]">
+					{{ ib_content }}
+				</div>
+			</div>
+			<div class="cta-wrapper">
+				{% set custom_class = 'btn btn-primary' %}							
+			
+				{% include 'components/cta.twig' with {
+					'class' : custom_class,
+					'cta': ib_cta, 
+					'icon': true,
+				} %}
+			</div>
+		</div>
+	</div>
+</section>

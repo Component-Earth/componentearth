@@ -1,0 +1,93 @@
+{% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+{% set pb = fields.padding_bottom and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+{% set npt = fields.is_top_block ? 'pt-[5rem]' : pt %}
+
+{% set custom_bg = "bg-white overflow-visible" %}
+
+<section class="{{ block.slug }} {{ custom_bg }}">
+  {% if block.anchor %}
+    <div class="section-anchor" id="{{ block.anchor | default(block.id) }}"></div>
+  {% endif %}
+        
+  <div class="container relative z-10">
+    <div class="{{ npt }} {{ pb }}">
+      <div class="flex flex-col justify-between xl:gap-[3rem] transition-top-stagger">
+        <div class="inner flex flex-col mx-auto gap-[1rem] w-full lg:w-[40.875rem] h-auto items-center justify-center" data-custom-delay="2000">
+          {% if fields.heading.value %}
+            <div class="w-full max-md:flex max-md:flex-col max-md:gap-[0.75rem] relative">
+                {% include 'components/heading.twig' with {
+                'class': 'main-title text-black lg:text-center text-left',
+                'value': fields.heading.value, 
+                'type': fields.heading.type != "default" ? fields.heading.type : "h5",
+                'has_custom_style': fields.heading.has_custom_style,
+                'style': fields.heading.style,
+                'to_words': true
+              } %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="flex max-xl:flex-col justify-between items-stretch ~gap-[1.25rem]/[3.5rem] relative">
+          {% if fields.list %}
+            {% set ctr = 0 %}
+            <div class="flex-1 relative lg:sticky lg:top-[6.5625rem] 3xl:pb-[70vh] 2xl:pb-[80vh] lg:pb-[75vh] h-full max-xl:hidden">
+              {% for item in fields.list %}
+                {% set ctr = ctr + 1 %}
+                <div data-id="{{ ctr }}" class="~h-[30rem]/[40.25rem] w-full ~max-w-[22rem]/[38rem] block-image relative {% if ctr == 1 %} active {% else %} inactive {% endif %}">
+                  {% if item.image.url %}
+                    <img class="object-cover h-full w-full" src="{{ item.image.url }}" alt="featured-image" />      
+                  {% endif %}          
+                </div>
+              {% endfor %}
+            </div>
+            {% set ctr = 0 %}
+            <div class="sticky top-[6.5625rem] left-[-2.6rem] bg-[#F4EDE9] w-[0.0625rem] h-[40.25rem] max-xl:hidden">
+              <div class="active sticky top-[10rem] right-0 bg-[var(--theme-color)] w-[0.0625rem] h-[5.4375rem] z-10;"></div>
+            </div>
+            <div class="flex-1 st-xl max-xl:!pt-[2rem] sb-xl flex xl:flex-col flex-wrap ~gap-[3.5rem]/[7.5rem] relative">
+              {% for item in fields.list %}
+                {% set ctr = ctr + 1 %}
+                <div id="{{ ctr }}" class="block-text relative flex flex-col items-start max-xl:justify-between gap-[0.75rem] lg:max-w-[30.5rem] {% if ctr == 1 %} xl:opacity-100 {% else %} xl:opacity-50 {% endif %} max-xl:lg:w-[45%]">                  
+                  <div class="flex flex-col items-start gap-md">
+                    <div class="flex flex-col items-start gap-xxs">
+                      {% if item.title %}
+                        <h3>{{ item.title }}</h3>
+                      {% endif %}
+                      {% if item.content %}
+                        <div class="font-secondary text-[1.125rem] text-[#57514E] ~leading-[140%]/[130%]">{{ item.content }}</div>
+                      {% endif %}
+                    </div>
+                    {% if item.link %}
+                      <a href="{{ item.link.url }}" class="bg-black hover:bg-[var(--theme-color)] rounded-full p-[1rem] relative transition-all ease-in-out duration-200">                      
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="19" y="11" width="2" height="2" fill="white"/>
+                          <rect x="15" y="11" width="2" height="2" fill="white"/>
+                          <rect opacity="0.8" x="13" y="11" width="2" height="2" fill="white"/>
+                          <rect opacity="0.6" x="11" y="11" width="2" height="2" fill="white"/>
+                          <rect opacity="0.5" x="9" y="11" width="2" height="2" fill="white"/>
+                          <rect opacity="0.4" x="7" y="11" width="2" height="2" fill="white"/>
+                          <rect opacity="0.2" x="5" y="11" width="2" height="2" fill="white"/>
+                          <rect x="13" y="5" width="2" height="2" fill="white"/>
+                          <rect x="15" y="7" width="2" height="2" fill="white"/>
+                          <rect x="17" y="9" width="2" height="2" fill="white"/>
+                          <rect x="13" y="17" width="2" height="2" fill="white"/>
+                          <rect x="15" y="15" width="2" height="2" fill="white"/>
+                          <rect x="17" y="13" width="2" height="2" fill="white"/>
+                        </svg>
+                      </a>
+                    {% endif %}     
+                    <div class="h-[22.1875rem] w-full xl:hidden block">
+                      {% if item.image.url %}
+                        <img class="object-cover h-full w-full" src="{{ item.image.url }}" alt="featured-image" />      
+                      {% endif %}          
+                    </div>               
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

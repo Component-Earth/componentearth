@@ -1,0 +1,14 @@
+@layer components {
+	.testimonials {
+		.inner {
+			@apply top-[25.6rem];
+		}
+
+		.inner__sticky {
+			@apply fixed left-[32.55%] top-0 h-screen;
+		}
+		.inner__addTop {
+			@apply pt-[12.5rem];
+		}
+	}
+}

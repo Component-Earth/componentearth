@@ -1,0 +1,86 @@
+<section  class="process-carousel-wrapper bg-[#7A3300] bg-cover" style="background-image: url({{ function('png', 'ce-tesimonials-slider-bg')}})">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+	{% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+	{% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+    
+    {% set custom_posts = fields.boxes %}
+
+    <div class="container relative">           
+        <div class="{{ pt }} flex justify-between items-end transition-top-stagger">
+            <div class="flex flex-col gap-y-[1rem] text-left w-full flex-1 lg:max-w-[40.875rem]">			
+                {% if fields.heading.value|length > 0 %}
+                    {% include 'components/heading.twig' with {
+                        'class': 'main-title text-white',
+                        'indent': '<span class="max-md:hidden w-[12.5rem] h-[2.5rem] shrink-0"></span>',
+                        'value': fields.heading.value, 
+                        'type': fields.heading.type != "default" ? fields.heading.type : "h3",
+                        'has_custom_style': fields.heading.has_custom_style,
+                        'style': fields.heading.style,
+                        'to_words': true
+                    } %}
+                {% endif %}
+            </div>     
+        </div>
+    </div>
+    <div class="container max-md:!px-0 relative">
+        <div class="~pt-[0.625rem]/[3rem] {{ pb }} transition-top-stagger">             
+            {% if custom_posts|length > 3 %}                                          
+                <div class="flex lg:hidden relative z-20 justify-end gap-[2rem] items-center w-full pr-[1rem] mb-[0.625rem]">                    
+                    <div class="flex justify-end items-center gap-[1rem]">
+                        <a href="{{ item.link.url }}" class="btn-prev bg-white hover:bg-[var(--theme-color)] rounded-full p-[1rem] relative transition-all ease-in-out duration-200">                      
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="5" y="13" width="2" height="2" transform="rotate(-180 5 13)" fill="black"/>
+                                <rect x="9" y="13" width="2" height="2" transform="rotate(-180 9 13)" fill="black"/>
+                                <rect opacity="0.8" x="11" y="13" width="2" height="2" transform="rotate(-180 11 13)" fill="black"/>
+                                <rect opacity="0.6" x="13" y="13" width="2" height="2" transform="rotate(-180 13 13)" fill="black"/>
+                                <rect opacity="0.5" x="15" y="13" width="2" height="2" transform="rotate(-180 15 13)" fill="black"/>
+                                <rect opacity="0.4" x="17" y="13" width="2" height="2" transform="rotate(-180 17 13)" fill="black"/>
+                                <rect opacity="0.2" x="19" y="13" width="2" height="2" transform="rotate(-180 19 13)" fill="black"/>
+                                <rect x="11" y="19" width="2" height="2" transform="rotate(-180 11 19)" fill="black"/>
+                                <rect x="9" y="17" width="2" height="2" transform="rotate(-180 9 17)" fill="black"/>
+                                <rect x="7" y="15" width="2" height="2" transform="rotate(-180 7 15)" fill="black"/>
+                                <rect x="11" y="7" width="2" height="2" transform="rotate(-180 11 7)" fill="black"/>
+                                <rect x="9" y="9" width="2" height="2" transform="rotate(-180 9 9)" fill="black"/>
+                                <rect x="7" y="11" width="2" height="2" transform="rotate(-180 7 11)" fill="black"/>
+                            </svg>
+                        </a>	
+                        <a href="{{ item.link.url }}" class="btn-next bg-white hover:bg-[var(--theme-color)] rounded-full p-[1rem] relative transition-all ease-in-out duration-200">                      
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="19" y="11" width="2" height="2" fill="black"/>
+                                <rect x="15" y="11" width="2" height="2" fill="black"/>
+                                <rect opacity="0.8" x="13" y="11" width="2" height="2" fill="black"/>
+                                <rect opacity="0.6" x="11" y="11" width="2" height="2" fill="black"/>
+                                <rect opacity="0.5" x="9" y="11" width="2" height="2" fill="black"/>
+                                <rect opacity="0.4" x="7" y="11" width="2" height="2" fill="black"/>
+                                <rect opacity="0.2" x="5" y="11" width="2" height="2" fill="black"/>
+                                <rect x="13" y="5" width="2" height="2" fill="black"/>
+                                <rect x="15" y="7" width="2" height="2" fill="black"/>
+                                <rect x="17" y="9" width="2" height="2" fill="black"/>
+                                <rect x="13" y="17" width="2" height="2" fill="black"/>
+                                <rect x="15" y="15" width="2" height="2" fill="black"/>
+                                <rect x="17" y="13" width="2" height="2" fill="black"/>
+                            </svg>
+                        </a>	
+                    </div>
+                </div>
+            {% endif %}
+            {# default #}
+            <div class="max-lg:w-full max-lg:px-[1rem] max-lg:pb-[2.5rem]">                          
+                <div class="process-carousel {% if custom_posts|length > 3 %} owl-carousel owl-theme {% else %} flex gap-[1.25rem] {% endif %} transition-top manual {% if fields.theme == "beige" or from_single %} before:bg-[#F4F4F4] {% else %} before:bg-[#FAFAFA] {% endif %}">
+                
+                    {% for box in custom_posts %}     
+                        {% set image = box.image.url ? box.image.url : '' %}
+                                       
+                        {% include 'blocks/process-carousel/_box.twig' with {
+                            'box' : box,
+                            'image': image
+                        } %}                                                                                  
+                    {% endfor %}  
+                </div>    
+            </div>
+        </div>
+    </div>
+</section>

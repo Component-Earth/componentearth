@@ -1,0 +1,16 @@
+{#
+cta: (required) Link acf field
+class: (optional) CTA custom classes
+aria_label: (optional) ARIA Label, defaults to link_title
+#}
+{% if cta %}
+	{% set link_url = cta.url ?: "#" %}
+	{% set link_title = cta.title ?: "Read now" %}
+	{% set link_target = cta.target ?: "_self" %}
+
+	<a class="btn {{ class ? class }}" type="button" href="{{ link_url }}" target="{{ link_target }}" aria-label="Go to {{ aria_label ?? link_title }}" style="{{ custom_style }}">
+		<div class="transition-all duration-300 ease-in-out">
+			{{ link_title }} 
+		</div>
+	</a>
+{% endif %}

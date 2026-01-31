@@ -1,0 +1,51 @@
+{% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+{% set pb = fields.padding_bottom and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+{% set npt = fields.is_top_block ? 'pt-[5rem]' : pt %}
+
+{% set custom_bg = "bg-white overflow-visible" %}
+
+<section class="{{ block.slug }} {{ custom_bg }}">
+  {% if block.anchor %}
+    <div class="section-anchor" id="{{ block.anchor | default(block.id) }}"></div>
+  {% endif %}
+        
+  <div class="container relative z-10">
+    <div class="{{ npt }} {{ pb }}">
+      <div class="flex flex-col justify-between xl:gap-[3rem] transition-top-stagger">
+
+        <div class="flex max-xl:flex-col justify-between items-stretch ~gap-[2.5rem]/[3.5rem] relative">
+          {% if fields.list %}
+            {% set ctr = 0 %}
+            <div class="flex-1 relative lg:sticky lg:top-[6.5625rem] lg:pb-[5vh] h-full lg:max-w-[19.8125rem]">
+              <h2>{{ fields.heading.value }}</h2>
+            </div>
+            {% set ctr = 0 %}
+            <div class="flex-1 flex xl:flex-col flex-wrap gap-md relative">
+              {% for item in fields.list %}
+                {% set ctr = ctr + 1 %}
+                <div id="{{ ctr }}" class="block-text relative flex flex-col items-start max-xl:justify-between gap-md lg:pb-[1.75rem] lg:max-w-[54.9375rem]">                  
+                  <div class="bg-[#F4EDE9] h-[2px] w-full"></div>
+                  <div class="flex max-lg:flex-col items-start gap-md">
+                    <div class="flex flex-col items-start gap-xxs lg:max-w-[18.3125rem]">
+                      {% if item.title %}
+                        <h5>{{ item.title }}</h5>
+                      {% endif %}
+                      {% if item.content %}
+                        <div class="font-secondary text-[1.125rem] text-[#57514E] ~leading-[140%]/[130%]">{{ item.content }}</div>
+                      {% endif %}
+                    </div>  
+                    <div class="h-auto w-full lg:max-w-[33.875rem]">
+                      {% if item.image.url %}
+                        <img class="object-cover h-full w-full" src="{{ item.image.url }}" alt="featured-image" />      
+                      {% endif %}          
+                    </div>               
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

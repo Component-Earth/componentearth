@@ -1,0 +1,47 @@
+{% set custom_class = "bg-white" %}
+
+<section class="{{ block.slug ?? 'single-stats' }} ss {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+
+    {% if fields.items %}
+        <div class="flex max-lg:flex-col lg:gap-[6rem] justify-between items-center">
+            <div class="ss__panel w-full">
+                <div class="ss__normal w-full flex max-lg:flex-col items-start justify-between flex-row gap-[1.25rem]">                                                       
+                    {% set ctr = 0 %}
+                    {% for item in fields.items %}
+                        {% set ctr = ctr + 1 %}
+                        {% set amount = item.amount %}
+                        {% set suffix = item.suffix %}
+                        {% set text = item.text %}
+
+                        <div class="ss__item">
+                            {% if suffix and amount %}                                
+                                <div class="ss__counter transition-count">
+                                    <h2 class="target">
+                                        {{ amount }}
+                                    </h2>
+                                    <h2 class="original">
+                                        <span>{{ amount }}</span>
+                                        <span>{{ suffix }}</span>
+                                    </h2>
+                                </div>
+                            {% endif %}
+                        
+                            {% if text %}
+                                <p>{{ text }}</p>
+                            {% endif %}
+                        </div>
+                        {% if ctr < fields.items|length %}
+                            <div class="lg:block hidden h-[7.75rem] w-[1px] mx-[2.25rem] bg-[#F4EDE9]"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>

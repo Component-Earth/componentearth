@@ -1,0 +1,66 @@
+{% set custom_class = "bg-white" %}
+
+<section class="{{ block.slug ?? 'cta-block' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "" %}
+    {% set bg = fields.theme == "dark" ? 'background: linear-gradient(0deg, #7A3300 0%, #7A3300 100%), #441C00;' : 'background: #E09762' %}
+
+    <div class="container {% if fields.theme == "dark" %} dark {% endif %}">
+        <div class="{{ pt }} {{ pb }}">            
+            <div class="relative flex flex-col items-center justify-center overflow-hidden text-center h-auto lg:p-[4.406rem] ~py-[6.25rem]/[8rem] px-[1.5rem] lg:h-[27.5rem]" style="{{ bg }}">
+          
+                {% if fields.theme == "dark" %}
+                    <div class="absolute top-0 left-0 w-full h-full z-0 mix-blend-difference before:content-[''] before:z-30 before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-black before:bg-opacity-80">
+                        <div class="jarallax w-full h-full" data-jarallax data-video-src="mp4:{{ function('video', 'cta-bg') }}"></div>
+                    </div>
+                {% endif %}
+          
+                <div class="lg:max-w-[40.875rem] 2xl:max-w-[37.875rem] mx-auto flex flex-col items-center justify-center transition-top relative z-50">
+                    <div class="flex flex-col gap-sm">
+                        {% if fields.heading.value|length > 0 %}
+                            <div class="w-full max-md:flex max-md:flex-col max-md:gap-[0.75rem] relative text-center">                        
+                                {% include 'components/heading.twig' with {
+                                    'class': 'main-title text-black dark:text-white ',
+                                    'indent': '<span class="max-md:hidden w-[12.5rem] h-[2.5rem] shrink-0"></span>',
+                                    'value': fields.heading.value, 
+                                    'type': fields.heading.type != "default" ? fields.heading.type : "h3",
+                                    'has_custom_style': fields.heading.has_custom_style,
+                                    'style': fields.heading.style,
+                                    'to_words': true
+                                } %}
+                            </div>
+                        {% endif %}
+
+                        {% if fields.paragraph|length > 0 or fields.cta.url|length > 0 %}
+                            <div class="flex flex-col items-center gap-md max-w-[26.875rem] mx-auto">
+                                {% if fields.paragraph|length > 0 %}
+                                    <div class="rich-text text-black dark:text-white [&_p]:text-[1.125rem] [&_p]:leading-[140%]">
+                                        {{ fields.paragraph }}
+                                    </div>
+                                {% endif %}
+                                
+                                {% if fields.cta.url|length > 0 %}
+                                {% if from_single %}
+                                    {% set custom_class = 'btn-primary btn-hover-black hover:opacity-50' %}							
+                                {% else %}
+                                    {% set custom_class = 'btn-light btn-hover-black' %}							
+                                {% endif %}
+                                
+                                    {% include 'components/cta.twig' with {
+                                        'class' : custom_class,
+                                        'cta': fields.cta, 
+                                        'icon': true,
+                                    } %}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

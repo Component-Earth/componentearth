@@ -1,0 +1,14 @@
+@layer components {
+    .table-container {
+        @apply overflow-x-auto;
+    }
+
+    .legal-table {
+        @apply w-full min-w-[37.5rem] border-collapse;
+
+        th,
+        td {
+            @apply p-[0.625rem_0.75rem] border border-[#393939] align-middle;
+        }
+    }
+}
