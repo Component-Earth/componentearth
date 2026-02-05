@@ -19,6 +19,7 @@ $theme_color = get_field('theme_color', 'option');
 $theme_color_dark = get_field('theme_color_dark', 'option');
 $theme_color_secondary = get_field('theme_color_secondary', 'option');
 $theme_color_tertiary = get_field('theme_color_tertiary', 'option');
+$theme_color_highlight = get_field('theme_color_highlight', 'option');
 $font_color_dark = get_field('font_color_dark', 'option');
 $font_color_light = get_field('font_color_light', 'option');
 
@@ -51,6 +52,7 @@ $context = Timber::context([
             --theme-color-dark: <?= esc_html($theme_color_dark); ?>;
             --theme-color-secondary: <?= esc_html($theme_color_secondary); ?>;
             --theme-color-tertiary: <?= esc_html($theme_color_tertiary); ?>;
+            --theme-color-highlight: <?= esc_html($theme_color_highlight); ?>;
             --font-color-dark: <?= esc_html($font_color_dark); ?>;
             --font-color-light: <?= esc_html($font_color_light); ?>;
         }
@@ -81,6 +83,8 @@ $context = Timber::context([
 </head>
 
 <body <?php body_class('is-loading'); ?>>
-    <?php Timber::render('./partials/nav-header.twig', $context); ?>
+    <?php if(!is_front_page()) : ?>
+        <?php Timber::render('./partials/nav-header.twig', $context); ?>
+    <?php endif; ?>
     <!-- <div id="smooth-wrapper">
         <div id="smooth-content"> -->

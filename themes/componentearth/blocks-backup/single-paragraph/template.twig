@@ -1,7 +1,0 @@
-<section class="{{ block.slug ?? 'single-paragraph' }} bg-[transparent] ">
-    {% if fields.anchor|length > 0 or custom_id %}
-        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
-    {% endif %}
-                      
-    {{ fields.paragraph|raw }}        
-</section>

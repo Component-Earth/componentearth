@@ -1,165 +1,51 @@
 @layer base {
-	/*Rhymes Display*/
-	@font-face {
-		font-family: "Maxitype_Rhymes_Trial-300";
-		src: url("../../fonts/Maxitype_Rhymes_Trial/Trial_WOFF/RhymesDisplay/RhymesDisplayTrialUnlicensed-Light.woff") format("woff");
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}	
-	@font-face {
-		font-family: "Maxitype_Rhymes_Trial";
-		src: url("../../fonts/Maxitype_Rhymes_Trial/Trial_WOFF/RhymesDisplay/RhymesDisplayTrialUnlicensed-Regular.woff") format("woff");
-		font-weight: 400;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "Maxitype_Rhymes_Trial-500";
-		src: url("../../fonts/Maxitype_Rhymes_Trial/Trial_WOFF/RhymesDisplay/RhymesDisplayTrialUnlicensed-Medium.woff") format("woff");
-		font-weight: 500;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "Maxitype_Rhymes_Trial-600";
-		src: url("../../fonts/Maxitype_Rhymes_Trial/Trial_WOFF/RhymesDisplay/RhymesDisplayTrialUnlicensed-SemiBold.woff") format("woff");
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "Maxitype_Rhymes_Trial-700";
-		src: url("../../fonts/Maxitype_Rhymes_Trial/Trial_WOFF/RhymesDisplay/RhymesDisplayTrialUnlicensed-Bold.woff") format("woff");
-		font-weight: 700;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
 	/*Geist*/
 	@font-face {
-		font-family: "Geist-300";
-		src: url("../../fonts/Geist/static/Geist-Light.woff") format("woff");
+		font-family: "Bregan";
+		src: url("../../fonts/Bregan/bregan.woff") format("woff");
 		font-weight: 300;
 		font-style: normal;
 		font-display: swap;
 		descent-override: 15%;
 	}	
-	@font-face {
-		font-family: "Geist";
-		src: url("../../fonts/Geist/static/Geist-Regular.woff") format("woff");
-		font-weight: 400;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "Geist-500";
-		src: url("../../fonts/Geist/static/Geist-Medium.woff") format("woff");
-		font-weight: 500;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "Geist-600";
-		src: url("../../fonts/Geist/static/Geist-SemiBold.woff") format("woff");
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "Geist-700";
-		src: url("../../fonts/Geist/static/Geist-Bold.woff") format("woff");
-		font-weight: 700;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	/*Geist Mono*/
-	@font-face {
-		font-family: "GeistMono-300";
-		src: url("../../fonts/Geist_Mono/static/GeistMono-Light.ttf") format("ttf");
-		font-weight: 300;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}	
-	@font-face {
-		font-family: "GeistMono";
-		src: url("../../fonts/Geist_Mono/static/GeistMono-Regular.woff") format("woff");
-		font-weight: 400;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "GeistMono-500";
-		src: url("../../fonts/Geist_Mono/static/GeistMono-Medium.woff") format("woff");
-		font-weight: 500;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "GeistMono-600";
-		src: url("../../fonts/Geist_Mono/static/GeistMono-SemiBold.ttf") format("ttf");
-		font-weight: 600;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
-	@font-face {
-		font-family: "GeistMono-700";
-		src: url("../../fonts/Geist_Mono/static/GeistMono-Bold.ttf") format("ttf");
-		font-weight: 700;
-		font-style: normal;
-		font-display: swap;
-		descent-override: 15%;
-	}
 
 	h1,
 	.h1 {
-		@apply ~text-[3rem]/[4.75rem] lg:text-[4.75rem] font-primary-500 leading-none;
+		@apply ~text-[3rem]/[4.75rem] lg:text-[4.75rem] font-primary leading-none;
 	}
 
 	h2,
 	.h2 {
-		@apply ~text-[2.75rem]/[3.25rem] lg:text-[3.25rem] font-primary-500 leading-[120%];
+		@apply ~text-[2.75rem]/[3.25rem] lg:text-[3.25rem] font-primary leading-[120%];
 	}
 
 	h3,
 	.h3 {
-		@apply ~text-[2rem]/[2.5rem] lg:text-[2.5rem] leading-[130%] font-secondary;
+		@apply ~text-[2rem]/[2.5rem] lg:text-[2.5rem] leading-[130%] font-primary;
 	}
 
 	h4,
 	.h4 {
-		@apply text-[1.75rem] leading-[130%] font-secondary-500 ~tracking-[-0.015rem]/[-0.02rem];
+		@apply text-[1.75rem] leading-[130%] font-primary ~tracking-[-0.015rem]/[-0.02rem];
 	}
 
 	h5,
 	.h5 {
-		@apply text-[1.5rem] font-secondary-500 leading-[140%] tracking-[-0.015rem];
+		@apply text-[1.5rem] font-primary leading-[140%] tracking-[-0.015rem];
 	}
 
 	h6,
 	.h6 {
-		@apply text-[1.25rem] lg:leading-[130%] leading-[140%] font-secondary-500 tracking-[-0.0125rem];
+		@apply text-[1.25rem] lg:leading-[130%] leading-[140%] font-primary tracking-[-0.0125rem];
 	}
 
 	b,
 	strong {
-		@apply font-primary-700;
+		@apply font-primary;
 	}
 
 	p {
-		@apply block text-[0.875rem] md:text-[1rem] leading-[150%] font-secondary;
+		@apply block text-[0.875rem] md:text-[1rem] leading-[150%] font-primary;
 	}
 
 	.text-large {
@@ -213,7 +99,7 @@
 	}
 
 	.yellow-title {
-		@apply text-[#F0E10D] font-primary-600 text-[0.875rem] leading-[93%] tracking-[-0.035rem];
+		@apply text-[#F0E10D] font-primary text-[0.875rem] leading-[93%] tracking-[-0.035rem];
 	}
 
 }

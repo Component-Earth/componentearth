@@ -67,14 +67,14 @@ $custom_tag = wp_get_post_terms($post->ID, 'resource-type');
         <div class="max-w-[69rem] mx-auto">
             <div class="max-lg:flex-col flex flex-col items-start relative w-full">            
                 <div class="flex flex-col gap-[1.75rem] items-start max-w-[40.875rem] mb-[2rem]">
-                    <div class="flex gap-[1rem] uppercase items-center justify-start text-black font-secondary text-[0.75rem] leading-[140%] w-auto">                                
+                    <div class="flex gap-[1rem] uppercase items-center justify-start text-black font-primary text-[0.75rem] leading-[140%] w-auto">                                
                         <?php if($custom_tag) : ?>
                             <div class="bg-[#E09762] text-black px-[0.75rem] py-[0.25rem] font-mono text-[0.75rem] rounded-[1.5rem] text-center lowercase"><?php echo $custom_tag[0]->name; ?></div>
                         <?php endif; ?>
                         <span class="text-[0.75rem] leading-none capitalize font-mono"><?php echo get_the_date('M d, Y'); ?></span>
                     </div>
                     <h2 class="leading-none"><?php the_title(); ?></h2>
-                    <span class="text-black font-secondary text-[1.125rem] leading-none">By <?php the_author(); ?></span>
+                    <span class="text-black font-primary text-[1.125rem] leading-none">By <?php the_author(); ?></span>
                 </div>
 
                 <?php if($block && $block['banner']) : ?>
@@ -99,7 +99,7 @@ $custom_tag = wp_get_post_terms($post->ID, 'resource-type');
 
                 <div class="flex ~mt-[2rem]/[2.5rem] items-center ~mb-[2rem]/[3rem]">
                     <div class="flex border-y border-solid border-[#F4EDE9]">
-                        <span class="font-secondary text-[0.875rem] tracking-[-0.01rem] leading-[140%] text-black ~p-[1.5rem]/[1.75rem] border-l border-r border-solid border-[#F4EDE9]">Share</span>                    
+                        <span class="font-primary text-[0.875rem] tracking-[-0.01rem] leading-[140%] text-black ~p-[1.5rem]/[1.75rem] border-l border-r border-solid border-[#F4EDE9]">Share</span>                    
                         
                         <a class="group ~p-[1.5rem]/[1.75rem] border-r border-solid border-[#F4EDE9]" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank" rel="nofollow noreferrer noopener">
                             <svg class="w-[1.5rem] h-[1.5rem]" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">

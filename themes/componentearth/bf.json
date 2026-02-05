@@ -1,7 +1,9 @@
 {
   "colors": {
-    "primary": "#65BD5A",
-    "primary-dark": "#42656D",
+    "primary": "#025294",
+    "primary-dark": "#1A3850",
+    "primary-highlight": "#FABC6F",
+    
     "primary-disabled": "#66788A",
     "secondary": "#C8A3EF",
     "secondary-disabled": "#66788A",

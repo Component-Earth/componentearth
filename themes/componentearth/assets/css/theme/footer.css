@@ -19,12 +19,12 @@
 			@apply flex ~gap-[2rem]/[2.5rem];
 
 			.footer-title-first .footer-col-title {
-				@apply text-[#ffffff] font-secondary leading-[140%] cursor-text uppercase text-[0.75rem] pb-[0.75rem] border-[#39D4DF] border-b;
+				@apply text-[#ffffff] font-primary leading-[140%] cursor-text uppercase text-[0.75rem] pb-[0.75rem] border-[#39D4DF] border-b;
 				font-feature-settings: 'liga' off, 'clig' off;
 			}
 
 			.footer-title-first .footer-col-title-sm, .footer-title-last .footer-col-title {
-				@apply text-[#ffffff99] text-[0.8125rem] font-secondary leading-[100%] cursor-text;
+				@apply text-[#ffffff99] text-[0.8125rem] font-primary leading-[100%] cursor-text;
 				font-feature-settings: 'liga' off, 'clig' off;
 			}
 		}
@@ -62,18 +62,18 @@
 
 		&__credits {
 			p {
-				@apply ~text-[1rem]/[0.875rem] ~leading-[140%]/[150%] font-secondary text-[#57514E];
+				@apply ~text-[1rem]/[0.875rem] ~leading-[140%]/[150%] font-primary text-[#57514E];
 			}
 		}
 
 		&__item {
-			@apply text-[1rem] leading-[140%] font-secondary hover:text-[#39D4DF] cursor-pointer transition-colors duration-300 ease-[ease];
+			@apply text-[1rem] leading-[140%] font-primary hover:text-[#39D4DF] cursor-pointer transition-colors duration-300 ease-[ease];
 
 			&.parent {
-				@apply text-[#57514E] text-[0.75rem] font-tertiary hover:text-[#57514E];
+				@apply text-[#57514E] text-[0.75rem] font-primary hover:text-[#57514E];
 			}
 			&.child {
-				@apply text-[var(--font-color-dark)] font-secondary leading-[140%] ~text-[1rem]/[0.875rem] before:w-0 relative;
+				@apply text-[var(--font-color-dark)] font-primary leading-[140%] ~text-[1rem]/[0.875rem] before:w-0 relative;
 				&:hover::before {
 					animation: showHoverLine 1s forwards ease-in-out; 
 				}
@@ -111,7 +111,7 @@
 					@apply p-[0.875rem_2.5rem] text-center;
 
 					p {
-						@apply text-[0.875rem] leading-none text-center font-secondary-600;
+						@apply text-[0.875rem] leading-none text-center font-primary;
 					}
 				}
 			}

@@ -3,19 +3,17 @@
     @apply flex items-center justify-center 
       text-[0.875rem] leading-[130%] tracking-normal
       py-[0.85rem] px-[1.75rem] border-[0.09375rem] rounded-[1.75rem]
-      transition-all duration-300 ease-in-out hover:opacity-90 font-tertiary-500;
+      transition-all duration-300 ease-in-out hover:opacity-90 font-primary;
 
     p {
-      @apply text-base font-tertiary-500 leading-[100%];
+      @apply text-base font-primary leading-normal;
     }
 
     &.btn-primary {
-      @apply text-[var(--font-color-light)] bg-[var(--font-color-dark)] border-[var(--font-color-dark)];
+      @apply text-[var(--theme-color-highlight)] bg-[var(--theme-color)] border-[var(--theme-color)];
 
       &:hover {
-        /* @apply text-[var(--font-color-light)] !bg-[var(--theme-color)] !border-[var(--theme-color)]; */
-        @apply text-[var(--font-color-light)] !bg-[#7A3300] !border-[#7A3300];
-         
+        @apply !text-[var(--theme-color-highlight)] !bg-[var(--theme-color-dark)] !border-[var(--theme-color-dark)];         
       }
     }
 

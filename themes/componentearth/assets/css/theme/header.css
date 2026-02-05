@@ -64,10 +64,10 @@
 					@apply opacity-100 relative !text-[var(--font-color-dark)] cursor-pointer text-[1.25rem] hover:!text-[var(--font-color-black)];
 				}
 				.nav__item.parent>.nav__item-inner a>p:last-of-type {
-					@apply  font-tertiary;
+					@apply  font-primary;
 				}
 				.nav__item.external>.nav__item-inner a>p:last-of-type {
-					@apply  font-tertiary;
+					@apply  font-primary;
 				}
 				.nav__item-inner.active .arrow-rotate svg path {
 					@apply stroke-black;
@@ -89,7 +89,7 @@
 					@apply p-0 w-full justify-between;
 
 					p {
-						@apply font-tertiary max-lg:!text-[1rem];
+						@apply font-primary max-lg:!text-[1rem];
 
 						&:hover,
 						&:active,
@@ -354,7 +354,7 @@
 			@apply flex items-center ~gap-[2rem]/[2.25rem] max-xl:hidden;
 
 			.nav__item p {
-				@apply !text-[0.875rem] font-tertiary leading-[150%] text-[var(--font-color-dark)];
+				@apply !text-[1.125rem] font-primary leading-[150%] text-[var(--font-color-dark)];
 			}
 		}
 
@@ -377,7 +377,7 @@
 							@apply cursor-default transition-opacity duration-300 ease-[ease];
 
 							&:first-of-type {
-								@apply text-black font-tertiary opacity-100;
+								@apply text-black font-primary opacity-100;
 							}
 						}
 					}
@@ -420,7 +420,7 @@
 							@apply cursor-pointer transition-opacity duration-300 ease-[ease];
 
 							&:first-of-type {
-								@apply text-black font-tertiary opacity-0;
+								@apply text-black font-primary opacity-0;
 							}
 
 							&:last-of-type {
@@ -467,7 +467,7 @@
 			@apply relative flex gap-[0.25rem] items-center;
 
 			p {
-				@apply !text-[1.125rem] font-tertiary leading-[105%] text-white;
+				@apply !text-[1.125rem] font-primary leading-[105%] text-white;
 			}
 
 			&:hover {
@@ -560,7 +560,7 @@
 			}
 
 			p {
-				@apply font-tertiary underline-offset-[0.125rem] max-lg:text-[1rem];
+				@apply font-primary underline-offset-[0.125rem] max-lg:text-[1rem];
 			}
 			
 			.square {

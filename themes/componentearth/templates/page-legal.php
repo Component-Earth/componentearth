@@ -21,7 +21,7 @@ get_header();
                             </div>
                         </div>
                         <div class="flex flex-col gap-[1.5rem]">
-                            <h4 class="~text-[1.25rem]/[1.5rem] leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] font-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                            <h4 class="~text-[1.25rem]/[1.5rem] leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] font-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
                             <ul>
                                 <li class="medium">Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</li>
                                 <li class="medium">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</li>
@@ -32,7 +32,7 @@ get_header();
                             </ul>
                         </div>
                         <div class="flex flex-col gap-[1.5rem]">
-                            <h4 class="~text-[1.25rem]/[1.5rem] leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] font-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+                            <h4 class="~text-[1.25rem]/[1.5rem] leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] font-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
                             <ol>
                                 <li class="medium">Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</li>
                                 <li class="medium">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</li>
@@ -52,10 +52,10 @@ get_header();
                                 <table class="legal-table table-fixed">
                                     <tbody>
                                         <tr class="">
-                                            <td class="~text-[1.25rem]/[1.5rem] font-secondary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Request Type</td>
-                                            <td class="~text-[1.25rem]/[1.5rem] font-secondary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Column 2</td>
-                                            <td class="~text-[1.25rem]/[1.5rem] font-secondary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Column 3</td>
-                                            <td class="~text-[1.25rem]/[1.5rem] font-secondary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Column 4</td>
+                                            <td class="~text-[1.25rem]/[1.5rem] font-primary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Request Type</td>
+                                            <td class="~text-[1.25rem]/[1.5rem] font-primary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Column 2</td>
+                                            <td class="~text-[1.25rem]/[1.5rem] font-primary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Column 3</td>
+                                            <td class="~text-[1.25rem]/[1.5rem] font-primary leading-[120%] ~tracking-[-0.025rem]/[-0.03rem] w-[25%]">Column 4</td>
                                         </tr>
                                         <tr>
                                             <td class="medium font-semibold">Request to Access</td>

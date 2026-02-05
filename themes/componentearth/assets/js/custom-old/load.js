@@ -1,17 +1,9 @@
-// jQuery(document).ready(function () {
-//     window.baunfire.ready();
-// });
-
-// jQuery(window).on("load", function () {
-//     // window.baunfire.load();
-// });
-
-// jQuery(document).ready(function () {
-//     window.app.init();
-// });
+jQuery(document).ready(function () {
+    window.app.init();
+});
 
 jQuery(window).on("load", function () {
-    window.baunfire.ready();
+    window.app.load();
 });
 
 window.resizeTimer;

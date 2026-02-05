@@ -152,7 +152,7 @@
 }
 
 .rich-content {	
-	@apply flex flex-col gap-[2.75rem] [&_.wp-block-heading]:mb-0 [&_table_img]:max-w-[1.5rem] [&_table_strong]:text-[1.25rem] [&_table_strong]:font-primary-600 [&_table_td]:p-[0.625rem_0.75rem];
+	@apply flex flex-col gap-[2.75rem] [&_.wp-block-heading]:mb-0 [&_table_img]:max-w-[1.5rem] [&_table_strong]:text-[1.25rem] [&_table_strong]:font-primary [&_table_td]:p-[0.625rem_0.75rem];
 
 	h1,
 	h2,
@@ -169,27 +169,27 @@
 	h1,
 	.h1,
 	h1 strong {
-		/* @apply ~text-[1.5rem]/[2.5rem] 2xl:text-[2.5rem] font-secondary-600 leading-[125%]; */
-		@apply ~text-[2rem]/[3.5rem] font-secondary-700 leading-[100%];
+		/* @apply ~text-[1.5rem]/[2.5rem] 2xl:text-[2.5rem] font-primary leading-[125%]; */
+		@apply ~text-[2rem]/[3.5rem] font-primary leading-[100%];
 	}
 
 
 	h2,
 	.h2,
 	h2 strong {
-		@apply ~text-[2.5rem]/[3rem] font-secondary-700 leading-[100%];
+		@apply ~text-[2.5rem]/[3rem] font-primary leading-[100%];
 	}
 
 	h3,
 	.h3,
 	h3 strong {
-		@apply ~text-[1.25rem]/[2.5rem] leading-[130%] font-secondary-500;
+		@apply ~text-[1.25rem]/[2.5rem] leading-[130%] font-primary;
 	}
 
 	h4,
 	.h4,
 	h4 strong {
-		@apply ~text-[1.125rem]/[1.75rem] leading-[120%] font-secondary-500;
+		@apply ~text-[1.125rem]/[1.75rem] leading-[120%] font-primary;
 	}
 
 	h5,
@@ -198,14 +198,14 @@
 	h6,
 	.h6,
 	h6 strong {
-		@apply text-[1.125rem] leading-[120%] font-secondary-500;
+		@apply text-[1.125rem] leading-[120%] font-primary;
 	}
 	
 	p {
-		@apply block ~text-[1rem]/[[1.125rem]] font-secondary ~leading-[1.4rem]/[1.6rem] text-black;
+		@apply block ~text-[1rem]/[[1.125rem]] font-primary ~leading-[1.4rem]/[1.6rem] text-black;
 		b,
 		strong {
-			@apply font-primary-600;
+			@apply font-primary;
 		}
 		&:last-of-type {
 			@apply mb-0;
@@ -213,13 +213,13 @@
 	}
 
 	a {
-		@apply text-black underline !font-secondary;
+		@apply text-black underline !font-primary;
 		strong {
-			@apply !font-secondary;
+			@apply !font-primary;
 		}
 		&.link,
 		&.btn {
-			@apply !font-secondary;
+			@apply !font-primary;
 		}
 	}
 
@@ -235,7 +235,7 @@
 		@apply m-0 list-none flex flex-col !gap-[0.75rem];
 
 		li {
-			@apply pl-[0.75rem] relative !font-secondary text-[1.125rem] leading-[130%];
+			@apply pl-[0.75rem] relative !font-primary text-[1.125rem] leading-[130%];
 
 			&::before {
 				content: "•";
@@ -249,7 +249,7 @@
 		@apply list-decimal m-0 leading-[200%] flex flex-col gap-[0.75rem];
 
 		li {
-			@apply relative leading-[130%] !font-secondary;
+			@apply relative leading-[130%] !font-primary;
 		}
 	}	
 
@@ -304,15 +304,15 @@
 .cky-consent-container .cky-consent-bar {
 	@apply lg:w-[29.813rem] w-full !p-[1.5rem];
 	.cky-notice-des p {
-		@apply !text-[0.8125rem] !leading-[1.3rem] !font-secondary;
+		@apply !text-[0.8125rem] !leading-[1.3rem] !font-primary;
 	}
 	.cky-title {
-		@apply !text-[1rem] !font-secondary leading-[1.6rem];
+		@apply !text-[1rem] !font-primary leading-[1.6rem];
 	}
 	.cky-notice-btn-wrapper {
 		@apply !mt-[1rem] !flex-row-reverse !gap-[1rem];
 		.cky-btn {
-			@apply !text-[0.875rem] !font-tertiary !text-center !p-[0.5rem_0.75rem] !border-[var(--font-color-dark)] !text-[var(--font-color-dark)] !rounded-[1.75rem];
+			@apply !text-[0.875rem] !font-primary !text-center !p-[0.5rem_0.75rem] !border-[var(--font-color-dark)] !text-[var(--font-color-dark)] !rounded-[1.75rem];
 			
 			&.cky-btn-accept {
 				@apply !bg-[var(--theme-color)] !border-[var(--theme-color)] !text-[var(--font-color-light)];
@@ -325,7 +325,7 @@
 	.cky-preference-title,
 	.cky-preference-content-wrapper,
 	.cky-accordion-btn {
-		@apply !text-[var(--font-color-dark)] !font-secondary;
+		@apply !text-[var(--font-color-dark)] !font-primary;
 	}	
 	.cky-accordion-btn {
 		@apply rounded-[0.25rem]
@@ -333,7 +333,7 @@
 	.cky-preference-content-wrapper,
 	.cky-accordion-header-des {
 		p {
-			@apply !text-[0.875rem] !leading-[1.4rem] !font-secondary;
+			@apply !text-[0.875rem] !leading-[1.4rem] !font-primary;
 		}
 	}	
 	.cky-preference-content-wrapper {
@@ -347,7 +347,7 @@
 	}
 	.cky-accordion-header-wrapper {
 		.cky-accordion-btn {
-			@apply !font-secondary !text-[0.875rem] !leading-[1.4rem] !text-[var(--font-color-dark)];
+			@apply !font-primary !text-[0.875rem] !leading-[1.4rem] !text-[var(--font-color-dark)];
 		}
 		.cky-accordion-header-des p {
 			@apply !tracking-[-0.008125rem] !text-[0.8125rem] !leading-[1.3rem] !text-[var(--font-color-dark)];	
@@ -357,7 +357,7 @@
 		@apply !hidden;
 	}
 	.cky-empty-cookies-text {
-		@apply !font-secondary !text-[0.875rem];
+		@apply !font-primary !text-[0.875rem];
 	}	
 	.cky-accordion-body {
 		@apply !px-0;
@@ -366,7 +366,7 @@
 		@apply flex gap-[1rem];
 		
 		.cky-btn {
-			@apply !text-[0.875rem] !font-tertiary !text-center !p-[0.5rem_0.75rem] !border-[var(--font-color-dark)] !text-[var(--font-color-dark)] !rounded-[1.75rem];	
+			@apply !text-[0.875rem] !font-primary !text-center !p-[0.5rem_0.75rem] !border-[var(--font-color-dark)] !text-[var(--font-color-dark)] !rounded-[1.75rem];	
 
 			&.cky-btn-accept {
 				@apply !bg-[var(--theme-color)] !border-[var(--theme-color)] !text-[var(--font-color-light)];
@@ -374,7 +374,7 @@
 		}
 	}
 	.cky-always-active {
-		@apply !font-secondary !shadow-none text-[0.875rem];
+		@apply !font-primary !shadow-none text-[0.875rem];
 	}
 	.cky-show-desc-btn {
 		@apply !text-[var(--theme-color)];

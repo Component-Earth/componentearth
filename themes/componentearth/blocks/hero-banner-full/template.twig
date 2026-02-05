@@ -1,0 +1,72 @@
+{% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+{% set pb = fields.padding_bottom and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+{% set bg_class = 'bg-white' %}
+
+<section class="{{ block.slug }} {{ bg_class }}">
+  {% if block.anchor %}
+    <div class="section-anchor" id="{{ block.anchor | default(block.id) }}"></div>
+  {% endif %}
+
+  <div class="container-fluid overflow-hidden lg:h-screen h-[43.25rem] max-lg:px-0">
+    <div class="relative flex flex-col items-center justify-center w-full h-full">
+      <div class="relative h-full gap-y-0 z-50 w-full text-center max-lg:p-[1.25rem]">        
+        <div class="transition-top-stagger flex flex-col items-center justify-center h-full gap-sm" data-custom-delay="1.25" data-custom-stagger="0.25">
+          {% include 'partials/nav-header.twig' with {                      
+            "global_nav_theme": context_menu.global_nav_theme,
+            "hide_navigation": context_menu.hide_navigation,
+            "site_logo": context_menu.site_logo,
+            "footer_logo": context_menu.footer_logo,
+            "header_nav_item": context_menu.header_nav_item
+          } %}
+          <div class="relative text-white">
+            <h1 class="flex flex-col items-center justify-center">
+              {% if fields.pre_header_text %}
+                <span>{{ fields.pre_header_text }}</span>
+              {% endif %}
+              {% if fields.post_header_text %}
+                <span>{{ fields.post_header_text }}</span>
+              {% endif %}
+            </h1>
+          </div>
+          
+          {% if fields.paragraph|length > 0 or fields.cta.url|length > 0 %}                
+            <div class="para flex flex-col items-center max-w-[34rem] !pt-0 gap-md">
+                <div class="flex flex-col gap-[1rem]">
+                  {% if fields.paragraph|length > 0 %}
+                    <p class="para-desc text-white text-[1.125rem]">{{ fields.paragraph }}</p>
+                  {% endif %}
+                </div>
+                {% if fields.cta.url|length > 0 %}
+                    {% set custom_class = 'btn-primary' %}							
+                
+                    {% include 'components/cta.twig' with {
+                      'class' : custom_class,
+                      'cta': fields.cta, 
+                      'icon': true,
+                    } %}
+                {% endif %}
+            </div>                
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="absolute top-0 left-0 w-full h-full z-0" data-custom-delay="0" data-custom-stagger="0.25">        
+          {% if fields.video %}
+            <div class="jarallax w-full h-full" data-jarallax data-video-src="mp4:{{ fields.video.url }}"></div>
+          {% else %}
+            {% if fields.thumbnail %}  
+              {% set image = fields.thumbnail ? fields.thumbnail.url : function('png', 'default') %}  
+              {% set image_mobile = fields.thumbnail_mobile ? fields.thumbnail_mobile.url : image %}  
+              
+              <div data-jarallax data-speed="0.75" class="jarallax w-full h-full">            
+                <img class="jarallax-img lg:block hidden" src="{{ image }}" alt="banner-image" />        
+                <img class="jarallax-img lg:hidden block" src="{{ image_mobile }}" alt="banner-image-mobile" />        
+              </div>
+            {% endif %}
+          {% endif %}                
+      </div>
+    </div>
+  </div>
+</section>
+
+
