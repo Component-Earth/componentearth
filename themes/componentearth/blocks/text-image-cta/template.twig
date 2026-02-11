@@ -1,0 +1,37 @@
+{% set custom_class = "bg-[transparent]" %}
+
+<section class="{{ block.slug ?? 'text-image-cta' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-md" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-md" %}
+
+    <div class="container">
+        <div class="{{ pt }} {{ pb }}">                                 
+            <div class="flex max-lg:flex-col items-start gap-sm mx-auto {% if fields.flip_text_image_column %} flex-row-reverse {% endif %}">
+                {% if fields.image %}
+                    <div class="2xl:w-[40rem] w-full max-lg:h-[30rem] h-auto bg-cover overflow-hidden {% if fields.flip_text_image_column %} rounded-bl-[8rem] {% else %} rounded-br-[8rem] {% endif %}" style="background-image: url({{ fields.image.url }})">
+                        <img class="invisible w-full h-full object-cover" src="{{ fields.image.url }}" />
+                    </div>
+                {% endif %}
+                {% if fields.title %}
+                    <div class="relative lg:mt-[5rem] max-xl:w-full flex flex-col {% if fields.flip_text_image_column %} items-start lg:mr-[-16rem]  {% else %} items-end lg:ml-[-16rem]  {% endif %}">
+                        <h3 class="2xl:w-[47.4375rem] text-[var(--theme-color-dark)] font-tertiary [&_p]:!~text-[3.15625rem]/[5.15625rem] [&_p]:leading-none [&_strong]:bg-primary [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.title }}</h3>
+                        
+                        {% if fields.link %}                
+                            {% set custom_class = '' %}							
+                        
+                            {% include 'components/cta.twig' with {
+                                'class' : custom_class,
+                                'cta': fields.link, 
+                                'icon': false,
+                            } %}
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

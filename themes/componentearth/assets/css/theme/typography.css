@@ -11,7 +11,7 @@
 
 	h1,
 	.h1 {
-		@apply ~text-[3rem]/[4.75rem] lg:text-[4.75rem] font-primary leading-none;
+		@apply ~text-[3rem]/[6rem] lg:text-[6rem] font-primary leading-none;
 	}
 
 	h2,

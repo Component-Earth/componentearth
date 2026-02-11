@@ -1,0 +1,24 @@
+{% set custom_class = "bg-[transparent]" %}
+
+<section class="{{ block.slug ?? 'animated-text' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-md" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-md" %}
+
+    <div class="container">
+        <div class="{{ pt }} {{ pb }}">                                 
+            <div class="flex flex-col items-center gap-sm mx-auto lg:max-w-[68.9375rem] text-center">
+                {% if fields.title %}
+                    <h2 class="text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal">{{ fields.title }}</h2>
+                {% endif %}
+
+                {% if fields.paragraph %}
+                    <div class="max-w-[53.5rem] font-normal [&_p]:leading-[110%] [&_p]:~text-[1.125rem]/[1.5rem] flex flex-col gap-[1.25rem] text-primary-dark [&_strong]:bg-primary [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.paragraph }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

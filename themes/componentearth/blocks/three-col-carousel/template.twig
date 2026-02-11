@@ -1,0 +1,89 @@
+{% set custom_class = "lg:h-[58.5rem]" %}
+
+<section class="{{ block.slug ?? 'three-col-carousel' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+           
+    <div class="bg-[#C0D5EA] bg-opacity-80 z-0 absolute top-0 left-0 w-full h-full"></div>
+    <img class="object-cover bg-opacity-80 z-10 absolute top-0 left-0 w-full h-full" src="{{ function('png','carousel-bg') }}" />
+    
+    <div class="container h-full relative z-50 px-[10rem]">
+        <div class="{{ pt }} {{ pb }} h-full">                      
+            {% if fields.carousel %}
+                <div class="slider h-full">
+                    {% for carousel_item in fields.carousel %}
+                        <div class="static slide__date">                        
+                            {% if fields.carousel_title %}
+                                <h2 class="absolute z-50 max-w-[30%] max-lg:hidden">{{ fields.carousel_title }}</h2>
+                            {% endif %}
+                        </div>
+                        <div class="slide">
+                            <div class="slide__top">
+                                {% if carousel_item.col_1 %}
+                                    <span class="slide__date">                        
+                                        {% if fields.carousel_title %}
+                                            <h2 class="invisible max-lg:visible">{{ fields.carousel_title }}</h2>
+                                        {% endif %}
+                                        {% if carousel_item.col_1.image %}
+                                            <div class="lg:h-[24rem] w-full max-w-[17rem] rounded-bl-[7rem] overflow-hidden">
+                                                <img class="object-cover w-full h-full" src="{{ carousel_item.col_1.image }}" alt="col-1-image" />
+                                            </div>
+                                        {% endif %}
+                                    </span>
+                                {% endif %}
+                            </div>
+                            <div class="slide__img">
+                                {% if carousel_item.col_2 and carousel_item.col_2.image %}
+                                    <div class="lg:h-[37.90625rem] w-auto rounded-tl-[7rem] rounded-tr-[7rem] overflow-hidden">
+                                        <img class="object-cover w-full h-full" src="{{ carousel_item.col_2.image }}" alt="col-2-image" />
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="slide__bottom">                        
+                                {% if carousel_item.col_3 %}
+                                    <span class="slide__title">
+                                        {% if carousel_item.col_3.image %}
+                                            <div class="lg:h-[24rem] w-full max-w-[17rem] rounded-br-[7rem] overflow-hidden">
+                                                <img class="object-cover w-full h-full" src="{{ carousel_item.col_3.image }}" alt="col-3-image">
+                                            </div>
+                                        {% endif %}
+                                        <div class="flex flex-col gap-[1rem] items-start">
+                                            {% if carousel_item.col_3.description %}
+                                                <p class="lg:text-[1.35rem] lg:leading-[110%] max-w-[16.75rem]">{{ carousel_item.col_3.description }}</p>
+                                            {% endif %}
+                                            {% if carousel_item.col_3.link.url|length > 0 %}
+                                                {% set custom_class = 'btn-primary' %}							
+                                            
+                                                {% include 'components/cta.twig' with {
+                                                'class' : custom_class,
+                                                'cta': carousel_item.col_3.link, 
+                                                'icon': true,
+                                                } %}
+                                            {% endif %}
+                                        </div>
+                                    </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if fields.carousel %}
+                {% set ctr = 0 %}
+                <div class="slider-dots flex gap-[1rem] items-center justify-center w-full">
+                    {% for carousel_item in fields.carousel %}
+                        <button class="slider-dot" data-ctr="{{ ctr }}">Item {{ ctr }}</button>
+                        {% set ctr = ctr + 1 %}
+                    {% endfor %}
+                </div>
+                {# <button class="slider-control prev">←</button>
+                <button class="slider-control next">→</button> #}
+            {% endif %}
+        </div>
+    </div>
+    
+</section>

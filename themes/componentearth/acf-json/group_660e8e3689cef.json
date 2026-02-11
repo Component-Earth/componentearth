@@ -55,12 +55,12 @@
                     "selected": 0
                 },
                 {
-                    "key": "field_660e8e369bbbb",
-                    "label": "Eyebrow",
-                    "name": "eyebrow",
+                    "key": "field_698497e14bb14",
+                    "label": "Title",
+                    "name": "title",
                     "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
+                    "type": "wysiwyg",
+                    "instructions": "Set to bold font weight to highlight a phrase.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -69,18 +69,19 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "plain_heading",
+                    "media_upload": 0,
+                    "delay": 0
                 },
                 {
                     "key": "field_660e8e60b9954",
                     "label": "Paragraph",
                     "name": "paragraph",
                     "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
+                    "type": "wysiwyg",
+                    "instructions": "Set to bold font weight to highlight a phrase.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -89,10 +90,33 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "rows": 4,
-                    "placeholder": "",
-                    "new_lines": ""
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "plain_heading",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_698498a033b40",
+                    "label": "Extras",
+                    "name": "extras",
+                    "aria-label": "",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_673eed0e10460"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
         }
@@ -116,5 +140,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1764953754
+    "modified": 1770297526
 }

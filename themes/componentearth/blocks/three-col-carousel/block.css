@@ -1,0 +1,85 @@
+@layer components {
+    .three-col-carousel {
+        
+        .slider {
+            position: relative;
+            overflow: hidden;
+            @apply max-lg:flex-col;
+            
+
+            .flickity-viewport {
+                @apply lg:!h-[95%]
+            }
+
+            
+            h2 {
+                @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
+                strong {
+                    @apply text-primary-dark;
+                }
+                p {
+                    @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
+                    
+                    strong {
+                        @apply text-primary-dark font-normal;
+                    }
+                }
+            }
+            
+            .slide {
+                @apply absolute top-0 left-0 w-full flex items-stretch ~gap-[3rem]/[7rem] justify-between max-lg:flex-col;
+
+                &__img {                
+                    @apply flex flex-col h-auto flex-1 w-full;
+                }
+                
+                &__top {
+                    @apply flex flex-col h-auto gap-[2rem] flex-1;
+                }
+                
+                &__date {
+                    @apply gap-[2rem] flex flex-col;
+                }
+                
+                &__bottom {
+                    @apply flex flex-col justify-start items-start h-auto flex-1;
+                }
+                
+                &__title {
+                    @apply text-[1.5rem] text-blue-900 leading-none gap-[2rem] flex flex-col items-start;
+                }
+            }
+            
+            .slider-control {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translate(0, -50%);
+                height: 40px;
+                width: 40px;
+                background-color: #eee;
+                cursor: pointer;
+                
+                @apply z-20;
+                
+                &.prev {
+                    border-radius: 0 8px 8px 0;
+                }
+                
+                &.next {
+                    left: auto;
+                    right: 0;
+                    border-radius: 8px 0 0 8px;
+                }
+            }
+
+            .flickity-page-dots {
+                @apply text-center flex items-center justify-center gap-[1rem];
+            }
+            
+        }
+    }
+}

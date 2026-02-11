@@ -1,0 +1,24 @@
+{
+    "name": "three-col-carousel",
+    "title": "Three Col Carousel",
+    "viewScript": [
+        "file:./script.js",
+        "gsap",
+        "flickity"
+    ],
+    "viewStyle": [		
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["page"]
+	},
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_help": "preview.png"
+            }
+        }
+    }
+}
