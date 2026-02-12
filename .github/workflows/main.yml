@@ -9,7 +9,7 @@ jobs:
     name: Deploy action
     runs-on: ubuntu-latest
     steps:
-      - uses: /AspirationCarbon/componentearth/deployment@main
+      - uses: /Component-Earth/componentearth/deployment@main
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: ${{ vars.PRD_ENV }}
@@ -18,7 +18,7 @@ jobs:
     name: Deploy Staging
     runs-on: ubuntu-latest
     steps:
-      - uses: /AspirationCarbon/componentearth/deployment@staging
+      - uses: /Component-Earth/componentearth/deployment@staging
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}          
           WPE_ENV: ${{ vars.STG_ENV }}
