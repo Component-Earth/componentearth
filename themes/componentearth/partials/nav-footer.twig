@@ -1,12 +1,11 @@
-<footer class="footer relative overflow-hidden">
-	<div class="container relative z-10 h-full">
-		<div class="footer__inner ~pt-[2.5rem]/[3.5rem] pb-[2.5rem] lg:pb-[1.75rem] h-full">
-			<div class="flex flex-col ~gap-[2rem]/[4.375rem] items-center justify-between w-full h-full">
-
+<footer class="footer relative overflow-hidden bg-primary-dark dark">
+	<div class="container-fluid relative z-10 h-auto">
+		<div class="footer__inner">
+			<div class="footer__inner-top container">
 				<div class="flex max-lg:flex-col ~gap-[2rem]/[2.1875rem] items-start w-full justify-between">
 					{% set footer_logo = footer_logo and footer_logo.url ? footer_logo.url : function('svg', 'block-icon') %}
-					<a href="{{ function('home_url') }}" class="footer__logo [&_img]:object-contain [&_img]:h-auto w-[3.6533125rem]">
-						<img class="object-contain w-full h-full" src="{{ footer_logo }}" alt="footer-logo" />
+					<a href="{{ function('home_url') }}" class="footer__logo [&_img]:object-contain [&_img]:h-auto w-[20.5625rem]">
+						<img class="object-contain w-full h-full dark:brightness-0 dark:invert" src="{{ footer_logo }}" alt="footer-logo" />
 					</a>
 
 					{% if primary_footer_nav_columns|length or footer_social|length %}
@@ -58,55 +57,26 @@
 						</div>
 					{% endif %}
 				</div>
+			</div>
 
+			<div class="footer__inner-line"></div>
+			
+			<div class="footer__inner-bottom container">
 				{% if footer_credits %}
-				{# {% if footer_credits or secondary_footer_nav_item|length %} #}
 					<div class="flex max-lg:flex-col-reverse max-lg:gap-[1.5rem] justify-between w-full">
 						<div class="flex flex-col ~gap-[1rem]/[2rem] items-center w-full">
 							<div class="flex justify-between w-full max-md:flex-col max-md:gap-[1.5rem]">
 								{% if footer_credits %}
 									<div class="footer__credits">{{ function('do_shortcode', footer_credits) }}</div>
 								{% endif %}
-
-								{# {% if secondary_footer_nav_item|length %}
-									<div class="flex ~gap-[1.125rem]/[1.5rem] max-md:flex-col">
-										{% for nav_item in secondary_footer_nav_item %}
-											{% if nav_item.link %}
-												{% set link_url = nav_item.link.url ?: '#' %}
-												{% set link_title = nav_item.link.title ?? '' %}
-												{% set link_target = nav_item.link.target ?: '_self' %}
-												{% if link_title %}
-													<a class="footer__item secondary [&_p]:text-[var(--font-color-dark)] hover:!text-[var(--theme-color)]"
-														href="{{ link_url }}" target="{{ link_target }}">
-														{{ link_title }}
-													</a>
-												{% endif %}
-											{% endif %}
-										{% endfor %}
-									</div>
-								{% endif %} #}
 							</div>
 						</div>
 						<div class="w-full flex max-lg:flex-col gap-sm lg:justify-end lg:items-center items-start">
 							{% if footer_information %}
 								<div class="bg-[var(--theme-color-secondary)] text-[var(--font-color-dark)] font-primary ~py-[0.5rem]/[0.25rem] ~px-[1.5rem]/[1.25rem] ~rounded-[0.5rem]/[2.375rem] text-[0.75rem] w-auto">
-									{# Text "Hello" to Sam at (830) 429-4376 to experience it live. #}
 									{{ footer_information }}
 								</div>
 							{% endif %}
-							{# <div class="lg:flex hidden gap-[0.75rem]">
-								<a href="#" class="w-[1.5rem] h-[1.5rem]">
-									<svg class="object-contain w-full h-full" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-										<path d="M8.22 3H15.78C18.66 3 21 5.34 21 8.22V15.78C21 17.1644 20.45 18.4922 19.4711 19.4711C18.4922 20.45 17.1644 21 15.78 21H8.22C5.34 21 3 18.66 3 15.78V8.22C3 6.83557 3.54996 5.50784 4.5289 4.5289C5.50784 3.54996 6.83557 3 8.22 3ZM8.04 4.8C7.1807 4.8 6.35659 5.14136 5.74897 5.74897C5.14136 6.35659 4.8 7.1807 4.8 8.04V15.96C4.8 17.751 6.249 19.2 8.04 19.2H15.96C16.8193 19.2 17.6434 18.8586 18.251 18.251C18.8586 17.6434 19.2 16.8193 19.2 15.96V8.04C19.2 6.249 17.751 4.8 15.96 4.8H8.04ZM16.725 6.15C17.0234 6.15 17.3095 6.26853 17.5205 6.4795C17.7315 6.69048 17.85 6.97663 17.85 7.275C17.85 7.57337 17.7315 7.85952 17.5205 8.0705C17.3095 8.28147 17.0234 8.4 16.725 8.4C16.4266 8.4 16.1405 8.28147 15.9295 8.0705C15.7185 7.85952 15.6 7.57337 15.6 7.275C15.6 6.97663 15.7185 6.69048 15.9295 6.4795C16.1405 6.26853 16.4266 6.15 16.725 6.15ZM12 7.5C13.1935 7.5 14.3381 7.97411 15.182 8.81802C16.0259 9.66193 16.5 10.8065 16.5 12C16.5 13.1935 16.0259 14.3381 15.182 15.182C14.3381 16.0259 13.1935 16.5 12 16.5C10.8065 16.5 9.66193 16.0259 8.81802 15.182C7.97411 14.3381 7.5 13.1935 7.5 12C7.5 10.8065 7.97411 9.66193 8.81802 8.81802C9.66193 7.97411 10.8065 7.5 12 7.5ZM12 9.3C11.2839 9.3 10.5972 9.58446 10.0908 10.0908C9.58446 10.5972 9.3 11.2839 9.3 12C9.3 12.7161 9.58446 13.4028 10.0908 13.9092C10.5972 14.4155 11.2839 14.7 12 14.7C12.7161 14.7 13.4028 14.4155 13.9092 13.9092C14.4155 13.4028 14.7 12.7161 14.7 12C14.7 11.2839 14.4155 10.5972 13.9092 10.0908C13.4028 9.58446 12.7161 9.3 12 9.3Z" fill="black"/>
-									</svg>
-								</a>
-								<a href="#" class="w-[1.5rem] h-[1.5rem]">
-									<svg class="object-contain w-full h-full" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-										<path d="M20.0644 2.40016H4.04439C3.8379 2.39049 3.63153 2.42163 3.4371 2.49182C3.24266 2.562 3.06397 2.66984 2.91127 2.80917C2.75857 2.9485 2.63484 3.11658 2.54718 3.30379C2.45951 3.49099 2.40963 3.69365 2.40039 3.90016V19.9562C2.41249 20.3884 2.58958 20.7995 2.8953 21.1052C3.20103 21.411 3.6122 21.5881 4.04439 21.6002H20.0644C20.4846 21.5814 20.8807 21.3988 21.1678 21.0915C21.4549 20.7842 21.6102 20.3766 21.6004 19.9562V3.90016C21.6038 3.69916 21.5662 3.49959 21.4897 3.31366C21.4133 3.12774 21.2997 2.95939 21.1558 2.81894C21.012 2.67849 20.841 2.5689 20.6533 2.49689C20.4657 2.42487 20.2652 2.39196 20.0644 2.40016ZM8.40039 18.4082H5.60439V9.85216H8.40039V18.4082ZM7.06839 8.55616C6.87328 8.56296 6.67887 8.52934 6.49738 8.45741C6.31588 8.38548 6.15122 8.2768 6.01374 8.13819C5.87626 7.99958 5.76892 7.83404 5.69848 7.65196C5.62803 7.46988 5.596 7.27521 5.60439 7.08016C5.59576 6.88301 5.62844 6.68622 5.70033 6.50244C5.77222 6.31866 5.88173 6.15193 6.02184 6.01295C6.16194 5.87397 6.32955 5.76582 6.51391 5.69542C6.69827 5.62502 6.89531 5.59394 7.09239 5.60416C7.2875 5.59736 7.48191 5.63098 7.6634 5.70291C7.8449 5.77484 8.00956 5.88352 8.14704 6.02213C8.28452 6.16074 8.39186 6.32628 8.4623 6.50836C8.53275 6.69044 8.56478 6.88511 8.55639 7.08016C8.56502 7.27731 8.53234 7.4741 8.46045 7.65788C8.38856 7.84166 8.27905 8.00839 8.13895 8.14737C7.99884 8.28635 7.83123 8.3945 7.64687 8.4649C7.46251 8.5353 7.26547 8.56638 7.06839 8.55616ZM18.4084 18.4082H15.6004V13.7282C15.6004 12.6122 15.2044 11.8442 14.2084 11.8442C13.899 11.8468 13.598 11.9452 13.3466 12.1256C13.0953 12.3061 12.9059 12.5598 12.8044 12.8522C12.7254 13.071 12.6927 13.304 12.7084 13.5362V18.4082H9.94839V9.85216H12.7084V11.0522C12.9538 10.6014 13.319 10.2272 13.7637 9.97093C14.2084 9.71469 14.7153 9.58637 15.2284 9.60016C17.0404 9.60016 18.4084 10.8002 18.4084 13.3562V18.4082Z" fill="black"/>
-									</svg>
-								</a>
-							</div> #}
-
 							{% if footer_social|length %}
 								<div class="lg:flex hidden flex-col ~gap-[1.5rem]/[2.5rem] justify-between">
 									<div class="footer__socials mobile">
@@ -135,7 +105,6 @@
 						</div>
 					</div>
 				{% endif %}
-
 			</div>
 		</div>
 	</div>
