@@ -2,20 +2,20 @@
 	<div class="container-fluid relative z-10 h-auto">
 		<div class="footer__inner">
 			<div class="footer__inner-top container">
-				<div class="flex max-lg:flex-col ~gap-[2rem]/[2.1875rem] items-start w-full justify-between">
+				<div class="flex max-lg:flex-col ~gap-[2rem]/[7.1875rem] items-center w-full justify-between">
 					{% set footer_logo = footer_logo and footer_logo.url ? footer_logo.url : function('svg', 'block-icon') %}
 					<a href="{{ function('home_url') }}" class="footer__logo [&_img]:object-contain [&_img]:h-auto w-[20.5625rem]">
 						<img class="object-contain w-full h-full dark:brightness-0 dark:invert" src="{{ footer_logo }}" alt="footer-logo" />
 					</a>
 
 					{% if primary_footer_nav_columns|length or footer_social|length %}
-						<div class="flex max-lg:grid max-lg:grid-cols-2 ~gap-x-[2rem]/[7rem] gap-y-[2.5rem] flex-wrap lg:justify-end w-full">
+						<div class="grid grid-cols-3 flex-wrap w-full">
 							
 							{% if primary_footer_nav_columns|length %}
 								{% for nav_column in primary_footer_nav_columns %}
 									{% for nav_item in nav_column.primary_footer_nav_item %}
 										{% if nav_item.child_nav_item|length %}
-											<div class="flex flex-col gap-sm ">
+											<div class="flex flex-col gap-xs">
 											{% set ctr = 0 %}
 											{% for child in nav_item.child_nav_item %}
 												{% set ctr = ctr + 1 %}

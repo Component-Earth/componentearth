@@ -84,14 +84,14 @@
 				@apply text-white/65 text-[0.75rem] font-primary hover:text-white/65;
 			}
 			&.child {
-				@apply text-[var(--font-color-dark)] font-primary leading-[140%] ~text-[1rem]/[0.875rem] before:w-0 relative;
-				&:hover::before {
+				@apply dark:text-[var(--font-color-light)] text-[var(--font-color-dark)] font-primary leading-[140%] ~text-[1rem]/[0.875rem] before:w-0 relative;
+				/* &:hover::before {
 					animation: showHoverLine 1s forwards ease-in-out; 
 				}
 				
 				&::before {
 					@apply content-['']  h-[1px] absolute bottom-[-6px] bg-black;
-				}
+				} */
 			}      
 
 			@keyframes showHoverLine {
