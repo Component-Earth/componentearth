@@ -24,7 +24,7 @@ baunfire.addModule({
                     draggable: false,
                     prevNextButtons: false,
                     autoPlay: false,
-                    rightToLeft: true,
+                    rightToLeft: false,
                     accessibility: false
 
                 });
