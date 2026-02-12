@@ -1,9 +1,9 @@
-name: Production Deployment
+name: Deploy WordPress Theme to WPE
+
 on:
   push:
-    branches:
-     - main
-     - staging
+    branches: [main, staging]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
