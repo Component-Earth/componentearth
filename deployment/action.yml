@@ -1,5 +1,5 @@
 name: "Deploy to WP Engine"
-description: "Deployment actions on WP Engine"
+description: "Deployment actions on WP Engine" 
 inputs:
   WPE_SSHG_KEY_PRIVATE:
     required: true
