@@ -1,24 +1,24 @@
-name: Production Deployment
+name: Deploy WordPress Theme to WPE
+
 on:
   push:
-    branches:
-     - main
-     - staging
+    branches: [main, staging]
+
 jobs:
-  deploy-action:
-    name: Deploy action
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: /AspirationCarbon/componentearth/deployment@main
+      - name: Deploy to Production
+        if: github.ref == 'refs/heads/main'
+        uses: /Component-Earth/componentearth/deployment@main
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
           WPE_ENV: ${{ vars.PRD_ENV }}
           THEME_ENVIRONMENT: "production"
-  deploy-stg:
-    name: Deploy Staging
-    runs-on: ubuntu-latest
-    steps:
-      - uses: /AspirationCarbon/componentearth/deployment@staging
+          
+      - name: Deploy Staging
+        if: github.ref == 'refs/heads/staging'        
+        uses: /Component-Earth/componentearth/deployment@staging
         with:
           WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}          
           WPE_ENV: ${{ vars.STG_ENV }}
