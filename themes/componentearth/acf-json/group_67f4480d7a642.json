@@ -1,0 +1,49 @@
+{
+    "key": "group_67f4480d7a642",
+    "title": "Global BG",
+    "fields": [
+        {
+            "key": "field_67f4480d7e222",
+            "label": "BG",
+            "name": "bg",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White",
+                "light-gray": "Light Gray"
+            },
+            "default_value": "white",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1770888212
+}
