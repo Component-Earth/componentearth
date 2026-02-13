@@ -18,7 +18,19 @@ baunfire.addModule({
                     nav: false,
                     autoplay: true,
                     autoplayTimeout:5000,
-                    autoplayHoverPause:false
+                    autoplayHoverPause:false,
+                    responsive:{
+                        0:{
+                            items:1.25,
+                            center: false
+                        },
+                        600:{
+                            items:2.5
+                        },
+                        1000:{
+                            items:3.5
+                        }
+                    }
                 });
             });
         }
