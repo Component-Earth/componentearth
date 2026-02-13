@@ -11,7 +11,7 @@
     <div class="bg-[#C0D5EA] bg-opacity-80 z-0 absolute top-0 left-0 w-full h-full"></div>
     <img class="object-cover bg-opacity-80 z-10 absolute top-0 left-0 w-full h-full" src="{{ function('png','carousel-bg') }}" />
     
-    <div class="container h-full relative z-50 px-[10rem]">
+    <div class="container h-full relative z-50 xl:px-[10rem]">
         <div class="{{ pt }} {{ pb }} h-full">                      
             {% if fields.carousel %}
                 <div class="slider h-full">
@@ -81,8 +81,6 @@
                         {% set ctr = ctr + 1 %}
                     {% endfor %}
                 </div>
-                {# <button class="slider-control prev">←</button>
-                <button class="slider-control next">→</button> #}
             {% endif %}
         </div>
     </div>

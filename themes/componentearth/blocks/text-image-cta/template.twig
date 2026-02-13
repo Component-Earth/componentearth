@@ -12,7 +12,7 @@
         <div class="{{ pt }} {{ pb }}">                                 
             <div class="flex max-lg:flex-col items-between gap-sm mx-auto {% if fields.flip_text_image_column %} flex-row-reverse {% endif %}">
                 {% if fields.image %}
-                    <div class="2xl:w-1/2 w-full max-lg:h-[30rem] h-auto bg-cover overflow-hidden {% if fields.flip_text_image_column %} rounded-bl-[8rem] lg:ml-[4.75rem] {% else %} lg:mr-[0.75rem] rounded-br-[8rem] {% endif %}" style="background-image: url({{ fields.image.url }})">
+                    <div class="2xl:w-1/2 w-full h-auto bg-cover overflow-hidden {% if fields.flip_text_image_column %} rounded-bl-[8rem] lg:ml-[4.75rem] {% else %} lg:mr-[0.75rem] rounded-br-[8rem] {% endif %}" style="background-image: url({{ fields.image.url }})">
                         <img class="invisible w-full h-full object-cover" src="{{ fields.image.url }}" />
                     </div>
                 {% endif %}

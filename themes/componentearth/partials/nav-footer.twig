@@ -1,4 +1,4 @@
-<footer class="footer relative overflow-hidden bg-primary-dark dark">
+<footer class="footer relative overflow-hidden bg-primary-dark dark py-[2rem]">
 	<div class="container-fluid relative z-10 h-auto">
 		<div class="footer__inner">
 			<div class="footer__inner-top container">
@@ -9,8 +9,7 @@
 					</a>
 
 					{% if primary_footer_nav_columns|length or footer_social|length %}
-						<div class="grid grid-cols-3 flex-wrap w-full">
-							
+						<div class="grid grid-cols-3 flex-wrap w-full">							
 							{% if primary_footer_nav_columns|length %}
 								{% for nav_column in primary_footer_nav_columns %}
 									{% for nav_item in nav_column.primary_footer_nav_item %}

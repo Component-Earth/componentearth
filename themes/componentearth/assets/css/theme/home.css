@@ -5,11 +5,14 @@
         &.top-nav-active {
             @apply top-0 ;
         }
+        .nav__search {
+            @apply max-lg:hidden;
+        }
     }
 
     .custom-nav {
         .menu-title {
-            @apply !text-white/[0.64];
+            @apply !text-white/[0.64] max-lg:!text-[0.8125rem];
         }
         .nav__logo {
             @apply hidden;
@@ -19,6 +22,12 @@
         }
         .nav__search {
             @apply hidden;
+        }
+        .nav__burger  {
+            @apply !hidden;
+        }
+        .nav__group {
+            @apply !flex max-lg:gap-[0.5rem];
         }
     }
 }
