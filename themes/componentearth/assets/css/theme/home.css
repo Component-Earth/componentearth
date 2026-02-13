@@ -1,3 +1,24 @@
-.home > .nav  {
-    @apply hidden;
+.home {
+
+    #top-nav {
+        @apply fixed top-[-100%] left-0 z-[9999] w-full bg-[#DBD5C6] transition-all duration-300 ease-in-out;        
+        &.top-nav-active {
+            @apply top-0 ;
+        }
+    }
+
+    .custom-nav {
+        .menu-title {
+            @apply !text-white/[0.64];
+        }
+        .nav__logo {
+            @apply hidden;
+        }
+        .nav__wrap {
+            @apply justify-center;
+        }
+        .nav__search {
+            @apply hidden;
+        }
+    }
 }

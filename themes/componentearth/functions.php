@@ -101,6 +101,7 @@ function front_js_scripts()
     wp_enqueue_script("vimeo", "https://player.vimeo.com/api/player.js", array('jquery'), _S_VERSION, true);
     wp_enqueue_script("gsap", get_template_directory_uri() . '/assets/js/external/gsap.min.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script("scroll-trigger", get_template_directory_uri() . '/assets/js/external/ScrollTrigger.min.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script("scroll-to", 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script("gblaze-smoother-script", get_template_directory_uri() . '/assets/js/external/smooth-scroll-gblaze.min.js', array('jquery'), _S_VERSION, false);
     wp_enqueue_script('alpine', 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js', array(), _S_VERSION, true);
     //wp_enqueue_script("jquery-ui-script", get_template_directory_uri() . '/assets/js/external/jquery-ui.js', _S_VERSION, true);

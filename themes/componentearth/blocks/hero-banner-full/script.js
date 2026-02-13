@@ -10,25 +10,36 @@ baunfire.addModule({
                 const self = $(this);
                 const mainTitle = self.find(".main-title");
                 const paraDesc = self.find(".para-desc");
-        
-                // Animation.prototype.headingAnimation(mainTitle, {
-                //     trigger: self,
-                //     start: "top 60%",
-                // }, {
-                //     onStart: () => {
-                //         const tl = gsap.timeline();
-            
-                //         if (paraDesc.length) {
-                //             tl.fromTo(paraDesc, { autoAlpha: 0, y: 30 }, {
-                //                 autoAlpha: 1,
-                //                 y: 0,
-                //                 delay: 0.2,
-                //                 duration: 0.6,
-                //                 ease: Power2.easeOut,
-                //             });
-                //         }
-                //     }
-                // });
+                        
+
+                gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: '.custom-nav',
+                        // pin: true,
+                        pinSpacing: true,
+                        markers: false,
+                        start: "top-=100px top", // when the top of the trigger hits the top of the viewport
+                        end: "+=100", 
+                        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                    }
+                });
+
+                tl.fromTo(
+                    self.find(".custom-nav"), {
+                        opacity: 1
+                    },
+                    {
+                        opacity: 0
+                    }
+                );
+
+                tl.set("#top-nav", { className: "" })
+                  .set("#top-nav", { className: "top-nav-active" });
+
+
             });
         }
 

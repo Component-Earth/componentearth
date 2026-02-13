@@ -6,7 +6,7 @@
 	<div class="nav__outer">
 		<div class="container max-lg:w-full max-xl:pt-[1rem] max-xl:pb-[1rem] max-lg:pt-0 max-lg:pb-0">
 			<div class="nav__desktop nav__inner max-md:py-0 relative">
-				<div class="flex gap-[2rem] items-center w-full {% if function('is_front_page') %} justify-center {% else %} justify-between {% endif %}">
+				<div class="nav__wrap flex gap-[2rem] items-center w-full justify-between">
 
 					{% if global_nav_theme == 'dark' or global_nav_theme == 'transparent' %}
 						{% set logo = footer_logo ? footer_logo.url : function('svg', 'block-icon') %}
@@ -14,7 +14,7 @@
 						{% set logo = site_logo ? site_logo.url : function('svg', 'block-icon') %}
 					{% endif %}
 
-					<a href="{{ function('home_url') }}" class="nav__logo {% if function('is_front_page') %} hidden {% endif %}">
+					<a href="{{ function('home_url') }}" class="nav__logo">
 						<img src="{{ logo }}" alt="logo" />
 					</a>
 
@@ -35,7 +35,7 @@
 														<a href="{{ nav_item.parent_link.url }}" class="flex items-center justify-between gap-[0.5rem] group">
 													{% endif %}
 
-														<p class="!cursor-pointer flex items-center gap-1 relative {% if function('is_front_page') %} !text-white/[0.64] {% endif %}">
+														<p class="menu-title !cursor-pointer flex items-center gap-1 relative">
 															{{ nav_item.name }}
 														</p>
 														<svg class="group-hover:-scale-100 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -52,7 +52,7 @@
 													{% endif %}
 																	
 														<div class="flex gap-[0.5rem] items-center group ">
-															<p class="{% if function('is_front_page') %} !text-white/[0.64] {% endif %}">{{ nav_item.is_parent ? nav_item.name : nav_item.link.title }}</p>
+															<p class="menu-title">{{ nav_item.is_parent ? nav_item.name : nav_item.link.title }}</p>
 															<div class="w-[0.36125rem] h-[0.36125rem] {% if nav_item.link.title != "Home"  %} invisible {% endif %} group-hover:visible">
 																<svg class="object-contain w-full h-full" width="6" height="6" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 																	<rect width="5.78125" height="5.78125" rx="2.89062" fill="#FABC6F"/>
@@ -164,7 +164,7 @@
 								{% endif %}
 							</div>
 
-							<div class="nav__actions">
+							{# <div class="nav__actions">
 								{% for nav_item in header_nav_item %}
 									{% if nav_item.is_cta and nav_item.link %}
 										{% set link_url = nav_item.link.url ?: '#' %}
@@ -196,8 +196,20 @@
 										{% endif %}
 									{% endif %}
 								{% endfor %}
-							</div>
+							</div> #}
 
+							<div class="nav__search">
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_3684_136)">
+									<path d="M18.031 16.617L22.314 20.899L20.899 22.314L16.617 18.031C15.0237 19.3082 13.042 20.0029 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20.0029 13.042 19.3082 15.0237 18.031 16.617ZM16.025 15.875C17.2941 14.5699 18.0029 12.8204 18 11C18 7.132 14.867 4 11 4C7.132 4 4 7.132 4 11C4 14.867 7.132 18 11 18C12.8204 18.0029 14.5699 17.2941 15.875 16.025L16.025 15.875Z" fill="#303030"/>
+									</g>
+									<defs>
+									<clipPath id="clip0_3684_136">
+									<rect width="24" height="24" fill="white"/>
+									</clipPath>
+									</defs>
+								</svg>
+							</div>
 						</div>
 					{% endif %}
 

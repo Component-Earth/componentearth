@@ -11,13 +11,15 @@
     <div class="relative flex flex-col items-center justify-center w-full h-full">
       <div class="relative h-full gap-y-0 z-50 w-full text-center max-lg:p-[1.25rem]">        
         <div class="transition-top-stagger flex flex-col items-center justify-center h-full gap-sm" data-custom-delay="1.25" data-custom-stagger="0.25">
-          {% include 'partials/nav-header.twig' with {                      
-            "global_nav_theme": context_menu.global_nav_theme,
-            "hide_navigation": context_menu.hide_navigation,
-            "site_logo": context_menu.site_logo,
-            "footer_logo": context_menu.footer_logo,
-            "header_nav_item": context_menu.header_nav_item
-          } %}
+          <div class="custom-nav">
+            {% include 'partials/nav-header.twig' with {                      
+              "global_nav_theme": context_menu.global_nav_theme,
+              "hide_navigation": context_menu.hide_navigation,
+              "site_logo": context_menu.site_logo,
+              "footer_logo": context_menu.footer_logo,
+              "header_nav_item": context_menu.header_nav_item
+            } %}
+          </div>
           <div class="relative text-white">
             <h1 class="flex flex-col items-center justify-center lg:max-w-[60.75rem]">
               {% if fields.pre_header_text %}
