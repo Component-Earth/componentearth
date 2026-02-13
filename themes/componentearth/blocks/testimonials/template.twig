@@ -1,0 +1,171 @@
+<section class="{{ block.slug }} bg-[#C0D5EA]">
+    {% if block.anchor %}
+        <div class="section-anchor" id="{{ block.anchor ?? block.id }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xl" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xl" %}
+
+    <div class="container">
+        <div class="{{ pt }}">
+            <h3 class="leading-none text-[var(--font-color-dark)]">Testimonies about the projects that <br/>
+            <strong class="font-normal p-[0.25rem] bg-[var(--theme-color-highlight)]">protect the planet, across the planet</strong></h3>
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="py-[2rem]">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">                    
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">                    
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">                    
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="flex flex-col gap-[1.5rem]">
+                        <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                        </div>
+                        <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">Example of a review of client or people involved in the projects, or someone that has recieved the services of Component Earth.</div>
+                        <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">Name Person</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="{{ pb }}">
+            <p class="!text-[1rem] !font-tertiary !font-bold text-[var(--font-color-dark)]">Featured in:</p>
+            <div class="flex items-center justify-between gap-[1rem] [&_img]:max-w-[11.4375rem]">
+                <img src="{{ function('svg', 'logo-sample')}}" alt="logo-sample" />
+                <img src="{{ function('svg', 'logo-sample')}}" alt="logo-sample" />
+                <img src="{{ function('svg', 'logo-sample')}}" alt="logo-sample" />
+                <img src="{{ function('svg', 'logo-sample')}}" alt="logo-sample" />
+                <img src="{{ function('svg', 'logo-sample')}}" alt="logo-sample" />
+                <img src="{{ function('svg', 'logo-sample')}}" alt="logo-sample" />
+                <img src="{{ function('svg', 'logo-sample')}}" alt="logo-sample" />
+            </div>
+        </div>
+    </div>
+</section>

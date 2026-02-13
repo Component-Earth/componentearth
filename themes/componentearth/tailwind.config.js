@@ -57,6 +57,8 @@ module.exports = {
             },
             fontFamily: {
                 "primary": ["Bregan", "sans-serif"],
+                "secondary": ["Inter", "sans-serif"],
+                "tertiary": ["Montserrat", "sans-serif"],
             },
             colors: theme.colors,
         },

@@ -8,6 +8,9 @@
         .nav__search {
             @apply max-lg:hidden;
         }
+        .custom-nav-ball {
+            @apply hidden;
+        }
     }
 
     .custom-nav {
@@ -28,6 +31,9 @@
         }
         .nav__group {
             @apply !flex max-lg:gap-[0.5rem];
+        }
+        .custom-nav-ball {
+            @apply block;
         }
     }
 }

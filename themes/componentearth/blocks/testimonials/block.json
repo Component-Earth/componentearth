@@ -1,11 +1,12 @@
 {
-	"name": "[[BLOCK_NAME]]",
-	"title": "[[BLOCK_TITLE]]",
+	"name": "testimonials",
+	"title": "Testimonials",
     "viewScript": [
-		"file:./script.js"
+		"file:./script.js",
+		"owl"
 	],
     "viewStyle": [
-		
+		"owl-style"
 	],
 	"acf": {
 		"mode": "edit",

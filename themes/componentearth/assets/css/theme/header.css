@@ -1,9 +1,9 @@
 @layer base {
 	.nav {
-		@apply sticky top-0 w-full h-full max-h-[5.3125rem] z-[100] opacity-0;
+		@apply sticky top-0 w-full h-full z-[100] opacity-0;
 
 		.nav__logo {
-			@apply w-[9.34425rem] h-auto;
+			@apply ~w-[12.875rem]/[21.5625rem] h-auto;
 			img {
 				@apply object-contain w-full h-full;
 			}
@@ -354,7 +354,7 @@
 			@apply flex items-center ~gap-[2rem]/[2.25rem] max-xl:hidden;
 
 			.nav__item p {
-				@apply !text-[1.125rem] font-primary leading-[150%] text-[var(--font-color-dark)];
+				@apply !text-[1.125rem] font-primary leading-[150%] text-[var(--font-color-dark)] hover:text-[var(--theme-color)];
 			}
 		}
 

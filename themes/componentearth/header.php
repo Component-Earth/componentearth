@@ -69,6 +69,10 @@ $context = Timber::context([
     <meta property="og:description" content="<?= esc_attr(get_the_excerpt($postID)); ?>">
     <meta property="og:url" content="<?= esc_url(get_the_permalink($postID)); ?>">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <?php wp_head(); ?>
 
     <!-- <script>

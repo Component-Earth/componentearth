@@ -3,7 +3,7 @@ use Timber\Timber;
 
 if ($is_preview && !empty($block['data'])) {
   $image = get_template_directory_uri() . '/blocks';
-  echo '<img alt="preview" style="width:100%; height:auto;" src="' . $image .  '/[[BLOCK_NAME]]/preview.png">';
+  echo '<img alt="preview" style="width:100%; height:auto;" src="' . $image .  '/testimonials/preview.png">';
   return;
 }
 

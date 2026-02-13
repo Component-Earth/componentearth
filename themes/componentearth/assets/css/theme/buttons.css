@@ -10,7 +10,7 @@
     }
 
     &.btn-primary {
-      @apply text-[var(--theme-color-highlight)] bg-[var(--theme-color)] border-[var(--theme-color)];
+      @apply text-[var(--theme-color-highlight)] bg-[var(--theme-color)] border-[var(--theme-color)] text-[0.720625rem];
 
       &:hover {
         @apply !text-[var(--theme-color-highlight)] !bg-[var(--theme-color-dark)] !border-[var(--theme-color-dark)];         
@@ -18,7 +18,7 @@
     }
 
     &.btn-secondary {
-      @apply bg-transparent text-[var(--theme-color)] border-[var(--theme-color)];
+      @apply bg-transparent text-[var(--theme-color)] border-[var(--theme-color)] text-[0.720625rem];
 
       &:hover {
         @apply text-[var(--font-color-light)] bg-[var(--theme-color)];

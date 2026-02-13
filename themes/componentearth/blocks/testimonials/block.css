@@ -1,0 +1,17 @@
+@layer components {
+    .testimonials {
+        /* Add your styles here */
+
+        .item {
+            @apply bg-white rounded-[3rem] p-[3rem];
+        }
+        h2 {
+            color: #FFF;
+            text-align: center;
+            padding: 5rem 0;
+            margin: 0;
+            font-style: italic;
+            font-weight: 300;
+        }
+    }
+}
