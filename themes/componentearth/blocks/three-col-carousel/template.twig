@@ -75,11 +75,35 @@
             {% endif %}
             {% if fields.carousel %}
                 {% set ctr = 0 %}
-                <div class="slider-dots flex gap-[1rem] items-center justify-center w-full">
-                    {% for carousel_item in fields.carousel %}
-                        <button class="slider-dot" data-ctr="{{ ctr }}">Item {{ ctr }}</button>
-                        {% set ctr = ctr + 1 %}
-                    {% endfor %}
+                <div class="flex items-center justify-center">
+                    <div class="slider-dots flex gap-[0.25rem] items-center justify-center w-auto bg-white/30 rounded-[1.875rem] p-[0.25rem]">
+                        {% for carousel_item in fields.carousel %}
+                            <button class="slider-dot {% if ctr == 0 %} active {% endif %}" data-ctr="{{ ctr }}">
+                                <svg class="active" width="45" height="14" viewBox="0 0 45 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 7C0 3.13401 3.13401 0 7 0H38C41.866 0 45 3.13401 45 7C45 10.866 41.866 14 38 14H7C3.13401 14 0 10.866 0 7Z" fill="white"/>
+                                </svg>
+
+                                <svg class="inactive" width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.4" filter="url(#filter0_d_3561_778)">
+                                    <rect x="4" y="4" width="15" height="14" rx="7" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <filter id="filter0_d_3561_778" x="0" y="0" width="23" height="22" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset/>
+                                    <feGaussianBlur stdDeviation="2"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3561_778"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3561_778" result="shape"/>
+                                    </filter>
+                                    </defs>
+                                </svg>
+                            </button>
+                            {% set ctr = ctr + 1 %}
+                        {% endfor %}
+                    </div>
                 </div>
             {% endif %}
         </div>

@@ -80,5 +80,23 @@
             }
             
         }
+
+        .slider-dot {
+            svg {
+                &.active {
+                    @apply hidden;
+                }
+            }
+            &.active svg {
+                
+                &.active {
+                    @apply block;
+                }
+                
+                &.inactive {
+                    @apply hidden;
+                }
+            }
+        }
     }
 }

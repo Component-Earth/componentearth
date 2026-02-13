@@ -13,8 +13,6 @@ baunfire.addModule({
                 const slider = document.querySelector('.slider');
                 const slides = document.querySelectorAll('.slide')
                 const sliderBg = document.querySelector('.slider__bg');
-                // const sliderNext = document.querySelector('.slider-control.next');
-                // const sliderPrev = document.querySelector('.slider-control.prev');
                 const sliderDot = document.querySelector('.flickity-page-dot');
 
                 const flkty = new Flickity( slider, {
@@ -50,30 +48,16 @@ baunfire.addModule({
                 var $dotGroup = $('.slider-dots');
                 
                 $dotGroup.on( 'click', '.slider-dot', function() {
-                    var index = $(this).data('ctr');
+                    var dot = $(this);
+                    var index = dot.data('ctr');
                     let currentSlide = flkty.selectedIndex;
                     if(index != currentSlide) {
                         slideAnim(currentSlide, index)
+                        dot.addClass('active');
+                        dot.siblings().removeClass('active');
                     }
                 });
 
-                // sliderPrev.addEventListener('click', () => {
-                //     let currentSlide = flkty.selectedIndex;
-                //     slideAnim(currentSlide, )
-                // })
-
-                // sliderNext.addEventListener('click', () => {
-                //     let currentSlide = flkty.selectedIndex;
-                //     slideAnim(currentSlide, 3)
-                // })
-
-                // function initSlider() {
-                    // let currentSlide = slides[0];
-                    // let bgColor = currentSlide.dataset.bg;
-                    // sliderBg.style.backgroundColor = bgColor;
-                // }
-
-                // initSlider();
 
             });
         }
