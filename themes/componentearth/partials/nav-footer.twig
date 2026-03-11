@@ -5,7 +5,7 @@
 				<div class="flex max-lg:flex-col ~gap-[2rem]/[7.1875rem] items-center w-full justify-between">
 					{% set footer_logo = footer_logo and footer_logo.url ? footer_logo.url : function('svg', 'block-icon') %}
 					<a href="{{ function('home_url') }}" class="footer__logo [&_img]:object-contain [&_img]:h-auto w-[20.5625rem]">
-						<img class="object-contain w-full h-full dark:brightness-0 dark:invert" src="{{ footer_logo }}" alt="footer-logo" />
+						<img class="object-contain w-full h-full" src="{{ footer_logo }}" alt="footer-logo" />
 					</a>
 
 					{% if primary_footer_nav_columns|length or footer_social|length %}

@@ -4,15 +4,15 @@
 
             
         .main-title {
-            @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
+            @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary-dark;
             strong {
-                @apply text-primary-dark;
+                @apply text-primary;
             }
             p {
-                @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
+                @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary-dark;
                 
                 strong {
-                    @apply text-primary-dark font-normal;
+                    @apply text-primary font-normal;
                 }
             }
         }
