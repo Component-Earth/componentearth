@@ -3,7 +3,7 @@ baunfire.addModule({
         const $ = baunfire.$;
 
         const script = () => {
-            const els = $("section.hero-banner-full");
+            const els = $("section.hero-banner-quote");
             if (!els.length) return;
         
             els.each(function () {
