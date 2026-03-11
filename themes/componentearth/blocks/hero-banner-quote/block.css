@@ -1,0 +1,10 @@
+@layer components {  
+  .hero-banner-quote {
+    /* will-change: transform; */
+
+    .para {  
+        @apply pt-[1.4375rem] relative;          
+    }
+
+  }
+}
