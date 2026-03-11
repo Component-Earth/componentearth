@@ -142,7 +142,8 @@
 		&.light {
 			.nav {
 				&__outer {
-					@apply bg-[var(--font-color-light)];
+					/* @apply bg-[var(--font-color-light)]; */
+					@apply !bg-[#DBD5C6];
 				}
 
 				&__item-inner {
@@ -155,17 +156,7 @@
 					&:active {
 						p {
 							@apply text-black;
-
-							/* &::before {
-								@apply border-b-2 border-black;
-								content: '';
-								display: inline-block;
-								width: 100%;
-								height: 100%;
-								position: absolute;
-								top: 10px;
-								left: 0;
-							} */
+							
 							&:hover::before {
 								animation: showHoverLine 1s forwards ease-in-out; 
 							}

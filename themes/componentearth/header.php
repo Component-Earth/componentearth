@@ -87,8 +87,9 @@ $context = Timber::context([
 </head>
 
 <body <?php body_class('is-loading'); ?>>
-    <div <?php if(is_front_page()) : ?> id="top-nav" <?php endif ?>>
-    <?php Timber::render('./partials/nav-header.twig', $context); ?>
-    </div>
-    <!-- <div id="smooth-wrapper">
-        <div id="smooth-content"> -->
+    <div class="bg-[#DBD5C6]">
+        <div <?php if(is_front_page()) : ?> id="top-nav" <?php endif ?>>
+        <?php Timber::render('./partials/nav-header.twig', $context); ?>
+        </div>
+        <!-- <div id="smooth-wrapper">
+            <div id="smooth-content"> -->

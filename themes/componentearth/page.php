@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<main class="relative bg-cover bg-[#DBD5C6]" style="background-image: url(<?= get_template_directory_uri(); ?>/assets/img/png/bg-pattern.png); background-position: 100% 960px;">
+<main class="relative bg-cover" style="background-image: url(<?= get_template_directory_uri(); ?>/assets/img/png/bg-pattern.png); background-position: 100% 960px;">
     
     <?php the_content(); ?>
 </main>
