@@ -58,6 +58,56 @@ baunfire.addModule({
                     }
                 });
 
+                
+                const sliderMobile = document.querySelector('.slider-mobile');
+                const slidesmob = document.querySelectorAll('.slidemob')
+                // const sliderBgMobile = sliderMobile.find('.slider__bg');
+                // const sliderDotMobile = sliderMobile.find('.flickity-page-dot');
+
+                const flktyMobile = new Flickity( sliderMobile, {
+                    cellSelector: '.slidemob',
+                    pageDots: false,
+                    wrapAround: false,
+                    draggable: false,
+                    prevNextButtons: false,
+                    autoPlay: false,
+                    rightToLeft: false,
+                    accessibility: false,           
+                    // cellAlign: 'left', // Aligns the cells to the left of the carousel viewport
+                    // contain: true // Contains the carousel cells within the viewport         
+                });                
+
+                function slideAnimMobile(currentSlide, targetSlide) {
+                    let tl = gsap.timeline({defaults: {duration: 0, ease: 'power2.in'}});
+                    let currentSlideEl = slidesmob[currentSlide];
+                    let year = currentSlideEl.querySelector('.slide__date');
+                    let title = currentSlideEl.querySelector('.slide__title');
+                    let img = currentSlideEl.querySelector('.slide__img');
+                    tl.to(year, {xPercent: 0, autoAlpha: 1});
+                    tl.to(img, {xPercent: 0, autoAlpha: 1}, '-=.3');
+                    tl.to(title, {xPercent: 0, autoAlpha: 1}, '-=.3');
+                    tl.add(() => {
+                        //flkty.next();
+                        flktyMobile.select( targetSlide );                        
+                    })
+                    tl.add(() => {
+                        tl.revert();
+                    }, '+=1')                
+                }
+
+                var $dotGroupMobile = $('.slider-dots-mobile');
+                
+                $dotGroupMobile.on( 'click', '.slider-dot', function() {
+                    var dot = $(this);
+                    var index = dot.data('ctr');
+                    let currentSlide = flktyMobile.selectedIndex;
+                    if(index != currentSlide) {
+                        slideAnimMobile(currentSlide, index)
+                        dot.addClass('active');
+                        dot.siblings().removeClass('active');
+                    }
+                });
+
 
             });
         }

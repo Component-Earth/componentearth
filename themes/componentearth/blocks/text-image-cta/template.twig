@@ -12,13 +12,13 @@
         <div class="{{ pt }} {{ pb }}">                                 
             <div class="flex max-lg:flex-col items-between gap-sm mx-auto {% if fields.flip_text_image_column %} flex-row-reverse {% endif %}">
                 {% if fields.image %}
-                    <div class="2xl:w-1/2 w-full h-auto bg-cover overflow-hidden {% if fields.flip_text_image_column %} rounded-bl-[8rem] lg:ml-[4.75rem] {% else %} lg:mr-[0.75rem] rounded-br-[8rem] {% endif %}" style="background-image: url({{ fields.image.url }})">
-                        <img class="invisible w-full h-full object-cover" src="{{ fields.image.url }}" />
+                    <div class="2xl:w-1/2 w-full h-auto bg-cover bg-center overflow-hidden max-lg:h-[24.375rem] {% if fields.flip_text_image_column %} rounded-bl-[8rem] lg:ml-[4.75rem] {% else %} lg:mr-[0.75rem] rounded-br-[8rem] {% endif %}" style="background-image: url({{ fields.image.url }})">
+                        <img class="invisible w-full h-full object-cover object-center" src="{{ fields.image.url }}" />
                     </div>
                 {% endif %}
                 {% if fields.title %}
                     <div class="relative lg:mt-[5rem] max-xl:w-full flex flex-col w-1/2 gap-[2rem] {% if fields.flip_text_image_column %} items-start lg:mr-[-5rem] {% else %} items-end lg:ml-[-5rem] text-right {% endif %}">
-                        <h3 class="2xl:w-[53rem] text-[var(--theme-color-dark)] font-tertiary [&_p]:!~text-[3.15625rem]/[5.15625rem] [&_p]:leading-none [&_strong]:bg-primary [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.title }}</h3>
+                        <h3 class="2xl:w-[53rem] text-[var(--theme-color-dark)] font-tertiary [&_p]:!~text-[2.625rem]/[5.15625rem] [&_p]:leading-none [&_strong]:bg-primary [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white max-lg:text-left">{{ fields.title }}</h3>
                         
                         {% if fields.link %}                
                             {% set custom_class = 'text-primary hover:text-primary-dark text-[1.125rem]' %}							

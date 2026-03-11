@@ -1,5 +1,21 @@
 @layer components {
     .three-col-carousel {        
+        
+
+            
+        .main-title {
+            @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
+            strong {
+                @apply text-primary-dark;
+            }
+            p {
+                @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
+                
+                strong {
+                    @apply text-primary-dark font-normal;
+                }
+            }
+        }
         .slider {
             position: relative;
             overflow: hidden;
@@ -8,21 +24,6 @@
 
             .flickity-viewport {
                 @apply lg:!h-[95%]
-            }
-
-            
-            h2 {
-                @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
-                strong {
-                    @apply text-primary-dark;
-                }
-                p {
-                    @apply ~text-[3.15625rem]/[5.15625rem] leading-[0.85] text-primary;
-                    
-                    strong {
-                        @apply text-primary-dark font-normal;
-                    }
-                }
             }
             
             .slide {
@@ -81,7 +82,8 @@
             
         }
 
-        .slider-dot {
+        .slider-dot,
+        .slider-dot-mobile {
             svg {
                 &.active {
                     @apply hidden;

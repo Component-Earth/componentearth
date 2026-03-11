@@ -89,6 +89,7 @@ function front_css_styles()
     wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
     wp_register_style('jarallax-style', 'https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css', array(), _S_VERSION);
     wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
+    wp_register_style('flickity-style', get_template_directory_uri() . '/assets/css/external/flickity.css', array(), _S_VERSION);
     //wp_register_style('owl-style2', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css', array(), _S_VERSION);
     // wp_register_style('splitting-style', 'https://unpkg.com/splitting/dist/splitting.css', array(), _S_VERSION);
     // wp_register_style('splitting-cells', 'https://unpkg.com/splitting/dist/splitting-cells.css', array(), _S_VERSION);
