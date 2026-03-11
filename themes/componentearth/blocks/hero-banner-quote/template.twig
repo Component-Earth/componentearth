@@ -9,28 +9,30 @@
 
   <div class="container-fluid overflow-hidden h-[23.4375rem] max-lg:px-0">
     <div class="relative flex flex-col items-center justify-center w-full h-full">
-      <div class="relative h-full gap-y-0 z-50 w-full text-center max-lg:p-[1.25rem]">        
-        <div class="transition-top-stagger flex flex-col items-center justify-center h-full gap-sm" data-custom-delay="1.25" data-custom-stagger="0.25">
-          
-          {% if fields.paragraph|length > 0 or fields.cta.url|length > 0 %}                
-            <div class="para flex flex-col items-center max-w-[34rem] !pt-0 gap-md">
-                <div class="flex flex-col gap-[1rem]">
-                  {% if fields.paragraph|length > 0 %}
-                    <p class="para-desc text-white text-[1.125rem]">{{ fields.paragraph|striptags }}</p>
+      <div class="relative h-full gap-y-0 z-50 w-full max-lg:p-[1.25rem]">        
+        <div class="container h-full">
+          <div class="transition-top-stagger h-full flex flex-col items-start justify-center gap-sm" data-custom-delay="1.25" data-custom-stagger="0.25">
+            
+            {% if fields.paragraph|length > 0 or fields.cta.url|length > 0 %}                
+              <div class="para flex flex-col items-start max-w-[34rem] !pt-0 gap-md">
+                  <div class="flex flex-col gap-[1rem]">
+                    {% if fields.paragraph|length > 0 %}
+                      <h4 class="para-desc text-[#DBD5C6]">{{ fields.paragraph|striptags }}</h4>
+                    {% endif %}
+                  </div>
+                  {% if fields.cta.url|length > 0 %}
+                      {% set custom_class = 'btn-primary' %}							
+                  
+                      {% include 'components/cta.twig' with {
+                        'class' : custom_class,
+                        'cta': fields.cta, 
+                        'icon': true,
+                        'is_btn': true
+                      } %}
                   {% endif %}
-                </div>
-                {% if fields.cta.url|length > 0 %}
-                    {% set custom_class = 'btn-primary' %}							
-                
-                    {% include 'components/cta.twig' with {
-                      'class' : custom_class,
-                      'cta': fields.cta, 
-                      'icon': true,
-                      'is_btn': true
-                    } %}
-                {% endif %}
-            </div>                
-          {% endif %}
+              </div>                
+            {% endif %}
+          </div>
         </div>
       </div>
       
