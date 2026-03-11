@@ -154,7 +154,7 @@
                     <div class="slider-dots-mobile flex gap-[0.25rem] items-center justify-center w-auto bg-white/30 rounded-[1.875rem] p-[0.25rem] mt-[1.5rem]">
                         {% for carousel_item in fields.carousel %}                        
                             {% if carousel_item.col_1 %}
-                                <button class="slider-dot {% if ctr == 0 %} active {% endif %}" data-ctr="{{ ctr }}">
+                                <button class="slider-dot {% if ctr == 1 %} active {% endif %}" data-ctr="{{ ctr }}">
                                     <svg class="active" width="45" height="14" viewBox="0 0 45 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 7C0 3.13401 3.13401 0 7 0H38C41.866 0 45 3.13401 45 7C45 10.866 41.866 14 38 14H7C3.13401 14 0 10.866 0 7Z" fill="white"/>
                                     </svg>
@@ -181,7 +181,7 @@
                                 {% set ctr = ctr + 1 %}
                             {% endif %}
                             {% if carousel_item.col_2 %}
-                                <button class="slider-dot {% if ctr == 0 %} active {% endif %}" data-ctr="{{ ctr }}">
+                                <button class="slider-dot {% if ctr == 1 %} active {% endif %}" data-ctr="{{ ctr }}">
                                     <svg class="active" width="45" height="14" viewBox="0 0 45 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 7C0 3.13401 3.13401 0 7 0H38C41.866 0 45 3.13401 45 7C45 10.866 41.866 14 38 14H7C3.13401 14 0 10.866 0 7Z" fill="white"/>
                                     </svg>
@@ -208,7 +208,7 @@
                             {% endif %}
                             
                             {% if carousel_item.col_3 %}
-                                <button class="slider-dot {% if ctr == 0 %} active {% endif %}" data-ctr="{{ ctr }}">
+                                <button class="slider-dot {% if ctr == 1 %} active {% endif %}" data-ctr="{{ ctr }}">
                                     <svg class="active" width="45" height="14" viewBox="0 0 45 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 7C0 3.13401 3.13401 0 7 0H38C41.866 0 45 3.13401 45 7C45 10.866 41.866 14 38 14H7C3.13401 14 0 10.866 0 7Z" fill="white"/>
                                     </svg>

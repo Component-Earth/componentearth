@@ -73,7 +73,7 @@
 
 		&__credits {
 			p {
-				@apply ~text-[1rem]/[0.875rem] ~leading-[140%]/[150%] font-secondary text-white/65;
+				@apply ~text-[1rem]/[0.8125rem] ~leading-[140%]/[150%] font-secondary text-white/65;
 			}
 		}
 
@@ -84,14 +84,7 @@
 				@apply text-white/65 text-[0.75rem] font-secondary hover:text-white/65;
 			}
 			&.child {
-				@apply dark:text-[var(--font-color-light)] text-[var(--font-color-dark)] font-secondary leading-[140%] ~text-[1rem]/[0.875rem] before:w-0 relative;
-				/* &:hover::before {
-					animation: showHoverLine 1s forwards ease-in-out; 
-				}
-				
-				&::before {
-					@apply content-['']  h-[1px] absolute bottom-[-6px] bg-black;
-				} */
+				@apply dark:text-[var(--font-color-light)] text-[var(--font-color-dark)] font-secondary leading-[140%] ~text-[1rem]/[1.1875rem] before:w-0 relative;
 			}      
 
 			@keyframes showHoverLine {

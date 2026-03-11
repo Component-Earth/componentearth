@@ -72,9 +72,8 @@ baunfire.addModule({
                     prevNextButtons: false,
                     autoPlay: false,
                     rightToLeft: false,
-                    accessibility: false,           
-                    // cellAlign: 'left', // Aligns the cells to the left of the carousel viewport
-                    // contain: true // Contains the carousel cells within the viewport         
+                    accessibility: false,     
+                    initialIndex: 1           
                 });                
 
                 function slideAnimMobile(currentSlide, targetSlide) {
