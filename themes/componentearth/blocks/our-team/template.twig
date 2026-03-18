@@ -1,0 +1,51 @@
+{% set custom_class = "bg-[transparent]" %}
+
+<section class="{{ block.slug ?? 'our-team' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-md" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-md" %}
+
+    <div class="container">
+        <div class="{{ pt }} {{ pb }} flex flex-col gap-[5rem]">                                 
+            <div class="flex flex-col items-center gap-sm mx-auto lg:max-w-[68.9375rem] text-center">
+                {% if fields.title %}
+                    <h2 class="text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal">{{ fields.title }}</h2>
+                {% endif %}
+
+                {% if fields.paragraph %}
+                    <div class="xl:max-w-[59.1875rem] lg:max-w-[67.1875rem] font-normal [&_p]:font-tertiary-500 [&_p]:leading-[110%] [&_p]:~text-[1.125rem]/[1.5rem] flex flex-col gap-[1.25rem] text-[var(--theme-color-dark)] [&_strong]:bg-[var(--theme-color)] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.paragraph }}</div>
+                {% endif %}
+            </div>                     
+            <div class="flex flex-col items-start gap-xl mx-auto lg:max-w-[68.9375rem] text-start">
+                {% for member in fields.team %}
+                    <div class="flex gap-[2rem]">
+                    
+                        <div class="flex gap-[1.75rem] w-[40%] items-center">
+                            <div class="flex flex-col gap-[0.25rem] text-left w-1/2">
+                                <img src="{{ member.image.url }}" alt="featured-image" />
+                            </div>
+
+                            <div class="flex flex-col gap-[0.25rem] text-left w-1/2">
+                                <p class="text-[var(--theme-color-dark)] text-[1.5rem] leading-none tracking-[-2%]">{{ member.position }}</p>
+                                <h4 class="text-[var(--theme-color-dark)] text-[1.125rem] leading-[1.6875rem]">{{ member.name }}</h4>
+                            </div>
+                        </div>
+
+                        {% if member.bio_excerpt %}
+                            <div class="w-[60%] flex flex-col gap-[0.5rem] items-end">
+                                <div class="font-normal text-left [&_p]:font-tertiary-500 [&_p]:leading-[1.6875rem] [&_p]:~text-[1rem]/[1.125rem] flex flex-col text-[#3F3F3F] [&_strong]:font-tertiary-600">
+                                    {{ member.bio_excerpt }}
+                                </div>
+
+                                <a href="#" class="text-[var(--theme-color)] font-tertiary-500">Read More</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

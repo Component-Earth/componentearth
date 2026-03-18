@@ -73,7 +73,7 @@
                     "tabs": "all",
                     "toolbar": "plain_heading",
                     "media_upload": 0,
-                    "delay": 0
+                    "delay": 1
                 },
                 {
                     "key": "field_660e8e60b9954",
@@ -94,7 +94,7 @@
                     "tabs": "all",
                     "toolbar": "plain_heading",
                     "media_upload": 0,
-                    "delay": 0
+                    "delay": 1
                 },
                 {
                     "key": "field_698498a033b40",
@@ -140,5 +140,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770297526
+    "modified": 1773799958
 }

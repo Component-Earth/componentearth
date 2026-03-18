@@ -1,0 +1,22 @@
+{
+    "name": "our-team",
+    "title": "Our Team",
+    "viewScript": [
+        "file:./script.js"
+    ],
+    "viewStyle": [		
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["page"]
+	},
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_help": "preview.png"
+            }
+        }
+    }
+}
