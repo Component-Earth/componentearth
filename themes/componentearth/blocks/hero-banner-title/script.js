@@ -3,11 +3,12 @@ baunfire.addModule({
         const $ = baunfire.$;
 
         const script = () => {
-            const els = $("section.hero-banner-quote");
+            const els = $("section.hero-banner-title");
             if (!els.length) return;
         
             els.each(function () {
                 const self = $(this);
+
             });
         }
 

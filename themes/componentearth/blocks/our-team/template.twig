@@ -10,18 +10,18 @@
 
     <div class="container">
         <div class="{{ pt }} {{ pb }} flex flex-col ~gap-[3.5rem]/[5rem]">                                 
-            <div class="flex flex-col items-center gap-sm mx-auto lg:max-w-[68.9375rem]">
+            <div class="flex flex-col items-center gap-sm mx-auto xl:max-w-[59.1875rem] lg:max-w-[67.1875rem]">
                 {% if fields.title %}
                     <h2 class="text-center text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal">{{ fields.title }}</h2>
                 {% endif %}
 
                 {% if fields.paragraph %}
-                    <div class="text-center max-lg:text-left xl:max-w-[59.1875rem] lg:max-w-[67.1875rem] font-normal [&_p]:font-tertiary-500 [&_p]:leading-[110%] [&_p]:text-[1.5rem] flex flex-col gap-[1.25rem] text-[var(--theme-color-dark)] [&_strong]:bg-[var(--theme-color)] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.paragraph }}</div>
+                    <div class="text-center max-lg:text-left font-normal [&_p]:font-tertiary-500 [&_p]:leading-[110%] [&_p]:text-[1.5rem] flex flex-col gap-[1.25rem] text-[var(--theme-color-dark)] [&_strong]:bg-[var(--theme-color)] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.paragraph }}</div>
                 {% endif %}
             </div>                     
-            <div class="flex flex-col items-start gap-xl mx-auto lg:max-w-[68.9375rem] text-start max-lg:mx-0">
+            <div class="flex flex-col items-start gap-xl mx-auto  xl:max-w-[59.1875rem] lg:max-w-[67.1875rem] text-start max-lg:mx-0">
                 {% for member in fields.team %}
-                    <div class="flex max-lg:flex-col ~gap-[1rem]/[2rem] max-lg:w-full">
+                    <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full">
                     
                         <div class="flex max-lg:flex-col gap-[1.75rem] lg:w-[40%] lg:items-center">
                             <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2">

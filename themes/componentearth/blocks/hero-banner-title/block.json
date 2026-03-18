@@ -1,0 +1,24 @@
+{
+	"name": "hero-banner-title",
+	"title": "Hero Banner Title",
+    "viewScript": [
+		"file:./script.js",
+		"jarallax"
+	],	
+    "viewStyle": [		
+		"jarallax-style"
+	],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["page"]
+	},
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_help": "preview.png"
+            }
+        }
+    }
+}
