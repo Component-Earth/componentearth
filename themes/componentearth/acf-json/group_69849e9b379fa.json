@@ -123,6 +123,27 @@
                     "delay": 0
                 },
                 {
+                    "key": "field_69b9f45bcb47e",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Set to bold font weight to highlight a phrase.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "all",
+                    "toolbar": "plain_heading",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
                     "key": "field_69849ed9747d7",
                     "label": "Link",
                     "name": "link",
@@ -183,5 +204,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1770300171
+    "modified": 1773794403
 }

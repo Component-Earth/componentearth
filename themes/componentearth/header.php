@@ -29,7 +29,6 @@ $context = Timber::context([
     'site_logo'        => get_field('site_logo', 'option'),
     'footer_logo'      => get_field('footer_logo', 'option'),
     'header_nav_item'  => get_field('header_nav_item', 'option'),
-    'login_url'        => get_field('login_url', 'option'),
 ]);
 ?>
 

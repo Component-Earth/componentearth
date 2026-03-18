@@ -78,6 +78,27 @@
                     "prefix_name": 0
                 },
                 {
+                    "key": "field_69ba07317db90",
+                    "label": "Subtext",
+                    "name": "subtext",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_69b182112cbf3",
                     "label": "Content",
                     "name": "",
@@ -191,5 +212,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1773240910
+    "modified": 1773799228
 }
