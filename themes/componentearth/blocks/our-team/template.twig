@@ -21,21 +21,21 @@
             </div>                     
             <div class="flex flex-col items-start gap-xl mx-auto lg:max-w-[68.9375rem] text-start">
                 {% for member in fields.team %}
-                    <div class="flex gap-[2rem]">
+                    <div class="flex max-lg:flex-col gap-[2rem]">
                     
-                        <div class="flex gap-[1.75rem] w-[40%] items-center">
-                            <div class="flex flex-col gap-[0.25rem] text-left w-1/2">
+                        <div class="flex max-lg:flex-col gap-[1.75rem] w-[40%] lg:items-center">
+                            <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2">
                                 <img src="{{ member.image.url }}" alt="featured-image" />
                             </div>
 
-                            <div class="flex flex-col gap-[0.25rem] text-left w-1/2">
+                            <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2">
                                 <p class="text-[var(--theme-color-dark)] text-[1.5rem] leading-none tracking-[-2%]">{{ member.position }}</p>
                                 <h4 class="text-[var(--theme-color-dark)] text-[1.125rem] leading-[1.6875rem]">{{ member.name }}</h4>
                             </div>
                         </div>
 
                         {% if member.bio_excerpt %}
-                            <div class="w-[60%] flex flex-col gap-[0.5rem] items-end">
+                            <div class="lg:w-[60%] flex flex-col gap-[0.5rem] items-end">
                                 <div class="font-normal text-left [&_p]:font-tertiary-500 [&_p]:leading-[1.6875rem] [&_p]:~text-[1rem]/[1.125rem] flex flex-col text-[#3F3F3F] [&_strong]:font-tertiary-600">
                                     {{ member.bio_excerpt }}
                                 </div>
