@@ -27,7 +27,7 @@
                         <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full" x-show="currentTab !== {{ ctr }}">
                         
                             <div class="flex max-lg:flex-col gap-[1.75rem] lg:w-[40%] lg:items-center">
-                                <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2">
+                                <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2 max-lg:max-w-[30rem]">
                                     <img src="{{ member.image.url }}" alt="featured-image" />
                                 </div>
 
@@ -54,7 +54,7 @@
                                 before:bg-[#C0D5EA] before:w-full before:absolute before:top-0 before:-left-full before:h-[5.5rem]
                                 after:bg-[#C0D5EA] after:w-full after:absolute after:top-0 after:-right-full after:h-[5.5rem]"></div>
 
-                            <div class="flex max-lg:flex-col gap-[1.75rem] lg:w-[40%] lg:items-start">
+                            <div class="flex max-lg:flex-col gap-[1.75rem] lg:w-[40%] lg:items-start max-lg:max-w-[30rem]">
                                 <img class="w-full h-auto" src="{{ member.image.url }}" alt="featured-image" />
                             </div>
 
@@ -65,7 +65,7 @@
                                         <p class="text-[var(--theme-color-dark)] text-[1.5rem] leading-none tracking-[-2%]">{{ member.position }}</p>
                                         <p class="text-[var(--theme-color-dark)] text-[1.125rem] leading-[1.6875rem]">{{ member.name }}</p>
                                     </div>
-                                    <div class="lg:flex hidden gap-[1rem] font-normal text-left [&_p]:font-tertiary-500 [&_p]:leading-[1.6875rem] [&_p]:text-[1.125rem] flex-col text-[#3F3F3F] [&_strong]:font-tertiary-600">
+                                    <div class="flex gap-[1rem] font-normal text-left [&_p]:font-tertiary-500 [&_p]:leading-[1.6875rem] [&_p]:text-[1.125rem] flex-col text-[#3F3F3F] [&_strong]:font-tertiary-600">
                                         {{ member.bio }}
                                     </div>
                                 </div>
