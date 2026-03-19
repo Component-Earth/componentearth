@@ -51,8 +51,11 @@
             </div>                
           {% endif %}
         </div>
+      </div>      
+      <div class="absolute top-0 left-0 w-full h-full z-[2]">
+        <img class="object-cover lg:block hidden" src="{{ function('svg', 'hero-overlay-dt')}}" alt="overlay" />
+        <img class="object-cover lg:hidden block" src="{{ function('svg', 'hero-overlay-mob')}}" alt="overlay" />
       </div>
-      
       <div class="absolute top-0 left-0 w-full h-full z-0" data-custom-delay="0" data-custom-stagger="0.25">        
           {% if fields.video %}
             <div class="jarallax w-full h-full" data-jarallax data-video-src="mp4:{{ fields.video.url }}"></div>
