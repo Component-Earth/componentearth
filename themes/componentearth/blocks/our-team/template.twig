@@ -26,9 +26,9 @@
                     <div class="flex flex-col gap-[2rem] w-full" >
                         <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full 2xl:px-[10rem]" x-show="currentTab !== {{ ctr }}">
                         
-                            <div class="flex max-lg:flex-col gap-[1.75rem] lg:w-[40%] lg:items-center">
-                                <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2 max-lg:max-w-[30rem]">
-                                    <img src="{{ member.image.url }}" alt="featured-image" />
+                            <div class="flex max-lg:flex-col lg:gap-[1.75rem] gap-[1rem] lg:w-[40%] lg:items-center">
+                                <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2 max-lg:max-w-[30rem] max-lg:max-h-[21.1875rem] bg-contain bg-no-repeat max-lg:bg-cover rounded-br-[5rem]" style="background-image: url({{ member.image.url }})">
+                                    <img class="invisible w-full h-full object-cover" src="{{ member.image.url }}" alt="featured-image" />
                                 </div>
 
                                 <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2">
@@ -50,18 +50,18 @@
 
                         <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full relative 2xl:pl-[10rem]" x-show="currentTab === {{ ctr }}">             
 
-                            <div class="lg:block hidden bg-[#C0D5EA] w-full absolute top-0 left-0 h-[5.5rem] z-[-1] before:content-[''] 
-                                before:bg-[#C0D5EA] before:w-full before:absolute before:top-0 before:-left-full before:h-[5.5rem]
-                                after:bg-[#C0D5EA] after:w-full after:absolute after:top-0 after:-right-full after:h-[5.5rem]"></div>
+                            <div class="bg-[#C0D5EA] w-full absolute lg:top-0 top-[19.1875rem] left-0 lg:h-[5.5rem] h-[7rem] z-[-1] before:content-[''] 
+                                before:bg-[#C0D5EA] before:w-full before:absolute before:top-0 before:-left-full before:lg:h-[5.5rem] before:h-[7rem]
+                                after:bg-[#C0D5EA] after:w-full after:absolute after:top-0 after:-right-full after:lg:h-[5.5rem] after:h-[7rem]"></div>
 
-                            <div class="flex max-lg:flex-col gap-[1.75rem] 2xl:w-[33.5%] lg:w-[39.5%] lg:items-start max-lg:max-w-[30rem]">
-                                <img class="w-full h-auto" src="{{ member.image.url }}" alt="featured-image" />
+                            <div class="flex max-lg:flex-col gap-[1.75rem] 2xl:w-[33.5%] lg:w-[39.5%] max-lg:max-h-[21.1875rem] lg:items-start max-lg:max-w-[30rem] bg-contain bg-no-repeat max-lg:bg-cover rounded-br-[5rem]" style="background-image: url({{ member.image.url }})">
+                                <img class="invisible w-full h-full object-cover" src="{{ member.image.url }}" alt="featured-image" />
                             </div>
 
                             {% if member.bio %}
-                                <div class="lg:w-[60%] flex flex-col gap-[0.5rem] items-start">
+                                <div class="lg:w-[60%] flex flex-col lg:gap-[0.5rem] gap-[1.5rem] items-start">
 
-                                    <div class="flex flex-col gap-[0.25rem] text-left py-[1.275rem]">
+                                    <div class="flex flex-col gap-[0.25rem] text-left lg:py-[1.275rem]">
                                         <p class="text-[var(--theme-color-dark)] text-[1.5rem] leading-none tracking-[-2%]">{{ member.position }}</p>
                                         <p class="text-[var(--theme-color-dark)] text-[1.125rem] leading-[1.6875rem]">{{ member.name }}</p>
                                     </div>
