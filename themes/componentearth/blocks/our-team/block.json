@@ -2,7 +2,8 @@
     "name": "our-team",
     "title": "Our Team",
     "viewScript": [
-        "file:./script.js"
+        "file:./script.js",
+        "alpine"
     ],
     "viewStyle": [		
 	],
