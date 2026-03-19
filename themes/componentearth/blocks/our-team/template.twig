@@ -20,11 +20,11 @@
                 {% endif %}
             </div>  
             {% set ctr = 0 %}                   
-            <div class="flex flex-col items-start gap-xl mx-auto  xl:max-w-[59.1875rem] lg:max-w-[67.1875rem] text-start max-lg:mx-0" x-data="{ currentTab: {{ ctr }} }">
+            <div class="flex flex-col items-start gap-xl mx-auto text-start max-lg:mx-0" x-data="{ currentTab: {{ ctr }} }">
                 {% for member in fields.team %}
                     {% set ctr = ctr + 1 %}
                     <div class="flex flex-col gap-[2rem] w-full" >
-                        <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full" x-show="currentTab !== {{ ctr }}">
+                        <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full 2xl:px-[10rem]" x-show="currentTab !== {{ ctr }}">
                         
                             <div class="flex max-lg:flex-col gap-[1.75rem] lg:w-[40%] lg:items-center">
                                 <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2 max-lg:max-w-[30rem]">
@@ -48,13 +48,13 @@
                             {% endif %}
                         </div>
 
-                        <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full relative" x-show="currentTab === {{ ctr }}">             
+                        <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full relative 2xl:pl-[10rem]" x-show="currentTab === {{ ctr }}">             
 
                             <div class="lg:block hidden bg-[#C0D5EA] w-full absolute top-0 left-0 h-[5.5rem] z-[-1] before:content-[''] 
                                 before:bg-[#C0D5EA] before:w-full before:absolute before:top-0 before:-left-full before:h-[5.5rem]
                                 after:bg-[#C0D5EA] after:w-full after:absolute after:top-0 after:-right-full after:h-[5.5rem]"></div>
 
-                            <div class="flex max-lg:flex-col gap-[1.75rem] lg:w-[40%] lg:items-start max-lg:max-w-[30rem]">
+                            <div class="flex max-lg:flex-col gap-[1.75rem] 2xl:w-[33.5%] lg:w-[39.5%] lg:items-start max-lg:max-w-[30rem]">
                                 <img class="w-full h-auto" src="{{ member.image.url }}" alt="featured-image" />
                             </div>
 
@@ -68,6 +68,8 @@
                                     <div class="flex gap-[1rem] font-normal text-left [&_p]:font-tertiary-500 [&_p]:leading-[1.6875rem] [&_p]:text-[1.125rem] flex-col text-[#3F3F3F] [&_strong]:font-tertiary-600">
                                         {{ member.bio }}
                                     </div>
+
+                                    <div class="[&_p]:text-[2.5rem] [&_p]:leading-[90%] [&_p]:tracking-[-2%] [&_p]:text-primary-dark [&_strong]:font-normal [&_strong]:p-[0.25rem] [&_strong]:bg-[var(--theme-color-highlight)]">{{ member.quote }}</div>
                                 </div>
                             {% endif %}
                         </div>                        
