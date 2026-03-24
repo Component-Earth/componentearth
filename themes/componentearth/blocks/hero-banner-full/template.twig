@@ -65,8 +65,8 @@
               {% set image_mobile = fields.thumbnail_mobile ? fields.thumbnail_mobile.url : image %}  
               
               <div data-jarallax data-speed="0.75" class="jarallax w-full h-full">            
-                <img class="jarallax-img lg:block hidden" src="{{ image }}" alt="banner-image" />        
-                <img class="jarallax-img lg:hidden block" src="{{ image_mobile }}" alt="banner-image-mobile" />        
+                <img class="jarallax-img1 lg:block hidden object-bottom" src="{{ image }}" alt="banner-image" />        
+                <img class="jarallax-img1 lg:hidden block" src="{{ image_mobile }}" alt="banner-image-mobile" />        
               </div>
             {% endif %}
           {% endif %}                

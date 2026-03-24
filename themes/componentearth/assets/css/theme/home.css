@@ -15,7 +15,7 @@
 
     .custom-nav {
         .menu-title {
-            @apply !text-white/[0.64] max-lg:!text-[0.8125rem];
+            @apply !text-white/[0.9] max-lg:!text-[0.8125rem];
         }
         .nav__logo {
             @apply hidden;
