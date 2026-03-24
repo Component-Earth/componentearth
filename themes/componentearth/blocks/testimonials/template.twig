@@ -8,9 +8,7 @@
 
     <div class="container">
         <div class="{{ pt }}">
-            <h3 class="leading-none text-[var(--font-color-dark)]">Testimonies about the projects that <br/>
-            <strong class="font-normal p-[0.25rem] bg-[var(--theme-color-highlight)]">protect the planet, across the planet</strong></h3>
-
+            <h3 class="leading-none text-[var(--font-color-dark)] [&_strong]:font-normal [&_strong]:p-[0.25rem] [&_strong]:bg-[var(--theme-color-highlight)] [&_b]:font-normal [&_b]:p-[0.25rem] [&_b]:bg-[var(--theme-color-highlight)]">{{ fields.heading }}</h3>            
         </div>
     </div>
     {% if fields.testimonials %}
