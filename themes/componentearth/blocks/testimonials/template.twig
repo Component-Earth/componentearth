@@ -1,55 +1,58 @@
-<section class="{{ block.slug }} bg-[#C0D5EA]">
-    {% if block.anchor %}
-        <div class="section-anchor" id="{{ block.anchor ?? block.id }}"></div>
-    {% endif %}
 
-    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xl" %}
-    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xl" %}
+{% if fields.testimonials or fields.featuring %}
+    <section class="{{ block.slug }} bg-[#C0D5EA]">
+        {% if block.anchor %}
+            <div class="section-anchor" id="{{ block.anchor ?? block.id }}"></div>
+        {% endif %}
 
-    <div class="container">
-        <div class="{{ pt }}">
-            <h3 class="leading-none text-[var(--font-color-dark)] [&_strong]:font-normal [&_strong]:p-[0.25rem] [&_strong]:bg-[var(--theme-color-highlight)] [&_b]:font-normal [&_b]:p-[0.25rem] [&_b]:bg-[var(--theme-color-highlight)]">{{ fields.heading }}</h3>            
-        </div>
-    </div>
-    {% if fields.testimonials %}
-        <div class="container-fluid">
-            <div class="py-[2rem]">
-                <div class="owl-carousel owl-theme">
-                    {% for entry in fields.testimonials %}
-                        <div class="item">
-                            <div class="flex flex-col gap-[1.5rem]">
-                                <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
-                                    
-                                    {% set rating = entry.rating == "five" ? 5 : entry.rating == "four" ? 4 : entry.rating == "three" ? 3  : entry.rating == "two" ? 2 : 1 %}
-                                    
-                                    {% for i in 1..rating %}
-                                        <img src="{{ function('svg', 'star')}}" alt="star" />
-                                    {% endfor %}
+        {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xl" %}
+        {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xl" %}
 
-                                </div>
-                                <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">{{ entry.testimonial }} </div>
-                                <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">{{ entry.author }}</div>
-                            </div>
-                        </div>                
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    {% endif %}
-    {% if fields.featuring %}
         <div class="container">
-            <div class="{{ pb }}">
-                {% if fields.featuring_title %}
-                    <p class="!text-[1rem] !font-tertiary !font-bold text-[var(--font-color-dark)]">{{ fields.featuring_title }}</p>
-                {% endif %}
-                <div class="flex items-center justify-start gap-[1rem] [&_img]:max-w-[11.4375rem] mt-[1rem]">                    
-                    {% for featured in fields.featuring %}
-                        {% if featured.logo %}
-                            <img src="{{ function('wp_get_attachment_url', featured.logo) }}" alt="logo-sample" />
-                        {% endif %}
-                    {% endfor %}
-                </div>
+            <div class="{{ pt }}">
+                <h3 class="leading-none text-[var(--font-color-dark)] [&_strong]:font-normal [&_strong]:p-[0.25rem] [&_strong]:bg-[var(--theme-color-highlight)] [&_b]:font-normal [&_b]:p-[0.25rem] [&_b]:bg-[var(--theme-color-highlight)]">{{ fields.heading }}</h3>            
             </div>
         </div>
-    {% endif %}
-</section>
+        {% if fields.testimonials %}
+            <div class="container-fluid">
+                <div class="py-[2rem]">
+                    <div class="owl-carousel owl-theme">
+                        {% for entry in fields.testimonials %}
+                            <div class="item">
+                                <div class="flex flex-col gap-[1.5rem]">
+                                    <div class="flex gap-[0.25rem] items-center justify-start [&_img]:!w-[1.5rem] [&_img]:!h-auto">
+                                        
+                                        {% set rating = entry.rating == "five" ? 5 : entry.rating == "four" ? 4 : entry.rating == "three" ? 3  : entry.rating == "two" ? 2 : 1 %}
+                                        
+                                        {% for i in 1..rating %}
+                                            <img src="{{ function('svg', 'star')}}" alt="star" />
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="text-[1rem] font-secondary text-[var(--font-color-dark)]">{{ entry.testimonial }} </div>
+                                    <div class="font-bold text-[0.9375rem] text-[var(--font-color-dark)] font-secondary">{{ entry.author }}</div>
+                                </div>
+                            </div>                
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if fields.featuring %}
+            <div class="container">
+                <div class="{{ pb }}">
+                    {% if fields.featuring_title %}
+                        <p class="!text-[1rem] !font-tertiary !font-bold text-[var(--font-color-dark)]">{{ fields.featuring_title }}</p>
+                    {% endif %}
+                    <div class="flex items-center justify-start gap-[1rem] [&_img]:max-w-[11.4375rem] mt-[1rem]">                    
+                        {% for featured in fields.featuring %}
+                            {% if featured.logo %}
+                                <img src="{{ function('wp_get_attachment_url', featured.logo) }}" alt="logo-sample" />
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+{% endif %}    
