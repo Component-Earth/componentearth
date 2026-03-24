@@ -304,10 +304,10 @@
 .cky-consent-container .cky-consent-bar {
 	@apply lg:w-[29.813rem] w-full !p-[1.5rem];
 	.cky-notice-des p {
-		@apply !text-[0.8125rem] !leading-[1.3rem] !font-primary;
+		@apply !text-[0.8125rem] !leading-[1.3rem] !font-primary tracking-[0.5px];
 	}
 	.cky-title {
-		@apply !text-[1rem] !font-primary leading-[1.6rem];
+		@apply !text-[1rem] !font-primary leading-[1.6rem] tracking-[0.75px];
 	}
 	.cky-notice-btn-wrapper {
 		@apply !mt-[1rem] !flex-row-reverse !gap-[1rem];
