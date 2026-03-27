@@ -43,7 +43,9 @@
                                         {{ member.bio_excerpt }}
                                     </div>
 
-                                    <button x-on:click="currentTab = {{ ctr }}" class="text-[var(--theme-color)] font-tertiary-500">Read More</button>
+                                    {% if member.bio or member.quote %}
+                                        <button x-on:click="currentTab = {{ ctr }}" class="text-[var(--theme-color)] font-tertiary-500">Read More</button>
+                                    {% endif %}
                                 </div>
                             {% endif %}
                         </div>
