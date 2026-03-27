@@ -24,7 +24,7 @@
                 {% for member in fields.team %}
                     {% set ctr = ctr + 1 %}
                     <div class="flex flex-col gap-[2rem] w-full" >
-                        <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full 2xl:px-[10rem]" x-show="currentTab !== {{ ctr }}">
+                        <div class="flex max-lg:flex-col ~gap-[1rem]/[1.5rem] max-lg:w-full 2xl:px-[10rem] max-lg:justify-center" x-show="currentTab !== {{ ctr }}">
                         
                             <div class="flex max-lg:flex-col lg:gap-[1.75rem] gap-[1rem] lg:w-[40%] lg:items-center">
                                 <div class="flex flex-col gap-[0.25rem] text-left lg:w-1/2 max-lg:max-w-[30rem] max-h-[11rem] max-lg:max-h-[21.1875rem] bg-cover bg-center bg-no-repeat rounded-br-[5rem] rounded-tl-[0.75rem] rounded-tr-[0.75rem] rounded-bl-[0.75rem]" style="background-image: url({{ member.image.url }})">
