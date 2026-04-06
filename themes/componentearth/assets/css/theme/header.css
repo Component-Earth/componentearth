@@ -207,7 +207,7 @@
 		&.dark {			
 			.nav {
 				&__outer {
-					@apply bg-[var(--theme-color)];
+					@apply bg-[var(--theme-color-dark)];
 				}
 
 				&__item-inner {
@@ -285,7 +285,7 @@
 		}
 
 		&__outer {
-			@apply relative transition-all duration-300 ease-[ease] z-[2] max-lg:flex max-lg:items-center py-[1rem];
+			@apply relative transition-all duration-300 ease-[ease] z-[2] max-lg:flex max-lg:items-center py-[2rem];
 			
 			.text-link p {
 				@apply dark:text-white hover:text-black;

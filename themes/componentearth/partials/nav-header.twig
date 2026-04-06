@@ -1,5 +1,5 @@
 {% if not function('is_front_page') %}
-	{% set nav_theme = global_nav_theme == 'dark' ? 'dark bg-[var(--theme-color)]' : global_nav_theme == 'transparent' ? 'transparent' : 'light' %}
+	{% set nav_theme = global_nav_theme == 'dark' ? 'dark' : global_nav_theme == 'transparent' ? 'transparent' : 'light' %}
 {% endif %}
 
 <nav class="nav group/navhead {{ nav_theme }}">
