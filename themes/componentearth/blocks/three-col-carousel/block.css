@@ -27,7 +27,7 @@
             }
             
             .slide {
-                @apply absolute top-0 left-0 w-full flex items-stretch ~gap-[3rem]/[7rem] justify-between max-lg:flex-col;
+                @apply absolute top-0 left-0 w-full flex items-end ~gap-[3rem]/[7rem] justify-between max-lg:flex-col;
 
                 &__img {                
                     @apply flex flex-col h-auto flex-1 w-full;

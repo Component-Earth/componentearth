@@ -5,18 +5,27 @@
         <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
     {% endif %}
 
-    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-md" %}
-    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-md" %}
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xl" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xl" %}
 
     <div class="container">
         <div class="{{ pt }} {{ pb }}">                                 
-            <div class="flex flex-col items-center gap-sm mx-auto lg:max-w-[68.9375rem] text-center">
-                {% if fields.title %}
-                    <h2 class="text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal">{{ fields.title }}</h2>
+            <div class="flex flex-col items-start gap-sm">
+                
+                {% if fields.heading %}
+                    <{{ fields.heading.type }} class="2xl:w-[36.6875rem] lg:w-1/2 w-full leading-[90%] text-[var(--theme-color-dark)] font-tertiary-700 [&_p]:!~text-[2.625rem]/[5.15625rem] [&_p]:leading-none [&_strong]:bg-[#FABC6F] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-primary-dark max-lg:text-left">
+                        {{ fields.heading.value }}
+                    </{{ fields.heading.type }}>
                 {% endif %}
 
-                {% if fields.paragraph %}
-                    <div class="max-w-[53.5rem] font-normal [&_p]:font-tertiary-500 [&_p]:leading-[110%] [&_p]:~text-[1.125rem]/[1.5rem] flex flex-col gap-[1.25rem] text-primary-dark [&_strong]:bg-primary [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.paragraph }}</div>
+                {% if fields.content %}
+                    <div class="grid lg:grid-cols-2 gap-[2rem]">
+                        {% for content in fields.content %}
+                            <div class="text-left font-normal [&_p]:font-tertiary [&_p]:leading-normal [&_p]:tracking-[-2%] [&_p]:text-[0.9375rem] flex flex-col gap-[1.25rem] text-primary-dark [&_strong]:bg-primary [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">
+                                {{ content.paragraph }}
+                            </div>
+                        {% endfor %}
+                    </div>
                 {% endif %}
             </div>     
         </div>
