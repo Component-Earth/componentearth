@@ -72,6 +72,9 @@
                             {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', list.ID) %}
                             {% set excerpt_sub = function('substr', excerpt, 0, 260) %}
                             {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %}    
+
+                            {% set temp_content = function(get_the_content, list.ID) %}
+
                             {% set post_date = function('get_the_date', 'M j, Y', list.ID ) %}
 
                             {% set post_thumb_id = function('get_post_thumbnail_id', list.ID) %}
@@ -91,8 +94,8 @@
                                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Project
                                                 </div>
                                                 <h2 class="text-primary-dark lg:max-w-[70%] mb-[1rem] leading-none">{{ list.post_title }} </h2>
-                                                {% if excerpt %}
-                                                    <div class="font-tertiary font-normal text-primary-dark text-[1rem]">{{ excerpt }}</div>
+                                                {% if temp_content %}
+                                                    <div class="font-tertiary font-normal text-primary-dark text-[1rem]">{{ temp_content }}</div>
                                                 {% endif %}
                                                 {# <a class="flex justify-between items-center w-full font-secondary-600 text-[1rem]" href="{{ function('the_permalink', list.ID) }}">
                                                     <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
