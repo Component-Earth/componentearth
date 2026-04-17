@@ -11,7 +11,7 @@
     <div class="filter-container container">                               
         <div class="flex flex-col items-start text-left gap-sm [&_ul]:list-none [&_ul]:flex  [&_ul]:gap-[1rem] [&_ul_li]:p-0 [&_ul_li]:before:hidden [&_ul_li]:font-mono [&_ul_li]:text-[0.75rem] [&_select]:min-w-[10rem]">           
     
-            {% if show_filters %}
+            {# {% if show_filters %}
                 <div class="ajax-filters w-full">
                     <form id="ajax-filter1" class="flex max-md:flex-col ~gap-[1.25rem]/[2rem]">
                         {% if categories %}
@@ -56,7 +56,7 @@
                         
                     </form>
                 </div>
-            {% endif %}
+            {% endif %} #}
             <div id="loading" class="hidden font-mono text-[1rem] text-black">Loading...</div>
             {# <div id="site-content" class="w-full relative">                 #}
             <div  id="cardGrid" class="card-grid w-full relative">
@@ -73,7 +73,7 @@
                             {% set excerpt_sub = function('substr', excerpt, 0, 260) %}
                             {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %}    
 
-                            {% set temp_content = function(get_the_content, list.ID) %}
+                            {# {% set temp_content = function(get_the_content, list.ID) %} #}
 
                             {% set post_date = function('get_the_date', 'M j, Y', list.ID ) %}
 
@@ -94,8 +94,8 @@
                                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Project
                                                 </div>
                                                 <h2 class="text-primary-dark lg:max-w-[70%] mb-[1rem] leading-none">{{ list.post_title }} </h2>
-                                                {% if temp_content %}
-                                                    <div class="font-tertiary font-normal text-primary-dark text-[1rem]">{{ temp_content }}</div>
+                                                {% if excerpt %}
+                                                    <div class="font-tertiary font-normal text-primary-dark text-[1rem]">{{ excerpt }}</div>
                                                 {% endif %}
                                                 {# <a class="flex justify-between items-center w-full font-secondary-600 text-[1rem]" href="{{ function('the_permalink', list.ID) }}">
                                                     <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
