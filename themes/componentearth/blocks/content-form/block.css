@@ -1,0 +1,67 @@
+@layer components {
+	.content-form {
+			
+		.gform_wrapper {
+			.gform_heading {
+				@apply hidden;
+			}
+			.gform_fields {
+				@apply !gap-y-[1rem] !gap-x-[1.5rem];
+			}
+			label.gfield_label  {
+				@apply text-[0.75rem] tracking-[-0.00875rem] leading-[1.4rem] !font-normal text-[#101010] mb-[0.25rem];
+			}
+			.gfield_consent_label {
+				@apply text-[0.75rem] tracking-[-0.00875rem] leading-[1.4rem] !font-normal text-[#101010] mb-[0.25rem] ml-[0.5rem];
+				b {
+					@apply text-[#4E00EA];
+				}
+			}
+			input[type="text"],
+			input[type="email"],
+			textarea {
+				@apply !rounded-[0.25rem] !overflow-hidden border border-solid border-[#F0F0F0] bg-white h-[2.5rem] focus:border-[#101010] active:border-[#101010] !text-[1rem]  tracking-[-0.0225rem] !p-[0.75rem_1rem];
+
+				&::placeholder {
+					@apply !text-[0.875rem] text-opacity-40;
+				}
+			}
+			input[type="checkbox"] {
+				@apply !rounded-[0.25rem] border border-solid border-[#101010];
+			}
+			textarea {
+				@apply max-h-[6.9375rem];
+			}
+			.charleft {
+				@apply hidden;
+			}
+			.gfield_required_asterisk {
+				@apply !text-[#101010] !text-[0.75rem];
+			}
+			.gform-footer {
+				@apply  !pb-0 !mb-0 !pt-0 !mt-[1rem];
+
+				input[type="submit"] {
+					@apply bg-[#101010] mb-[6px] text-white inline w-auto py-[0.5rem] pl-[1rem] pr-[2.5rem] !rounded-[0.1875rem] overflow-hidden text-[1rem] tracking-[-0.02rem] font-normal max-lg:mb-0 bg-no-repeat cursor-pointer;
+					background-image: url('../../img/svg/btn-arrow.svg');
+					background-position: 83% center;
+				}
+			}
+			.gform_validation_errors,
+			.gfield_validation_message {
+				@apply !hidden;
+			}
+			
+			
+			&.gravity-theme .gfield_error .gfield_repeater_cell label, 
+			&.gravity-theme .gfield_error label, 
+			&.gravity-theme .gfield_error legend, 
+			&.gravity-theme .gfield_validation_message, 
+			&.gravity-theme .validation_message, 
+			&.gravity-theme [aria-invalid=true]+label, .gform_wrapper.gravity-theme label+[aria-invalid=true] {
+				@apply !text-[#101010]
+			}
+
+		}
+	}
+}

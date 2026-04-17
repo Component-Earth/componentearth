@@ -1,0 +1,48 @@
+{% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+{% set pb = fields.padding_bottom and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+{% set bg_class = 'bg-[#C0D5EA]' %}
+
+<section class="{{ block.slug }} {{ bg_class }}">
+  {% if block.anchor %}
+    <div class="section-anchor" id="{{ block.anchor | default(block.id) }}"></div>
+  {% endif %}
+        
+  <div class="container relative z-10">
+    <div class="{{ pt }} {{ pb }}">
+      <div class="wrapper">
+        <div class="wrapper__inner">        
+          {% if fields.form_type == "hs" %}
+            {% if fields.hubspot_embed_code %}
+              <div class="wrapper__content {% if fields.style == "page" %} lg:!px-[2.5rem] lg:!py-[2rem] {% else %} lg:!px-0 {% endif %}">
+                {{ fields.hubspot_embed_code|raw }}   
+              </div>
+            {% endif %}
+          {% else %}
+            {% if fields.gravity_form_id %}
+              <div class="wrapper__content">
+                {{ function('do_shortcode', '[gravityform id="' ~ fields.gravity_form_id ~'" title="false" description="false" ajax="true"]') }}              
+              </div>
+            {% endif %} 
+          {% endif %} 
+        </div>
+
+        <div class="w-full max-w-[90%]">
+          {% for item in fields.content_list %}
+            <div class="flex gap-[1rem] items-start justify-start">
+              <img class="max-w-[4.125rem] h-auto" src="{{ item.icon.url }}" alt="icon" />
+              <div class="flex flex-col gap-[1.5rem]">
+                <div class="text-[1.5rem] text-primary-dark">
+                  {{ item.title }}
+                </div>
+
+                <div class="[&_a]:text-primary-dark [&_a]:hover:underline [&_p]:text-primary-dark">
+                  {{ item.description }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
