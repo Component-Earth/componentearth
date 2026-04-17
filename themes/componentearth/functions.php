@@ -50,6 +50,7 @@ require_once 'includes/theme/setup-wysiwyg.php';
 
 require_once 'includes/theme/support-helpers.php';
 require_once 'includes/theme/support-visual-overrides.php';
+require_once 'includes/theme/support-transients.php';
 
 
 

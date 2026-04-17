@@ -1,0 +1,129 @@
+{% set custom_class = "bg-[#DBD5C6] ~pb-[2.5rem]/[4rem]" %}
+
+<section id="filter-block" class="{{ block.slug ?? 'filter-block' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+
+    <div class="filter-container container">                               
+        <div class="flex flex-col items-start text-left gap-sm [&_ul]:list-none [&_ul]:flex  [&_ul]:gap-[1rem] [&_ul_li]:p-0 [&_ul_li]:before:hidden [&_ul_li]:font-mono [&_ul_li]:text-[0.75rem] [&_select]:min-w-[10rem]">           
+    
+            {% if show_filters %}
+                <div class="ajax-filters w-full">
+                    <form id="ajax-filter1" class="flex max-md:flex-col ~gap-[1.25rem]/[2rem]">
+                        {% if categories %}
+                            <el-dropdown id="filter-category" class="inline-block">
+                                <button class="font-mono inline-flex w-full items-center justify-between lg:w-[10rem] bg-white text-black border-b border-black border-solid text-[0.75rem] pb-[0.5rem]">
+                                    <span>Resource Types</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="7" viewBox="0 0 13 7" fill="none">
+                                        <path d="M12.3391 0.367432L6.33909 5.90589L0.339142 0.367431" stroke="black"/>
+                                    </svg>
+                                </button>
+
+                                <el-menu anchor="bottom start" popover class="m-0 w-56 origin-top-right bg-[#F4EDE9] p-0 transition [--anchor-gap:theme(spacing.2)] [transition-behavior:allow-discrete] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
+                                    <div class="flex flex-col py-[1.0625rem] px-[0.9375rem] [&_.active]:px-[0.875rem] [&_.active]:py-[0.6875rem] [&_.active]:rounded-[50px] [&_.active]:bg-[#E09762]">
+                                        <a href="#" data-value="0" data-name="Resource Types" class="filter active font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">All</a>
+                                        {% for category in categories %}
+                                            <a href="#" data-value="{{ category.term_id }}" data-name="{{ category.name}}" class="filter font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">{{ category.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </el-menu>
+                            </el-dropdown>
+                        {% endif %}
+                        
+                        {% if industries %}
+                            <el-dropdown id="filter-industry" class="inline-block">
+                                <button class="font-mono inline-flex w-full items-center justify-between lg:w-[10rem] bg-white text-black border-b border-black border-solid text-[0.75rem] pb-[0.5rem]">
+                                    <span>Industries</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="7" viewBox="0 0 13 7" fill="none">
+                                        <path d="M12.3391 0.367432L6.33909 5.90589L0.339142 0.367431" stroke="black"/>
+                                    </svg>
+                                </button>
+
+                                <el-menu anchor="bottom start" popover class="m-0 w-56 origin-top-right bg-[#F4EDE9] p-0 transition [--anchor-gap:theme(spacing.2)] [transition-behavior:allow-discrete] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
+                                    <div class="flex flex-col py-[1.0625rem] px-[0.9375rem] [&_.active]:px-[0.875rem] [&_.active]:py-[0.6875rem] [&_.active]:rounded-[50px] [&_.active]:bg-[#E09762]">
+                                        <a href="#" data-value="0" data-name="Industries" class="filter active font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">All</a>
+                                        {% for industry in industries %}
+                                            <a href="#" data-value="{{ industry.term_id }}" data-name="{{ industry.name}}" class="filter font-mono px-[0.875rem] py-[0.6875rem] rounded-[50px] hover:bg-[#E09762] hover:transition-all hover:duration-300 hover:ease-in-out">{{ industry.name }}</a>
+                                        {% endfor %}
+                                    </div>
+                                </el-menu>
+                            </el-dropdown>
+                        {% endif %}
+                        
+                    </form>
+                </div>
+            {% endif %}
+            <div id="loading" class="hidden font-mono text-[1rem] text-black">Loading...</div>
+            {# <div id="site-content" class="w-full relative">                 #}
+            <div  id="cardGrid" class="card-grid w-full relative">
+                {% set i = 0 %}
+
+                {% if (custom_query) %}
+                    <div class="grid  gap-[1.75rem]">
+                        {% for list in custom_query.posts %}
+
+                            {% set custom_block = function('get_field', 'block', list.ID) %}
+                            {% set custom_excerpt = custom_block.excerpt %}
+
+                            {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', list.ID) %}
+                            {% set excerpt_sub = function('substr', excerpt, 0, 260) %}
+                            {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %}    
+                            {% set post_date = function('get_the_date', 'M j, Y', list.ID ) %}
+
+                            {% set post_thumb_id = function('get_post_thumbnail_id', list.ID) %}
+                            {% set custom_image = function('wp_get_attachment_image_src', post_thumb_id, 'full') %}
+                            {% set image = custom_image ? custom_image[0] : "" %}  
+
+                            <div class="gap-[1.75rem] flex items-center justify-between relative group w-full card" data-id="{{ terms[0].term_id }}">
+                                {# <a href="{{ function('the_permalink', list.ID) }}" class="absolute top-0 left-0 w-full h-full z-10"></a> #}
+                                <div class="flex flex-col justify-between gap-[1.75rem] w-full flex-1 {% if image != "" %} h-auto {% else %} h-full {% endif %}">
+                                    <div class="flex flex-col gap-[1.75rem]">
+                                        <div class="flex flex-col gap-[0.75rem] relative">
+                                            <div class="text-[10rem] absolute top-[-3rem] left-[-3rem] text-[#025294] opacity-20">
+                                                01
+                                            </div>
+                                            <div class="p-[3rem] flex flex-col gap-[1.5rem]">
+                                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold">
+                                                    <div class="w-[10rem] h-[2px] bg-primary"></div> Name of the section
+                                                </div>
+                                                <h2 class="text-primary-dark max-w-[70%] mb-[1rem] leading-none">{{ list.post_title }} </h2>
+                                                {% if excerpt %}
+                                                    <div class="font-tertiary font-normal text-primary-dark text-[1rem]">{{ excerpt }}</div>
+                                                {% endif %}
+                                                {# <a class="flex justify-between items-center w-full font-secondary-600 text-[1rem]" href="{{ function('the_permalink', list.ID) }}">
+                                                    <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 -6.99382e-07L14.59 1.41L20.17 7L-3.93402e-07 7L-3.0598e-07 9L20.17 9L14.58 14.58L16 16L24 8L16 -6.99382e-07Z" fill="#025294"/>
+                                                    </svg>
+                                                </a> #}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% if image != "" %}
+                                    <div class="h-[46.0625rem] w-[36.25rem] overflow-hidden rounded-bl-[8rem]">
+                                        <img src="{{ image }}" class="object-cover w-full h-full group-hover:scale-105 group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out" />
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if custom_query.max_num_pages > 1 %}
+                {% set custom_class = 'ahr_loadmore btn bg-black text-white font-mono !no-underline !leading-[1rem] text-[0.875rem] cursor-pointer' %}						                
+            
+                <div id="load-more" class="flex items-center justify-center w-full">
+                    <div class="ahr_loadmore btn btn-primary {{ custom_class }} w-auto">
+                        Load more                        
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
