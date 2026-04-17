@@ -14,6 +14,9 @@ use Timber\Timber;
 global $post;
 $postID = get_the_ID();
 
+global $wp;  
+$current_url = home_url(add_query_arg(array($_GET), $wp->request));
+
 // Grab theme setting colors
 $theme_color = get_field('theme_color', 'option');
 $theme_color_dark = get_field('theme_color_dark', 'option');
@@ -24,6 +27,7 @@ $font_color_dark = get_field('font_color_dark', 'option');
 $font_color_light = get_field('font_color_light', 'option');
 
 $context = Timber::context([
+    'current_url' => $current_url,
     'global_nav_theme' => get_field('global_nav_theme'),
     'hide_navigation' => get_field('hide_navigation'),
     'site_logo'        => get_field('site_logo', 'option'),
