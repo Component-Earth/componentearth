@@ -11,7 +11,7 @@
 				@apply object-contain w-full h-full;
 				path,
 				polygon {
-					@apply fill-black;
+					@apply fill-primary-dark;
 				}
 			}
 		}
@@ -24,7 +24,7 @@
 			  
 			  &:after,
 			  &:before {
-				@apply content-[''] absolute top-0 h-0 w-full left-0 right-0 border-b-[.13375rem] border-solid border-black transition-all ease-out duration-[0.3s];
+				@apply content-[''] absolute top-0 h-0 w-full left-0 right-0 border-b-[.13375rem] border-solid border-primary-dark transition-all ease-out duration-[0.3s];
 			  }
 			  
 			  &:after {
@@ -32,7 +32,7 @@
 			  }
 			  
 			  i {
-				@apply block overflow-hidden whitespace-nowrap h-0 border-b-[.13375rem] border-solid border-black bg-black w-full absolute top-1/2 indent-[100%] transition-all ease-out duration-[0.1s];
+				@apply block overflow-hidden whitespace-nowrap h-0 border-b-[.13375rem] border-solid border-primary-dark bg-primary-dark w-full absolute top-1/2 indent-[100%] transition-all ease-out duration-[0.1s];
 			  }
 			  
 			  &.active-menu {
@@ -61,7 +61,7 @@
 				}
 				.nav__item.parent>.nav__item-inner a>p:last-of-type,
 				.nav__item.external>.nav__item-inner a>p:last-of-type {
-					@apply opacity-100 relative !text-[var(--font-color-dark)] cursor-pointer text-[1.25rem] hover:!text-[var(--font-color-black)];
+					@apply opacity-100 relative !text-[var(--font-color-dark)] cursor-pointer text-[1.25rem] hover:!text-[var(--font-color-primary-dark)];
 				}
 				.nav__item.parent>.nav__item-inner a>p:last-of-type {
 					@apply  font-primary;
@@ -70,15 +70,15 @@
 					@apply  font-primary;
 				}
 				.nav__item-inner.active .arrow-rotate svg path {
-					@apply stroke-black;
+					@apply stroke-primary-dark;
 				}
 			}
 			.arrow-rotate svg path {
-				@apply stroke-black;
+				@apply stroke-primary-dark;
 			}
 			
 			.nav__item {
-				@apply h-auto items-start py-[1.5rem] border-b border-solid border-black border-opacity-20;
+				@apply h-auto items-start py-[1.5rem] border-b border-solid border-primary-dark border-opacity-20;
 
 
 				&:first-of-type {
@@ -162,7 +162,7 @@
 							}
 							
 							&::before {
-								@apply content-[''] h-[2px] absolute bottom-[-6px] left-0 bg-black w-0;
+								@apply content-[''] h-[2px] absolute bottom-[-6px] left-0 bg-primary-dark w-0;
 							}
 							@keyframes showHoverLine {
 								0% {
@@ -288,7 +288,7 @@
 			@apply relative transition-all duration-300 ease-[ease] z-[2] max-lg:flex max-lg:items-center py-[2rem];
 			
 			.text-link p {
-				@apply dark:text-white hover:text-black;
+				@apply dark:text-white hover:text-primary-dark;
 			}
 		}
 
@@ -307,7 +307,7 @@
 				@apply block;
 
 				path {
-					@apply stroke-black dark:stroke-white;
+					@apply stroke-primary-dark dark:stroke-white;
 				}
 			}
 			.close {
@@ -323,7 +323,7 @@
 					@apply block;
 
 					path {
-						@apply stroke-black dark:stroke-white;
+						@apply stroke-primary-dark dark:stroke-white;
 					}
 				}
 			}
@@ -368,7 +368,7 @@
 							@apply cursor-default transition-opacity duration-300 ease-[ease];
 
 							&:first-of-type {
-								@apply text-black font-primary opacity-100;
+								@apply text-primary-dark font-primary opacity-100;
 							}
 						}
 					}
@@ -379,7 +379,7 @@
 					& > .nav__item-inner {
 						a {
 							p {
-								@apply text-black;
+								@apply text-primary-dark;
 
 								&:first-of-type {
 									@apply opacity-100;
@@ -411,7 +411,7 @@
 							@apply cursor-pointer transition-opacity duration-300 ease-[ease];
 
 							&:first-of-type {
-								@apply text-black font-primary opacity-0;
+								@apply text-primary-dark font-primary opacity-0;
 							}
 
 							&:last-of-type {
@@ -432,7 +432,7 @@
 					& > .nav__item-inner {
 						a {
 							p {
-								@apply text-black;
+								@apply text-primary-dark;
 
 								&:first-of-type {
 									@apply opacity-100;
@@ -446,7 +446,7 @@
 
 						svg {
 							path {
-								@apply fill-black;
+								@apply fill-primary-dark;
 							}
 						}
 					}
@@ -537,7 +537,7 @@
 				}
 				
 				&::before {
-					@apply content-['']  h-[1px] absolute bottom-[-6px] bg-black;
+					@apply content-['']  h-[1px] absolute bottom-[-6px] bg-primary-dark;
 				} 
 
 				@keyframes showHoverLine {
@@ -560,16 +560,16 @@
 
 			&:hover {
 				p {
-					@apply max-lg:!text-black;
+					@apply max-lg:!text-primary-dark;
 				}
 
 				.square {		
-					@apply opacity-100 visible w-[0.5625rem] rounded-[0.0625rem] bg-black mr-[10px];
+					@apply opacity-100 visible w-[0.5625rem] rounded-[0.0625rem] bg-primary-dark mr-[10px];
 				}
 
 				svg {
 					path {
-						@apply fill-black;
+						@apply fill-primary-dark;
 					}
 				}
 			}
@@ -579,7 +579,7 @@
 			@apply flex gap-[0.5rem] items-center;
 
 			p {
-				@apply text-black-60 decoration-[0.0625rem] underline-offset-[0.125rem] hover:underline;
+				@apply text-primary-dark-60 decoration-[0.0625rem] underline-offset-[0.125rem] hover:underline;
 			}
 		}
 
@@ -636,7 +636,7 @@
 		}
 
 		&__overlay {
-			@apply absolute top-0 left-0 w-full h-[100svh] opacity-0 invisible duration-300 ease-[ease] bg-black;
+			@apply absolute top-0 left-0 w-full h-[100svh] opacity-0 invisible duration-300 ease-[ease] bg-primary-dark;
 		}
 
 		&.nav-hidden {
