@@ -148,14 +148,14 @@
 
 				&__item-inner {
 					p {
-						@apply text-black;
+						@apply text-primary-dark;
 					}
 
 					&:hover,
 					&:focus,
 					&:active {
 						p {
-							@apply text-black;
+							@apply text-primary-dark;
 							
 							&:hover::before {
 								animation: showHoverLine 1s forwards ease-in-out; 
@@ -177,20 +177,20 @@
 				}
 
 				&__square {
-					@apply bg-black;
+					@apply bg-primary-dark;
 				}
 
 				&__burger {
 					.open {
 						path {
-							@apply dark:stroke-black;
+							@apply dark:stroke-primary-dark;
 						}
 					}
 
 					&.active {
 						.close {
 							path {
-								@apply dark:stroke-black;
+								@apply dark:stroke-primary-dark;
 							}
 						}
 					}
@@ -198,7 +198,7 @@
 
 				&__actions {
 					a.normal-link p {
-						@apply text-black;
+						@apply text-primary-dark;
 					}
 				}
 			}
