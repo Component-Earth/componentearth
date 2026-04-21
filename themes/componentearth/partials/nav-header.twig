@@ -239,7 +239,6 @@
 						{% for nav_item in header_nav_item %}
 							{% set nav_index = loop.index %}
 							{% set ctr = ctr + 1 %}
-
 							{% if not nav_item.is_cta %}
 								<li class="list-none pl-0 text-black before:hidden py-[1.5rem] border-b border-[#F4EDE9] border-solid" x-data="accordion({{ ctr }})">
 									
@@ -327,7 +326,7 @@
 										</div>
 
 									{% else %}
-										<a class="flex flex-row justify-between items-center !font-primary cursor-pointer !capitalize !text-[2rem] text-[var(--font-color-dark)]">
+										<a href="{{ nav_item.link.url }}" class="flex flex-row justify-between items-center !font-primary cursor-pointer !capitalize !text-[2rem] text-[var(--font-color-dark)]">
 											{{ nav_item.link.title }}
 										</a>
 									{% endif %}
@@ -379,11 +378,11 @@
 		window.onscroll = function () {
 			var lastScrollTop = 0;
 			jQuery(window).scroll(function () {
-				var currentScrollTop = $(this).scrollTop();
+				var currentScrollTop = jQuery(this).scrollTop();
 				if (currentScrollTop > lastScrollTop) {
-					$('.nav.transparent').addClass('dark');
+					jQuery('.nav.transparent').addClass('dark');
 				} else if (currentScrollTop == 0) {
-					$('.nav.transparent').removeClass('dark');
+					jQuery('.nav.transparent').removeClass('dark');
 				}
 				lastScrollTop = currentScrollTop;
 			});

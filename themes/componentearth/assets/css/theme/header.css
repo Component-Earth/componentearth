@@ -52,7 +52,7 @@
 		}
 
 		&__mobile {
-			@apply hidden top-[3.5rem] bg-white left-0 w-full h-screen overflow-hidden px-[1rem] py-[2.5rem];
+			@apply hidden top-[3.5rem] max-lg:top-[6.3rem] bg-[#dbd5c6] left-0 w-full h-screen overflow-hidden px-[1rem] py-[2.5rem];
 
 			&.active {
 				@apply flex flex-col fixed w-full overflow-auto h-[calc(100vh-3.5rem)] justify-between;
