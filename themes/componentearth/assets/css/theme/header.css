@@ -345,7 +345,7 @@
 			@apply flex items-center ~gap-[2rem]/[2.25rem] max-xl:hidden;
 
 			.nav__item p {
-				@apply !text-[1.125rem] font-tertiary font-medium leading-[150%] text-[var(--font-color-dark)] hover:text-[var(--theme-color)];
+				@apply !text-[1.125rem] font-tertiary font-medium leading-[150%] text-[var(--font-color-dark)] hover:text-[var(--theme-color-highlight)];
 			}
 		}
 
