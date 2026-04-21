@@ -240,7 +240,7 @@
 							{% set nav_index = loop.index %}
 							{% set ctr = ctr + 1 %}
 							{% if not nav_item.is_cta %}
-								<li class="list-none pl-0 text-black before:hidden py-[1.5rem] border-b border-[#F4EDE9] border-solid" x-data="accordion({{ ctr }})">
+								<li class="list-none pl-0 text-black before:hidden py-[1.5rem] border-b border-[var(--theme-color-dark)] border-solid" x-data="accordion({{ ctr }})">
 									
 									{% if nav_item.is_parent %}
 										<p 
