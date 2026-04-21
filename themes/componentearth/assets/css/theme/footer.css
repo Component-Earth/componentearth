@@ -84,7 +84,9 @@
 				@apply text-white/65 text-[0.75rem] font-secondary hover:text-white/65;
 			}
 			&.child {
-				@apply dark:text-[var(--font-color-light)] text-[var(--font-color-dark)] font-secondary leading-[140%] ~text-[1rem]/[1.1875rem] before:w-0 relative;
+				@apply dark:text-[var(--font-color-light)] text-[var(--font-color-dark)] font-secondary leading-[140%] ~text-[1rem]/[1.1875rem] before:w-0 relative hover:text-[var(--theme-color-highlight)];
+
+				
 			}      
 
 			@keyframes showHoverLine {

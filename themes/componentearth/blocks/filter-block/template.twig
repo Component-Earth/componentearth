@@ -65,15 +65,13 @@
                 {% if (custom_query) %}
                     <div class="lg:grid gap-[1.75rem]">
                         {% for list in custom_query.posts %}
-
                             {% set custom_block = function('get_field', 'block', list.ID) %}
                             {% set custom_excerpt = custom_block.excerpt %}
 
                             {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', list.ID) %}
                             {% set excerpt_sub = function('substr', excerpt, 0, 1060) %}
-                            {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %}    
-
-                            {# {% set temp_content = function(get_the_content, list.ID) %} #}
+                            {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %}
+                            {% set temp_content = list.post_content %}
 
                             {% set post_date = function('get_the_date', 'M j, Y', list.ID ) %}
 
@@ -94,8 +92,8 @@
                                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Project
                                                 </div>
                                                 <h2 class="text-primary-dark lg:max-w-[70%] mb-[1rem] leading-none">{{ list.post_title }} </h2>
-                                                {% if result %}
-                                                    <div class="font-tertiary font-normal text-primary-dark text-[1rem]">{{ result ~ '...' }}</div>
+                                                {% if temp_content %}
+                                                    <div class="font-tertiary font-normal text-primary-dark text-[1rem]">{{ temp_content }}</div>
                                                 {% endif %}
                                                 {# <a class="flex justify-between items-center w-full font-secondary-600 text-[1rem]" href="{{ function('the_permalink', list.ID) }}">
                                                     <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">

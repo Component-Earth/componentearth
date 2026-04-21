@@ -53,6 +53,7 @@ require_once 'includes/theme/support-visual-overrides.php';
 require_once 'includes/theme/support-transients.php';
 
 
+require_once 'blocks/filter-block/functions.php';
 
 
 
@@ -175,8 +176,6 @@ function enqueue_block_editor_scripts()
 
 
 
-
-
 /******************** ACF ************************/
 add_action('acf/init', 'my_acf_op_init');
 
@@ -280,57 +279,6 @@ function custom_block_category($categories, $post)
 add_filter('block_categories_all', 'custom_block_category', 10, 2);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-add_filter('facetwp_facet_dropdown_show_counts', '__return_false');
-  
-
-// Hook into Gravity Forms after submission
-add_action( 'gform_after_submission', 'mark_form_as_submitted', 10, 2 );
-function mark_form_as_submitted( $entry, $form ) {
-    // Start the session if not already started
-    if ( session_status() === PHP_SESSION_NONE ) {
-        session_start();
-    }
-    // Set a session variable to mark the form as submitted
-    $_SESSION[ 'form_submitted_' . $form['id'] ] = true;
-}
-
-// Hook into Gravity Forms to check for submission status before displaying the form
-add_filter( '<<!nav>>gform_get_form<<!/nav>>', 'check_submission_status', 10, 3 );
-function check_submission_status( $form_string, $form_object, $url ) {
-    // Start the session if not already started
-    if ( session_status() === PHP_SESSION_NONE ) {
-        session_start();
-    }
-
-    // Get the form ID
-    $form_id = $form_object['id'];
-
-    // Check if the form was already submitted for this session
-    if ( isset( $_SESSION[ 'form_submitted_' . $form_id ] ) && $_SESSION[ 'form_submitted_' . $form_id ] ) {
-        // If submitted, return a confirmation message instead of the form
-        return '<p>Thank you, your form has already been submitted.</p>';
-    }
-
-    // If not submitted, return the form HTML
-    return $form_string;
-}
-
 function get_acf_block_field_value_by_post_id($post_id, $block_name, $field_name) {
     $post = get_post($post_id);    
     if (!$post) {
@@ -351,10 +299,10 @@ function get_acf_block_field_value_by_post_id($post_id, $block_name, $field_name
 }
 
 
+
 add_filter('timber/context', 'global_timber_context');
 
 function global_timber_context($context) {
     $context['options'] = get_fields('option'); // 'option' is the default post_id for the main options page
     return $context;
 }
-

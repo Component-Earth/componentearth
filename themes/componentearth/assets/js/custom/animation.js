@@ -1,4 +1,4 @@
-(function () {
+(function (){
     const $ = baunfire.$;
 
     let startingThreshold = 90;
