@@ -11,7 +11,7 @@
             //this.headerAnim();
             //this.smoothScroll();
             this.bgAnim();
-            this.sectionsFadeIn();
+            //this.sectionsFadeIn();
         },
 
         // smoothScroll() {
