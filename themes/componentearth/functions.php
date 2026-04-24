@@ -67,7 +67,6 @@ require_once 'blocks/filter-block/functions.php';
 
 
 
-
 /******************** LOAD CSS/JS ************************/
 add_action('wp_enqueue_scripts', 'front_css_styles');
 add_action('wp_enqueue_scripts', 'front_js_scripts');
@@ -76,6 +75,7 @@ add_action('admin_enqueue_scripts', 'back_css_styles');
 add_action('admin_enqueue_scripts', 'back_js_scripts');
 
 add_action('enqueue_block_editor_assets', 'enqueue_block_editor_scripts');
+remove_action('wp_enqueue_scripts','wp_enqueue_global_styles');
 
 
 function front_css_styles() 
@@ -88,7 +88,7 @@ function front_css_styles()
     wp_register_style('owl-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), _S_VERSION);    
     wp_register_style('flowbite-style', 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', array(), _S_VERSION);
     wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
-    wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
+    //wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
     wp_register_style('jarallax-style', 'https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css', array(), _S_VERSION);
     //wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
     wp_register_style('flickity-style', get_template_directory_uri() . '/assets/css/external/flickity.css', array(), _S_VERSION);
