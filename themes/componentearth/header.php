@@ -67,10 +67,10 @@ $context = Timber::context([
     </script>
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="<?= esc_attr(get_the_title($postID)); ?>">
+    <!-- <meta property="og:title" content="<?= esc_attr(get_the_title($postID)); ?>">
     <meta property="og:image" content="<?= esc_url(get_the_post_thumbnail_url($postID)); ?>">
     <meta property="og:description" content="<?= get_post_meta($post_id, '_yoast_wpseo_metadesc', true) ? get_post_meta($post_id, '_yoast_wpseo_metadesc', true) : esc_attr(get_the_excerpt($postID)); ?>">
-    <meta property="og:url" content="<?= esc_url(get_the_permalink($postID)); ?>">
+    <meta property="og:url" content="<?= esc_url(get_the_permalink($postID)); ?>"> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
