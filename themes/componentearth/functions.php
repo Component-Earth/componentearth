@@ -35,6 +35,20 @@ if (!function_exists('bf_setup')):
         add_theme_support('align-wide');
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
+        add_theme_support('editor-color-palette', [
+            array(
+                array(
+                    'name'  => __( 'Light Blue', 'componentearth' ),
+                    'slug'  => 'light-blue',
+                    'color'	=> '#C0D5EA',
+                ),
+                array(
+                    'name'  => __( 'Sand Cream', 'componentearth' ),
+                    'slug'  => 'sand-cream',
+                    'color' => '#DBD5C6',
+                ),
+            )
+        ]);
     }
 endif;
 
@@ -87,7 +101,7 @@ function front_css_styles()
     wp_enqueue_style('animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), _S_VERSION);    
     wp_register_style('owl-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), _S_VERSION);    
     wp_register_style('flowbite-style', 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', array(), _S_VERSION);
-    wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
+    //wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
     //wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
     wp_register_style('jarallax-style', 'https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css', array(), _S_VERSION);
     //wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
@@ -115,7 +129,7 @@ function front_js_scripts()
     wp_register_script("owl", get_template_directory_uri() . '/assets/js/external/owl.min.js', array('jquery'), _S_VERSION, true);    
     wp_register_script("jarallax", "https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js", array('jquery'), _S_VERSION, true);
     wp_register_script("jarallax-video", "https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax-video.min.js", array('jquery'), _S_VERSION, true);
-    wp_register_script("swiper", get_template_directory_uri() . '/assets/js/external/swiper-bundle.min.js', array('jquery'), _S_VERSION, true);
+    //wp_register_script("swiper", get_template_directory_uri() . '/assets/js/external/swiper-bundle.min.js', array('jquery'), _S_VERSION, true);
     wp_register_script("flowbite", "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js", array('jquery'), _S_VERSION, true);
     //wp_register_script("split-type", get_template_directory_uri() . '/assets/js/external/SplitType.min.js', array(), _S_VERSION, true);
     //wp_register_script('splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), _S_VERSION, true);
