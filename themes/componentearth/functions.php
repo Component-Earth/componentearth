@@ -98,7 +98,7 @@ function front_css_styles()
     wp_enqueue_style('normalize-style', get_template_directory_uri() . '/assets/css/theme/normalize.css', array(), _S_VERSION);
     wp_enqueue_style('admin-bar-style', get_template_directory_uri() . '/assets/css/admin/bar.css', array(), _S_VERSION);
     wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme/styles.css', array(), uniqid());
-    wp_enqueue_style('animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), _S_VERSION);    
+    //wp_enqueue_style('animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), _S_VERSION);    
     wp_register_style('owl-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), _S_VERSION);    
     wp_register_style('flowbite-style', 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', array(), _S_VERSION);
     //wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
@@ -114,6 +114,7 @@ function front_css_styles()
 
 function front_js_scripts()
 {
+    
     wp_enqueue_script("jquery-script", get_template_directory_uri() . '/assets/js/external/jquery.min.js', _S_VERSION, true);
     wp_enqueue_script("vimeo", "https://player.vimeo.com/api/player.js", array('jquery'), _S_VERSION, true);
     wp_enqueue_script("gsap", get_template_directory_uri() . '/assets/js/external/gsap.min.js', array('jquery'), _S_VERSION, true);
