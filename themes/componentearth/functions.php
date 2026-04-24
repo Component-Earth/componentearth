@@ -90,7 +90,7 @@ function front_css_styles()
     wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
     wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
     wp_register_style('jarallax-style', 'https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css', array(), _S_VERSION);
-    wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
+    //wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
     wp_register_style('flickity-style', get_template_directory_uri() . '/assets/css/external/flickity.css', array(), _S_VERSION);
     //wp_register_style('owl-style2', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css', array(), _S_VERSION);
     // wp_register_style('splitting-style', 'https://unpkg.com/splitting/dist/splitting.css', array(), _S_VERSION);
@@ -117,9 +117,9 @@ function front_js_scripts()
     wp_register_script("jarallax-video", "https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax-video.min.js", array('jquery'), _S_VERSION, true);
     wp_register_script("swiper", get_template_directory_uri() . '/assets/js/external/swiper-bundle.min.js', array('jquery'), _S_VERSION, true);
     wp_register_script("flowbite", "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js", array('jquery'), _S_VERSION, true);
-    wp_register_script("split-type", get_template_directory_uri() . '/assets/js/external/SplitType.min.js', array(), _S_VERSION, true);
-    wp_register_script('splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), _S_VERSION, true);
-    wp_register_script('glightbox', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/js/glightbox.min.js', array(), _S_VERSION, true);
+    //wp_register_script("split-type", get_template_directory_uri() . '/assets/js/external/SplitType.min.js', array(), _S_VERSION, true);
+    //wp_register_script('splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), _S_VERSION, true);
+    //wp_register_script('glightbox', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/js/glightbox.min.js', array(), _S_VERSION, true);
     wp_register_script('flickity', 'https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js', array(), _S_VERSION, true);
     //wp_register_script('locomotive', 'https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js', array(), _S_VERSION, true);
     //wp_register_script("owl2", get_template_directory_uri() . '/assets/js/external/owl-custom.js', array('jquery'), _S_VERSION, true);    
