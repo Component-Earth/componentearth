@@ -58,7 +58,7 @@ $image = $custom_image ? $custom_image[0] : "";
 
     <div class="container relative z-10">
         <?php if($image) : ?>
-            <div class="lg:flex hidden w-full flex-col gap-[2rem] md:h-[45rem] h-[31rem] bg-cover bg-no-repeat bg-start overflow-hidden rounded-b-[5rem]" 
+            <div class="lg:flex hidden w-full flex-col gap-[2rem] md:h-[45rem] h-[31rem] bg-cover bg-no-repeat bg-center overflow-hidden rounded-b-[5rem]" 
                 style="background-image: url(<?php echo $image; ?>)">
                 &nbsp;
             </div>
