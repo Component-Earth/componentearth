@@ -55,7 +55,7 @@ $custom_image = wp_get_attachment_image_src($post_thumb_id, 'full');
 $image = $custom_image ? $custom_image[0] : "";
 ?>
 
-<main class="bg-[#C0D5EA] relative ungated">
+<main class="bg-[#C0D5EA] relative ungated pb-[5rem]">
 
     <div class="container relative z-10 ">
         <?php if($image) : ?>
