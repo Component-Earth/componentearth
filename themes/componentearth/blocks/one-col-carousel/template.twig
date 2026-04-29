@@ -8,27 +8,23 @@
     {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
     {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
            
-    <div class="bg-[#C0D5EA] bg-opacity-80 z-0 absolute top-0 left-0 w-full h-full"></div>
-    <img class="object-cover bg-opacity-80 z-10 absolute top-0 left-0 w-full h-full" src="{{ function('png','carousel-bg') }}" />
     
     <div class="container h-full relative z-50 xl:px-[10rem]">
         <div class="{{ pt }} {{ pb }} h-full">                      
-            {% if fields.carousel %}
+            {% if fields.gallery %}
                 <div class="slider h-full">
-                    {% for carousel_item in fields.carousel %}
+                    {% for carousel_item in fields.gallery %}
                         <div class="slide">
-                            {% if carousel_item.col_1 and carousel_item.col_1.image %}
-                                <div class="lg:h-[41.90625rem] w-auto rounded-tl-[7rem] rounded-tr-[7rem] overflow-hidden">
-                                    <img class="object-cover w-full h-full" src="{{ carousel_item.col_1.image }}" alt="col-2-image" />
-                                </div>
-                            {% endif %}
+                            <div class="lg:h-[41.90625rem] w-auto rounded-tl-[7rem] rounded-br-[7rem] overflow-hidden">
+                                <img class="object-cover w-full h-full" src="{{ carousel_item.url }}" alt="col-image" />
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
                 {% set ctr = 0 %}
                 <div class="flex items-center justify-center">
                     <div class="slider-dots flex gap-[0.25rem] items-center justify-center w-auto bg-white/30 rounded-[1.875rem] p-[0.25rem]">
-                        {% for carousel_item in fields.carousel %}
+                        {% for carousel_item in fields.gallery %}
                             <button class="slider-dot {% if ctr == 0 %} active {% endif %}" data-ctr="{{ ctr }}">
                                 <svg class="active" width="45" height="14" viewBox="0 0 45 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 7C0 3.13401 3.13401 0 7 0H38C41.866 0 45 3.13401 45 7C45 10.866 41.866 14 38 14H7C3.13401 14 0 10.866 0 7Z" fill="white"/>
