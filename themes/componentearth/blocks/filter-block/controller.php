@@ -8,6 +8,7 @@ if ($is_preview && !empty($block['data'])) {
 }
 
 acf_setup_meta($block["data"], $block["id"], true);
+$post_type = get_field('post_type');
 
 
 // $categories = get_terms(
@@ -27,11 +28,13 @@ acf_setup_meta($block["data"], $block["id"], true);
 
 // $transient_key = TRANSIENT_PREFIX . "_all_res";
 // $custom_query = get_transient($transient_key);
+// echo $post_type;
+// die();
 
 //if (!$custom_query) {
   $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
   $custom_args = [
-    'post_type'=> 'project', 
+    'post_type'=> $post_type, 
     'posts_per_page'=> 12,  
     'post_status' => 'publish',
     'orderby' => 'date', 
