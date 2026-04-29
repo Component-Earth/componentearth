@@ -11,6 +11,6 @@ baunfire.addModule({
             });
         }
 
-        script();        
-    }
+        script();      
+    }  
 });

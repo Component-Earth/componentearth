@@ -1,14 +1,16 @@
-typeof app !== 'undefined' && app.ready(() => {
-    var $ = jQuery.noConflict();
+baunfire.addModule({
+    init(baunfire) {
+        const $ = baunfire.$;
 
-    const script = () => {
-        const els = $("section.content-form");
-        if (!els.length) return;
+        const script = () => {
+            const els = $("section.content-form");
+            if (!els.length) return;
 
-        els.each(function () {
-            const self = $(this);
-        });
+            els.each(function () {
+                const self = $(this);
+            });
+        }
+
+        script();
     }
-
-    script();
 });

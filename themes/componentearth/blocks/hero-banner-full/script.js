@@ -37,12 +37,12 @@ baunfire.addModule({
                 );
 
                 tl.set("#top-nav", { className: "" })
-                  .set("#top-nav", { className: "top-nav-active" });
+                    .set("#top-nav", { className: "top-nav-active" });
 
 
             });
         }
 
-        script();        
+        script();       
     }
 });

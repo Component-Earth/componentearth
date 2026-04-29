@@ -9,7 +9,7 @@ baunfire.addModule({
             els.each(function () {
                 const self = $(this);
                 /* Add your logic here */            
-	
+
                 const slider = document.querySelector('.slider');
                 const slides = document.querySelectorAll('.slide')
                 const sliderBg = document.querySelector('.slider__bg');

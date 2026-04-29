@@ -25,8 +25,7 @@ module.exports = {
             "./components/*.php",
             "./components/*.twig",
             "./components/**/*.php",
-            "./components/**/*.twig",
-            "./estatik4/**/*.php"
+            "./components/**/*.twig"
         ],
         extract,
     },

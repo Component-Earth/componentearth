@@ -44,7 +44,7 @@
                     {% if fields.featuring_title %}
                         <p class="!text-[1rem] !font-tertiary !font-bold text-[var(--font-color-dark)]">{{ fields.featuring_title }}</p>
                     {% endif %}
-                    <div class="flex items-center justify-start gap-[1rem] [&_img]:max-w-[11.4375rem] mt-[1rem]">                    
+                    <div class="flex items-center justify-start gap-[1rem] [&_img]:max-w-[8.4375rem] mt-[1rem]">                    
                         {% for featured in fields.featuring %}
                             {% if featured.logo %}
                                 <img src="{{ function('wp_get_attachment_url', featured.logo) }}" alt="logo-sample" />

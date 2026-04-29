@@ -35,6 +35,20 @@ if (!function_exists('bf_setup')):
         add_theme_support('align-wide');
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
+        add_theme_support('editor-color-palette', [
+            array(
+                array(
+                    'name'  => __( 'Light Blue', 'componentearth' ),
+                    'slug'  => 'light-blue',
+                    'color'	=> '#C0D5EA',
+                ),
+                array(
+                    'name'  => __( 'Sand Cream', 'componentearth' ),
+                    'slug'  => 'sand-cream',
+                    'color' => '#DBD5C6',
+                ),
+            )
+        ]);
     }
 endif;
 
@@ -53,7 +67,7 @@ require_once 'includes/theme/support-visual-overrides.php';
 require_once 'includes/theme/support-transients.php';
 
 
-
+require_once 'blocks/filter-block/functions.php';
 
 
 
@@ -75,6 +89,7 @@ add_action('admin_enqueue_scripts', 'back_css_styles');
 add_action('admin_enqueue_scripts', 'back_js_scripts');
 
 add_action('enqueue_block_editor_assets', 'enqueue_block_editor_scripts');
+remove_action('wp_enqueue_scripts','wp_enqueue_global_styles');
 
 
 function front_css_styles() 
@@ -83,13 +98,13 @@ function front_css_styles()
     wp_enqueue_style('normalize-style', get_template_directory_uri() . '/assets/css/theme/normalize.css', array(), _S_VERSION);
     wp_enqueue_style('admin-bar-style', get_template_directory_uri() . '/assets/css/admin/bar.css', array(), _S_VERSION);
     wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme/styles.css', array(), uniqid());
-    wp_enqueue_style('animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), _S_VERSION);    
+    //wp_enqueue_style('animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), _S_VERSION);    
     wp_register_style('owl-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), _S_VERSION);    
     wp_register_style('flowbite-style', 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', array(), _S_VERSION);
-    wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
-    wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
+    //wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
+    //wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
     wp_register_style('jarallax-style', 'https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css', array(), _S_VERSION);
-    wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
+    //wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
     wp_register_style('flickity-style', get_template_directory_uri() . '/assets/css/external/flickity.css', array(), _S_VERSION);
     //wp_register_style('owl-style2', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css', array(), _S_VERSION);
     // wp_register_style('splitting-style', 'https://unpkg.com/splitting/dist/splitting.css', array(), _S_VERSION);
@@ -99,6 +114,7 @@ function front_css_styles()
 
 function front_js_scripts()
 {
+    
     wp_enqueue_script("jquery-script", get_template_directory_uri() . '/assets/js/external/jquery.min.js', _S_VERSION, true);
     wp_enqueue_script("vimeo", "https://player.vimeo.com/api/player.js", array('jquery'), _S_VERSION, true);
     wp_enqueue_script("gsap", get_template_directory_uri() . '/assets/js/external/gsap.min.js', array('jquery'), _S_VERSION, true);
@@ -114,11 +130,11 @@ function front_js_scripts()
     wp_register_script("owl", get_template_directory_uri() . '/assets/js/external/owl.min.js', array('jquery'), _S_VERSION, true);    
     wp_register_script("jarallax", "https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js", array('jquery'), _S_VERSION, true);
     wp_register_script("jarallax-video", "https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax-video.min.js", array('jquery'), _S_VERSION, true);
-    wp_register_script("swiper", get_template_directory_uri() . '/assets/js/external/swiper-bundle.min.js', array('jquery'), _S_VERSION, true);
+    //wp_register_script("swiper", get_template_directory_uri() . '/assets/js/external/swiper-bundle.min.js', array('jquery'), _S_VERSION, true);
     wp_register_script("flowbite", "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js", array('jquery'), _S_VERSION, true);
-    wp_register_script("split-type", get_template_directory_uri() . '/assets/js/external/SplitType.min.js', array(), _S_VERSION, true);
-    wp_register_script('splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), _S_VERSION, true);
-    wp_register_script('glightbox', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/js/glightbox.min.js', array(), _S_VERSION, true);
+    //wp_register_script("split-type", get_template_directory_uri() . '/assets/js/external/SplitType.min.js', array(), _S_VERSION, true);
+    //wp_register_script('splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), _S_VERSION, true);
+    //wp_register_script('glightbox', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/js/glightbox.min.js', array(), _S_VERSION, true);
     wp_register_script('flickity', 'https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js', array(), _S_VERSION, true);
     //wp_register_script('locomotive', 'https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js', array(), _S_VERSION, true);
     //wp_register_script("owl2", get_template_directory_uri() . '/assets/js/external/owl-custom.js', array('jquery'), _S_VERSION, true);    
@@ -162,8 +178,6 @@ function enqueue_block_editor_scripts()
     wp_enqueue_script('bf-block-preview-script', get_template_directory_uri() . '/assets/js/admin/block-preview.js', array('jquery'), _S_VERSION, true);
     wp_localize_script("bf-block-preview-script", 'theme_path', array('url' => get_template_directory_uri()));
 }
-
-
 
 
 
@@ -280,57 +294,6 @@ function custom_block_category($categories, $post)
 add_filter('block_categories_all', 'custom_block_category', 10, 2);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-add_filter('facetwp_facet_dropdown_show_counts', '__return_false');
-  
-
-// Hook into Gravity Forms after submission
-add_action( 'gform_after_submission', 'mark_form_as_submitted', 10, 2 );
-function mark_form_as_submitted( $entry, $form ) {
-    // Start the session if not already started
-    if ( session_status() === PHP_SESSION_NONE ) {
-        session_start();
-    }
-    // Set a session variable to mark the form as submitted
-    $_SESSION[ 'form_submitted_' . $form['id'] ] = true;
-}
-
-// Hook into Gravity Forms to check for submission status before displaying the form
-add_filter( '<<!nav>>gform_get_form<<!/nav>>', 'check_submission_status', 10, 3 );
-function check_submission_status( $form_string, $form_object, $url ) {
-    // Start the session if not already started
-    if ( session_status() === PHP_SESSION_NONE ) {
-        session_start();
-    }
-
-    // Get the form ID
-    $form_id = $form_object['id'];
-
-    // Check if the form was already submitted for this session
-    if ( isset( $_SESSION[ 'form_submitted_' . $form_id ] ) && $_SESSION[ 'form_submitted_' . $form_id ] ) {
-        // If submitted, return a confirmation message instead of the form
-        return '<p>Thank you, your form has already been submitted.</p>';
-    }
-
-    // If not submitted, return the form HTML
-    return $form_string;
-}
-
 function get_acf_block_field_value_by_post_id($post_id, $block_name, $field_name) {
     $post = get_post($post_id);    
     if (!$post) {
@@ -351,10 +314,10 @@ function get_acf_block_field_value_by_post_id($post_id, $block_name, $field_name
 }
 
 
+
 add_filter('timber/context', 'global_timber_context');
 
 function global_timber_context($context) {
     $context['options'] = get_fields('option'); // 'option' is the default post_id for the main options page
     return $context;
 }
-

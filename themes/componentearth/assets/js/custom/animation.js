@@ -1,4 +1,4 @@
-(function () {
+(function (){
     const $ = baunfire.$;
 
     let startingThreshold = 90;
@@ -11,7 +11,7 @@
             //this.headerAnim();
             //this.smoothScroll();
             this.bgAnim();
-            this.sectionsFadeIn();
+            //this.sectionsFadeIn();
         },
 
         // smoothScroll() {
