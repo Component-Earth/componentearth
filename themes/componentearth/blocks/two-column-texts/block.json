@@ -9,7 +9,7 @@
 	"acf": {
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
-        "postTypes": ["page"]
+        "postTypes": ["page", "resources", "project"]
 	},
     "example": {
         "attributes": {
