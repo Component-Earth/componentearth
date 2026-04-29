@@ -57,30 +57,38 @@ $image = $custom_image ? $custom_image[0] : "";
 
 <main class="bg-[#C0D5EA] relative ungated">
 
-
-    <?php if($image) : ?>
-        <div class="lg:hidden w-full flex flex-col gap-[2rem] pb-[2.5rem] md:h-[45rem] h-full bg-cover bg-no-repeat bg-start items-start justify-end p-[2.5rem] overflow-hidden " 
-            style="background-image: url(<?php echo $image; ?>)">
-            <img src="<?php echo $image; ?>" class="invisible" />
-        </div>
-    <?php endif; ?>
-
-    <?php if($image) : ?>
-        <div class="lg:flex hidden w-full flex-col gap-[2rem] pb-[2.5rem] md:h-[45rem] h-[20.5rem] bg-cover bg-no-repeat bg-start items-start justify-end p-[2.5rem] overflow-hidden rounded-b-[5rem]" 
-            style="background-image: url(<?php echo $image; ?>)">
-            &nbsp;
-        </div>
-    <?php endif; ?>   
-    <div class="container relative z-10 py-[5rem]">
-        <div class="max-w-[69rem] mx-auto">
-            <div class="max-lg:flex-col flex flex-col items-start relative w-full">            
-                <div class="flex flex-col gap-[1.75rem] items-start max-w-[40.875rem] mb-[2rem]">                    
-                    <h2 class="leading-none text-primary-dark"><?php the_title(); ?></h2>
-                </div>                                 
+    <div class="container relative z-10 ">
+        <?php if($image) : ?>
+            <div class="lg:hidden w-full flex flex-col gap-[2rem] pb-[2.5rem] md:h-[45rem] h-full bg-cover bg-no-repeat bg-start items-start justify-end p-[2.5rem] overflow-hidden " 
+                style="background-image: url(<?php echo $image; ?>)">
+                <img src="<?php echo $image; ?>" class="invisible" />
             </div>
-          
-            <div class="flex flex-col items-start rich-content text-primary-dark [&_ul]:p-0 lg:!gap-[2.5rem] !gap-[2rem] [&_p]:!mb-0 [&_.wp-block-heading]:!mb-0 [&_.wp-block-separator]:w-full">
-                <?php the_content(); ?>
+        <?php endif; ?>
+
+        <?php if($image) : ?>
+            <div class="lg:flex hidden w-full flex-col gap-[2rem] pb-[2.5rem] md:h-[45rem] h-[20.5rem] bg-cover bg-no-repeat bg-start items-start justify-end p-[2.5rem] overflow-hidden rounded-b-[5rem]" 
+                style="background-image: url(<?php echo $image; ?>)">
+                &nbsp;
+            </div>
+        <?php endif; ?>  
+        <div class="max-w-[69rem] mx-auto pt-[5rem]">
+            <div class="max-lg:flex-col flex flex-col items-start relative w-full">        
+                <div class="flex flex-col gap-[1.75rem] items-start">  
+                    <div class="flex flex-col gap-[1.75rem]">
+                        <div class="flex flex-col gap-[0.75rem] relative">
+                            <div class="lg:block hidden text-[10rem] absolute top-[-3rem] left-[-3rem] text-[#025294] opacity-20">
+                                01
+                            </div>
+                            <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
+                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold">
+                                    <div class="w-[10rem] h-[2px] bg-primary"></div> Project
+                                </div>           
+                                <h2 class="leading-none text-primary-dark max-w-[40.875rem] "><?php the_title(); ?></h2>                                
+                                <div class="font-tertiary font-normal text-primary-dark text-[1rem]"><?php the_content(); ?></div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>                             
             </div>
 
             <!-- <div class="flex ~mt-[2rem]/[2.5rem] items-center ~mb-[2rem]/[3rem]">
