@@ -79,10 +79,10 @@ $image = $custom_image ? $custom_image[0] : "";
                                 01
                             </div>
                             <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
-                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[4rem] font-normal tracking-[-2%]">
+                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary ~text-[2rem]/[4rem] font-normal tracking-[-2%]">
                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Project
                                 </div>           
-                                <h2 class="text-primary-dark max-w-[40.875rem] text-[5.625rem] tracking-[-2%] leading-[90%]"><?php the_title(); ?></h2>                                
+                                <h2 class="text-primary-dark max-w-[50.875rem] ~text-[2.5rem]/[5.625rem]  tracking-[-2%] leading-[90%]"><?php the_title(); ?></h2>                                
                                 <div class="font-tertiary font-normal text-primary-dark text-[1rem]"><?php the_content(); ?></div>                                
                             </div>
                         </div>
