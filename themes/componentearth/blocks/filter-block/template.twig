@@ -19,8 +19,10 @@
                 {% if (custom_query) %}
                     <div class="lg:grid gap-[1.75rem]">
                         {% for list in custom_query.posts %}
+                            {% set i = i + 1 %}
                             {% set custom_block = function('get_field', 'block', list.ID) %}
                             {% set custom_excerpt = custom_block.excerpt %}
+                            {% set post_type = function('get_post_type', list.ID) %}
 
                             {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', list.ID) %}
                             {% set excerpt_sub = function('substr', excerpt, 0, 1060) %}
@@ -39,11 +41,11 @@
                                     <div class="flex flex-col gap-[1.75rem]">
                                         <div class="flex flex-col gap-[0.75rem] relative">
                                             <div class="lg:block hidden text-[10rem] absolute top-[-3rem] left-[-3rem] text-[#025294] opacity-20">
-                                                01
+                                                0{{ i }}
                                             </div>
                                             <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
-                                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold">
-                                                    <div class="w-[10rem] h-[2px] bg-primary"></div> Project
+                                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold capitalize">
+                                                    <div class="w-[10rem] h-[2px] bg-primary"></div> {{ post_type }}
                                                 </div>
                                                 <h2 class="text-primary-dark lg:max-w-[70%] mb-[1rem] leading-none">{{ list.post_title }} </h2>
                                                 {% if temp_content %}
