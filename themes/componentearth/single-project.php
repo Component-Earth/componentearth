@@ -56,17 +56,16 @@ $image = $custom_image ? $custom_image[0] : "";
 ?>
 
 <main class="bg-[#C0D5EA] relative ungated pb-[5rem]">
+    <?php if($image) : ?>
+        <div class="lg:hidden w-full flex flex-col gap-[2rem] h-[31rem] bg-cover bg-no-repeat bg-start overflow-hidden rounded-b-[5rem]" 
+            style="background-image: url(<?php echo $image; ?>)">
+            <img src="<?php echo $image; ?>" class="invisible" />
+        </div>
+    <?php endif; ?>
 
-    <div class="container relative z-10 ">
+    <div class="container relative z-10">
         <?php if($image) : ?>
-            <div class="lg:hidden w-full flex flex-col gap-[2rem] pb-[2.5rem] md:h-[45rem] h-full bg-cover bg-no-repeat bg-start items-start justify-end p-[2.5rem] overflow-hidden " 
-                style="background-image: url(<?php echo $image; ?>)">
-                <img src="<?php echo $image; ?>" class="invisible" />
-            </div>
-        <?php endif; ?>
-
-        <?php if($image) : ?>
-            <div class="lg:flex hidden w-full flex-col gap-[2rem] pb-[2.5rem] md:h-[45rem] h-[20.5rem] bg-cover bg-no-repeat bg-start items-start justify-end p-[2.5rem] overflow-hidden rounded-b-[5rem]" 
+            <div class="lg:flex hidden w-full flex-col gap-[2rem] md:h-[45rem] h-[31rem] bg-cover bg-no-repeat bg-start overflow-hidden rounded-b-[5rem]" 
                 style="background-image: url(<?php echo $image; ?>)">
                 &nbsp;
             </div>
@@ -76,14 +75,14 @@ $image = $custom_image ? $custom_image[0] : "";
                 <div class="flex flex-col gap-[1.75rem] items-start">  
                     <div class="flex flex-col gap-[1.75rem]">
                         <div class="flex flex-col gap-[0.75rem] relative">
-                            <div class="lg:block hidden text-[10rem] absolute top-[-3rem] left-[-3rem] text-[#025294] opacity-20">
+                            <div class="lg:block hidden text-[10rem] absolute top-[-2rem] left-[-3rem] text-[#025294] opacity-20">
                                 01
                             </div>
                             <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
-                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold">
+                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[4rem] font-normal tracking-[-2%]">
                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Project
                                 </div>           
-                                <h2 class="leading-none text-primary-dark max-w-[40.875rem] "><?php the_title(); ?></h2>                                
+                                <h2 class="text-primary-dark max-w-[40.875rem] text-[5.625rem] tracking-[-2%] leading-[90%]"><?php the_title(); ?></h2>                                
                                 <div class="font-tertiary font-normal text-primary-dark text-[1rem]"><?php the_content(); ?></div>                                
                             </div>
                         </div>
