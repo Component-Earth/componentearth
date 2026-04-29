@@ -10,12 +10,12 @@
 
 get_header();
 
-$link = "/projects";
+// $link = "/projects";
 
-if(!empty($link) && $link != "#") {
-    header("Location: " . $link);
-    exit(); 
-}
+// if(!empty($link) && $link != "#") {
+//     header("Location: " . $link);
+//     exit(); 
+// }
 
 global $post;
 
