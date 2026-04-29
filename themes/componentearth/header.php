@@ -90,7 +90,7 @@ $context = Timber::context([
 </head>
 
 <body <?php body_class('is-loading'); ?>>
-    <div class="bg-[#DBD5C6]">
+    <div class="<?php echo is_single() ? 'bg-[#C0D5EA]' : 'bg-[#DBD5C6]'; ?>">
         <?php if(is_front_page()) : ?>
             <div id="top-nav">
         <?php endif ?>
