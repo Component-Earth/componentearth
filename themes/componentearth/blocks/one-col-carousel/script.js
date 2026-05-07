@@ -20,7 +20,7 @@ baunfire.addModule({
                     pageDots: false,
                     wrapAround: true,
                     draggable: false,
-                    prevNextButtons: false,
+                    prevNextButtons: true,
                     autoPlay: false,
                     rightToLeft: false,
                     accessibility: false
