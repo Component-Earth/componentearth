@@ -22,7 +22,7 @@
                 {% if fields.content %}
                     <div class="grid {% if fields.content|length == 2 %} lg:grid-cols-2 {% else %} lg:grid-cols-1 {% endif %} gap-[2rem] w-full">
                         {% for content in fields.content %}
-                            <div class="text-left font-normal [&_p]:font-tertiary [&_p]:leading-normal [&_p]:tracking-[-2%] [&_p]:text-[0.9375rem] flex flex-col gap-[1.25rem] text-primary-dark [&_strong]:bg-[#FABC6F] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white w-full">
+                            <div class="text-left font-normal [&_p]:font-tertiary [&_p]:leading-normal [&_p]:tracking-[-2%] [&_p]:text-[0.9375rem] flex flex-col gap-[1.25rem] text-primary-dark [&_strong]:bg-[#FABC6F] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-primary-dark w-full">
                                 {{ content.paragraph }}
                             </div>
                         {% endfor %}
