@@ -1,21 +1,21 @@
-{% set custom_class = "lg:h-[58.5rem]" %}
+{% set custom_class = "" %}
 
 <section class="{{ block.slug ?? 'one-col-carousel' }} {{ custom_class }}">
     {% if fields.anchor|length > 0 or custom_id %}
         <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
     {% endif %}
 
-    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
-    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-sm" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-sm" %}
            
     
-    <div class="container h-full relative z-50 xl:px-[10rem]">
-        <div class="{{ pt }} {{ pb }} h-full">                      
+    <div class="container relative z-50 xl:px-[10rem]">
+        <div class="{{ pt }} {{ pb }}">                      
             {% if fields.gallery %}
-                <div class="slider h-full">
+                <div class="slider" data-flickity='{ "wrapAround": true }'>
                     {% for carousel_item in fields.gallery %}
                         <div class="slide">
-                            <div class="lg:h-[41.90625rem] w-auto rounded-tl-[7rem] rounded-br-[7rem] overflow-hidden">
+                            <div class=" w-auto rounded-tl-[7rem] rounded-br-[7rem] overflow-hidden">
                                 <img class="object-cover w-full h-full" src="{{ carousel_item.url }}" alt="col-image" />
                             </div>
                         </div>
