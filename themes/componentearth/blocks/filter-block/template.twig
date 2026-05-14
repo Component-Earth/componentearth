@@ -24,10 +24,11 @@
                             {% set custom_excerpt = custom_block.excerpt %}
                             {% set post_type = function('get_post_type', list.ID) %}
 
-                            {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', list.ID) %}
+                            {# {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', list.ID) %}
                             {% set excerpt_sub = function('substr', excerpt, 0, 1060) %}
-                            {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %}
+                            {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %} #}
                             {% set temp_content = list.post_content %}
+                            {% set temp_result = function('wp_trim_words', temp_content, 50) %}
 
                             {% set post_date = function('get_the_date', 'M j, Y', list.ID ) %}
 
@@ -35,9 +36,9 @@
                             {% set custom_image = function('wp_get_attachment_image_src', post_thumb_id, 'full') %}
                             {% set image = custom_image ? custom_image[0] : "" %}  
 
-                            <div class="gap-[1.75rem] flex max-lg:flex-col items-center justify-between relative group w-full card" data-id="{{ terms[0].term_id }}">
+                            <div class="gap-[1.75rem] flex max-lg:flex-col items-start justify-between relative group w-full card" data-id="{{ terms[0].term_id }}">
                                 <a href="{{ function('the_permalink', list.ID) }}" class="absolute top-0 left-0 w-full h-full z-10"></a>
-                                <div class="flex flex-col justify-between gap-[1.75rem] w-full lg:flex-1">
+                                <div class="flex flex-col justify-between gap-[1.75rem] w-full lg:flex-1 lg:pt-[4rem]">
                                     <div class="flex flex-col gap-[1.75rem]">
                                         <div class="flex flex-col gap-[0.75rem] relative">
                                             <div class="lg:block hidden text-[10rem] absolute top-[-3rem] left-[-3rem] text-[#025294] opacity-20">
@@ -49,7 +50,7 @@
                                                 </div>
                                                 <h2 class="text-primary-dark lg:max-w-[70%] mb-[1rem] leading-none">{{ list.post_title }} </h2>
                                                 {% if temp_content %}
-                                                    <div class="font-tertiary font-normal text-primary-dark text-[1.25rem] [&_p]:text-[1.25rem]">{{ temp_content }}</div>
+                                                    <div class="font-tertiary font-normal text-primary-dark text-[1.25rem] [&_p]:text-[1.25rem]">{{ temp_result }}</div>
                                                 {% endif %}
                                             </div>
                                         </div>
