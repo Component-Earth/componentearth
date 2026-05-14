@@ -17,7 +17,7 @@
                 {% set i = 0 %}
 
                 {% if (custom_query) %}
-                    <div class="lg:grid gap-[1.75rem]">
+                    <div class="lg:grid flex flex-col ~gap-[3rem]/[1.75rem] max-lg:py-[4rem]">
                         {% for list in custom_query.posts %}
                             {% set i = i + 1 %}
                             {% set custom_block = function('get_field', 'block', list.ID) %}
@@ -41,11 +41,17 @@
                                 <div class="flex flex-col justify-between gap-[1.75rem] w-full lg:flex-1 lg:pt-[4rem]">
                                     <div class="flex flex-col gap-[1.75rem]">
                                         <div class="flex flex-col gap-[0.75rem] relative">
-                                            <div class="lg:block hidden text-[10rem] absolute top-[-3rem] {% if i % 2 == 0 %} left-[-1rem] {% else %} left-[-3rem] {% endif %} text-[#025294] opacity-20">
-                                                0{{ i }}
+                                            <div class="relative">
+                                                <div class=" text-[10rem] lg:absolute lg:top-[-3rem] max-lg:leading-none {% if i % 2 == 0 %} lg:left-[-1rem] {% else %} lg:left-[-3rem] {% endif %} relative text-[#025294] opacity-20">
+                                                    0{{ i }}
+                                                </div>
+                                                <div class="lg:hidden flex absolute top-[60px] left-[40px] py-[1rem] gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold capitalize">
+                                                    <div class="w-[10rem] h-[2px] bg-primary"></div> {{ post_type }}
+                                                </div>
                                             </div>
+                                            
                                             <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
-                                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold capitalize">
+                                                <div class="lg:flex hidden py-[1rem] gap-[2rem] items-center text-primary font-tertiary text-[1.25rem] font-bold capitalize">
                                                     <div class="w-[10rem] h-[2px] bg-primary"></div> {{ post_type }}
                                                 </div>
                                                 <h2 class="text-primary-dark lg:max-w-[70%] mb-[1rem] leading-none">{{ list.post_title }} </h2>
@@ -57,7 +63,7 @@
                                     </div>
                                 </div>
                                 {% if image != "" %}
-                                    <div class="h-[46.0625rem] w-[36.25rem] overflow-hidden {% if i % 2 == 0 %} rounded-br-[8rem] {% else %} rounded-bl-[8rem] {% endif %}">
+                                    <div class="~h-[29.375rem]/[46.0625rem] lg:w-[36.25rem] w-full overflow-hidden {% if i % 2 == 0 %} rounded-br-[8rem] {% else %} rounded-bl-[8rem] {% endif %}">
                                         <img src="{{ image }}" class="object-cover w-full h-full group-hover:scale-105 group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out" />
                                     </div>
                                 {% endif %}
