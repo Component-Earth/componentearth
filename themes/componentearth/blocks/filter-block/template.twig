@@ -36,12 +36,12 @@
                             {% set custom_image = function('wp_get_attachment_image_src', post_thumb_id, 'full') %}
                             {% set image = custom_image ? custom_image[0] : "" %}  
 
-                            <div class="gap-[1.75rem] flex max-lg:flex-col items-start justify-between relative group w-full card" data-id="{{ terms[0].term_id }}">
+                            <div class="gap-[1.75rem] flex max-lg:flex-col items-start justify-between relative group w-full card {% if i % 2 == 0 %} lg:flex-row-reverse {% endif %}" data-id="{{ terms[0].term_id }}">
                                 <a href="{{ function('the_permalink', list.ID) }}" class="absolute top-0 left-0 w-full h-full z-10"></a>
                                 <div class="flex flex-col justify-between gap-[1.75rem] w-full lg:flex-1 lg:pt-[4rem]">
                                     <div class="flex flex-col gap-[1.75rem]">
                                         <div class="flex flex-col gap-[0.75rem] relative">
-                                            <div class="lg:block hidden text-[10rem] absolute top-[-3rem] left-[-3rem] text-[#025294] opacity-20">
+                                            <div class="lg:block hidden text-[10rem] absolute top-[-3rem] {% if i % 2 == 0 %} left-[-1rem] {% else %} left-[-3rem] {% endif %} text-[#025294] opacity-20">
                                                 0{{ i }}
                                             </div>
                                             <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
@@ -57,7 +57,7 @@
                                     </div>
                                 </div>
                                 {% if image != "" %}
-                                    <div class="h-[46.0625rem] w-[36.25rem] overflow-hidden rounded-bl-[8rem]">
+                                    <div class="h-[46.0625rem] w-[36.25rem] overflow-hidden {% if i % 2 == 0 %} rounded-br-[8rem] {% else %} rounded-bl-[8rem] {% endif %}">
                                         <img src="{{ image }}" class="object-cover w-full h-full group-hover:scale-105 group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out" />
                                     </div>
                                 {% endif %}
