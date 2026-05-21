@@ -1,0 +1,12 @@
+@layer components {
+    .tabbed-carousels {        
+        .tab-pane {
+            @apply hidden;
+        }
+        .tab-pane {
+            &.active {
+                @apply block;
+            }
+        }
+    }
+}

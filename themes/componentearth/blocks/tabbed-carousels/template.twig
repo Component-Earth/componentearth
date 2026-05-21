@@ -1,0 +1,51 @@
+{% set custom_class = "overflow-visible" %}
+
+<section class="{{ block.slug ?? 'tabbed-carousels' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-sm" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-sm" %}
+           
+    
+    <div class="container relative z-50 xl:px-[10rem]">
+        <div class="{{ pt }} {{ pb }}">         
+        
+            <!-- Tab Navigation -->
+            <div class="tab-controls">
+                <button class="tab-btn active" data-tab="1">Category 1</button>
+                <button class="tab-btn" data-tab="2">Category 2</button>
+            </div>
+
+            <!-- Tab Content Panels -->
+            <div class="tab-content">
+                <!-- Tab 1: Carousel -->
+                <div class="tab-pane active" data-tab="1">
+                    <div class="carousel">
+                    <button class="prev-btn">◀</button>
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="image1-a.jpg" alt="Slide 1A"></div>
+                        <div class="carousel-slide"><img src="image2-a.jpg" alt="Slide 2A"></div>
+                    </div>
+                    <button class="next-btn">▶</button>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Carousel -->
+                <div class="tab-pane" data-tab="2">
+                    <div class="carousel">
+                    <button class="prev-btn">◀</button>
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="image1-b.jpg" alt="Slide 1B"></div>
+                        <div class="carousel-slide"><img src="image2-b.jpg" alt="Slide 2B"></div>
+                    </div>
+                    <button class="next-btn">▶</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</section>
