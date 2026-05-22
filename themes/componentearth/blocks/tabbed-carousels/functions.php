@@ -40,7 +40,7 @@ function handle_ajax_load_service() {
 
 	if ( $custom_query->have_posts() ) :
         ob_start(); // Start output buffering ?>
-        <div class="wrapper">
+        <div class="container">
             <?php while ( $custom_query->have_posts() ) : $custom_query->the_post(); 
 
                 $custom_block = get_field('block', get_the_ID());
@@ -57,8 +57,34 @@ function handle_ajax_load_service() {
                 $custom_image = wp_get_attachment_image_src($post_thumb_id, 'full');
                 $image = $custom_image ? $custom_image[0] : "";  
                 ?>
-                <div class="bg-[#F4EDE9] p-[1.75rem] gap-[1.75rem] flex flex-col relative group w-full">
-                   <?php echo get_the_title(); ?>
+                <div class="gap-[1.75rem] flex flex-col relative group w-full">
+                    
+                    <?php if($image) : ?>
+                        <div class="banner h-[50.375rem] w-full rounded-br-[6.1875rem] overflow-hidden relative">
+                            <img src="<?php echo $image; ?>" class="object-cover w-full h-auto" />
+
+                            <div class="absolute bottom-[4rem] right-[6rem]">
+                                <h2 class="font-primary text-[#C0D5EA]"><?php echo get_the_title(); ?></h2>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="flex gap-[1rem] mb-[4rem]">
+                        <div class="flex flex-col gap-[1rem] flex-1 max-w-[25rem]">
+                            <div class="bg-[#FABC6F] p-[3rem_2rem] rounded-br-[6.1875rem] overflow-hidden">
+                                <h4 class="text-[#1A3850]"><span class="text-[4rem]">20%</span> Faster</h4>
+                                <p class="text-[#1A3850]">Component Earth is a climate assets management company rns for both impact and capital. </p>
+                            </div>
+                            <div class="bg-[#B1B1B1] text-white text-[4rem] leading-[100%] p-[3rem_2rem] rounded-bl-[6.1875rem] overflow-hidden">
+                                Ambiental Strategy & Structure
+                            </div>
+                        </div>
+                        <div class="bg-[#1A3850] p-[3rem_2rem] rounded-tr-[6.1875rem] overflow-hidden flex-1 flex flex-col gap-[1rem]">
+                            <h4 class="text-[#FABC6F] max-w-[60%]"><span class="text-[4rem]">69%</span> Progress Cycles for agro</h4>
+                            <p class="text-white max-w-[60%]">Component Earth is a climate assets management company with a mission to deliver outsized returns for both impact and capital.</p>
+                        </div>
+                        
+                    </div>
                 </div>
             <?php endwhile;
             wp_reset_postdata(); // Restore original post data ?>
