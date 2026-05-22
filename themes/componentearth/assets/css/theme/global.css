@@ -326,3 +326,7 @@ a.link-hover-underline {
 		}
 	}
 }      
+
+.wp-block-list {
+	@apply text-[1rem] font-primary leading-[150%]; 
+}
