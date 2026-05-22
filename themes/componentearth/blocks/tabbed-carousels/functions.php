@@ -79,7 +79,7 @@ function handle_ajax_load_service() {
                                 Ambiental Strategy & Structure
                             </div>
                         </div>
-                        <div class="bg-[#1A3850] p-[3rem_2rem] rounded-tr-[6.1875rem] overflow-hidden flex-1 flex flex-col gap-[1rem] relative">
+                        <div class="bg-[#1A3850] p-[3.75rem_2rem] rounded-tr-[6.1875rem] overflow-hidden flex-1 flex flex-col gap-[1rem] relative">
                             <h4 class="text-[#DBD5C6] max-w-[60%] text-[3rem] leading-[90%]"><span class="text-[6rem]">69%</span> Progress Cycles for agro</h4>
                             <p class="text-[#DBD5C6] max-w-[70%] text-[1.125rem] leading-normal">Component Earth is a climate assets management company with a mission to deliver outsized returns for both impact and capital.</p>
                             <svg class="absolute  bottom-[4rem] left-0 w-full h-auto" width="911" height="192" viewBox="0 0 911 192" fill="none" xmlns="http://www.w3.org/2000/svg">
