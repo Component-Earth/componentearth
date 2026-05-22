@@ -85,7 +85,7 @@ function handle_ajax_load_service() {
                         </div>                        
                     </div>
 
-                    <div class="content-inner py-[4rem]">
+                    <div class="content-inner py-[4rem] text-[#1A3850]">
                         <?php the_content(); ?>
                     </div>
                 </div>
