@@ -18,13 +18,18 @@
                 {% endif %}
             </div>       
         
-            <!-- Tab Navigation -->
-            <div class="container relative z-50 xl:px-[10rem] overflow-visible">
-                <div class="tab-controls">
-                    <button class="tab-btn active" data-tab="1">Category 1</button>
-                    <button class="tab-btn" data-tab="2">Category 2</button>
+            {% if tabs %}
+                {% set i = 0 %}
+                <!-- Tab Navigation -->
+                <div class="container relative z-50 xl:px-[10rem] overflow-visible">
+                    <div class="tab-controls">
+                        {% for tab_main in tabs %}
+                            {% set i = i + 1 %}
+                            <button class="tab-btn {% if i == 1 %} active {% endif %}" data-tab="{{ i }}">{{ tab_main.tab_title }}</button>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+            {% endif %}
 
             <!-- Tab Content Panels -->
             <div class="tab-content">
