@@ -66,12 +66,6 @@ $context = Timber::context([
         history.scrollRestoration = 'manual';
     </script>
 
-    <!-- Open Graph Meta -->
-    <!-- <meta property="og:title" content="<?= esc_attr(get_the_title($postID)); ?>">
-    <meta property="og:image" content="<?= esc_url(get_the_post_thumbnail_url($postID)); ?>">
-    <meta property="og:description" content="<?= get_post_meta($post_id, '_yoast_wpseo_metadesc', true) ? get_post_meta($post_id, '_yoast_wpseo_metadesc', true) : esc_attr(get_the_excerpt($postID)); ?>">
-    <meta property="og:url" content="<?= esc_url(get_the_permalink($postID)); ?>"> -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,100..900&family=Montserrat:ital,wght@0,400..700;1,100..900&display=swap" rel="stylesheet">
