@@ -23,7 +23,7 @@
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -33,11 +33,11 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
                     "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "tabs": "all",
+                    "toolbar": "plain_heading",
+                    "media_upload": 0,
+                    "delay": 1
                 },
                 {
                     "key": "field_6a0f8869d237c",
@@ -144,5 +144,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1779418383
+    "modified": 1779419409
 }

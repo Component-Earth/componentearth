@@ -5,7 +5,7 @@
         <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
     {% endif %}
 
-    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-sm" %}
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-lg" %}
     {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-sm" %}
            
     
@@ -29,14 +29,6 @@
             <!-- Tab Content Panels -->
             <div class="tab-content">
                 <!-- Tab 1: Carousel -->
-
-                    {# <div class="carousel">
-                        <div class="carousel-cell">
-                            <a href="https://google.com">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange tree" />
-                            </a>
-                        </div>
-                    </div> #}
 
                     {% if tabs %}
                         {% set i = 0 %}
@@ -71,25 +63,19 @@
                                                     {% set custom_image = function('wp_get_attachment_image_src', post_thumb_id, 'full') %}
                                                     {% set image = custom_image ? custom_image[0] : function('png', 'preview') %}  
 
-                                                    <div class="design-card-list__item" data-trackable-click-event="design-card-list-item">
-                                                        <div class="design-card design-card--relative design-card--collapse design-card--heavy-shadow" data-design-card="" style="color: #313131">
-                                                            <img alt="black dog custom logo design" src="{{ image }}" title="custom logo design"> <span class="design-card__pill"></span>
-                                                            {# <div class="sticker sticker--chameleon">
-                                                                <span class="design-card__pill"></span>
-                                                                <div class="sticker__content">
-                                                                    <span class="design-card__pill">{{ title }}</span>
-                                                                </div>
-                                                            </div> #}
+                                                    <div class="design-card-list__item" data-trackable-click-event="design-card-list-item" class="rounded-br-[999] overflow-hidden">
+                                                        <div class="design-card design-card--relative design-card--collapse design-card--heavy-shadow" data-design-card="" >
+                                                            <img alt="" src="{{ image }}">
                                                             <div class="design-card__meta">
                                                                 <a class="design-card__meta__cta" data-design-card-link="" data-design-card-link-category="logo-design" href="{{ function('get_the_permalink', tab.ID) }}">
                                                                 <div class="design-card__meta__cta__content">
                                                                     <span class="design-card__meta__cta__content__text">
                                                                         <span class="marketing-icon marketing-icon--logo-design"></span>
                                                                     </span>
-                                                                    <div class="heading heading--h4 heading--quarter-margin heading--bleached-as">
+                                                                    <div class="text-white text-[0.9375rem] tracking-[-2%]">
                                                                         {{ title }}
                                                                     </div>
-                                                                    <div class="paragraph paragraph--narrow">
+                                                                    <div class="text-white text-[0.8125rem] font-bold tracking-[-2%]">
                                                                         {{ temp_result }}
                                                                     </div>
                                                                 </div></a>
