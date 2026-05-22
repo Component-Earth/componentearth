@@ -71,17 +71,22 @@ function handle_ajax_load_service() {
 
                     <div class="flex gap-[1rem]">
                         <div class="flex flex-col gap-[1rem] flex-1 max-w-[25rem]">
-                            <div class="bg-[#FABC6F] p-[3rem_2rem] rounded-br-[6.1875rem] overflow-hidden">
+                            <div class="bg-[#FABC6F] p-[3rem_2rem] rounded-br-[6.1875rem] overflow-hidden flex flex-col gap-[1rem]">
                                 <h4 class="text-[#1A3850]"><span class="text-[4rem]">20%</span> Faster</h4>
-                                <p class="text-[#1A3850]">Component Earth is a climate assets management company rns for both impact and capital. </p>
+                                <p class="text-[#1A3850] leading-normal">Component Earth is a climate assets management company rns for both impact and capital. </p>
                             </div>
-                            <div class="bg-[#B1B1B1] text-white text-[4rem] leading-[100%] p-[3rem_2rem] rounded-bl-[6.1875rem] overflow-hidden">
+                            <div class="bg-[#B1B1B1] text-white text-[4rem] leading-none p-[3rem_2rem] rounded-bl-[6.1875rem] overflow-hidden">
                                 Ambiental Strategy & Structure
                             </div>
                         </div>
-                        <div class="bg-[#1A3850] p-[3rem_2rem] rounded-tr-[6.1875rem] overflow-hidden flex-1 flex flex-col gap-[1rem]">
-                            <h4 class="text-[#FABC6F] max-w-[60%]"><span class="text-[4rem]">69%</span> Progress Cycles for agro</h4>
-                            <p class="text-white max-w-[60%]">Component Earth is a climate assets management company with a mission to deliver outsized returns for both impact and capital.</p>
+                        <div class="bg-[#1A3850] p-[3rem_2rem] rounded-tr-[6.1875rem] overflow-hidden flex-1 flex flex-col gap-[1rem] relative">
+                            <h4 class="text-[#DBD5C6] max-w-[60%] text-[3rem] leading-[90%]"><span class="text-[6rem]">69%</span> Progress Cycles for agro</h4>
+                            <p class="text-[#DBD5C6] max-w-[70%] text-[1.125rem] leading-normal">Component Earth is a climate assets management company with a mission to deliver outsized returns for both impact and capital.</p>
+                            <svg class="absolute  bottom-[4rem] left-0 w-full h-auto" width="911" height="192" viewBox="0 0 911 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.0351562 179.981L146.446 166.77L244.654 191.499L438.817 53.6251H602.347L731.189 9.24805H910.035" stroke="#C0D5EA" stroke-width="0.784775"/>
+                                <path d="M0.285156 147.787L210.213 142.031L328.298 108.51L471.686 123.07L595.862 0.499023L670.368 47.9022H910.285" stroke="#FABC6F" stroke-width="0.784775"/>
+                            </svg>
+
                         </div>                        
                     </div>
 
