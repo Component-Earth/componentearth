@@ -24,7 +24,17 @@ baunfire.addModule({
 
                 $('.tab-btn').click(function(e) {
                     switchTab($(this).data('tab'));
-                })
+                });
+
+                $('.design-card__meta__cta').click(function(e) {
+                    var dataID = $(this).data('id');
+                    
+                    $('#main-content').html();
+                });
+
+
+
+                //$('#main-content').html();
 
                 // external js: flickity.pkgd.js
 

@@ -52,6 +52,7 @@ require_once 'includes/theme/support-visual-overrides.php';
 
 
 require_once 'blocks/filter-block/functions.php';
+require_once 'blocks/tabbed-carousels/functions.php';
 
 
 
