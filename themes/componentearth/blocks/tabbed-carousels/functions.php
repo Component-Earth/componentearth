@@ -69,7 +69,7 @@ function handle_ajax_load_service() {
                         </div>
                     <?php endif; ?>
 
-                    <div class="flex gap-[1rem] mb-[4rem]">
+                    <div class="flex gap-[1rem]">
                         <div class="flex flex-col gap-[1rem] flex-1 max-w-[25rem]">
                             <div class="bg-[#FABC6F] p-[3rem_2rem] rounded-br-[6.1875rem] overflow-hidden">
                                 <h4 class="text-[#1A3850]"><span class="text-[4rem]">20%</span> Faster</h4>
@@ -82,8 +82,11 @@ function handle_ajax_load_service() {
                         <div class="bg-[#1A3850] p-[3rem_2rem] rounded-tr-[6.1875rem] overflow-hidden flex-1 flex flex-col gap-[1rem]">
                             <h4 class="text-[#FABC6F] max-w-[60%]"><span class="text-[4rem]">69%</span> Progress Cycles for agro</h4>
                             <p class="text-white max-w-[60%]">Component Earth is a climate assets management company with a mission to deliver outsized returns for both impact and capital.</p>
-                        </div>
-                        
+                        </div>                        
+                    </div>
+
+                    <div class="content-inner py-[4rem]">
+                        <?php the_content(); ?>
                     </div>
                 </div>
             <?php endwhile;
