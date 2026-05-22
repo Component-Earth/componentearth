@@ -8,10 +8,16 @@ if ($is_preview && !empty($block['data'])) {
 }
 
 acf_setup_meta($block["data"], $block["id"], true);
+$fields = get_field("block");
+
+//global $post;
+$tabs = $fields['tabs'];
+
 
 $context = Timber::context([
   "block" => $block,
-  "fields" => get_field("block")
+  "fields" => $fields,
+  "tabs" => $tabs
 ]);
 
 $context["block"]["slug"] = sanitize_title($block["title"]);

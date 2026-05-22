@@ -1,4 +1,5 @@
 {
+    "apiVersion": 3,
     "name": "text-image-cta",
     "title": "Text Image CTA",
     "viewScript": [

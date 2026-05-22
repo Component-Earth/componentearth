@@ -1,4 +1,5 @@
 {
+    "apiVersion": 3,
     "name": "one-col-carousel",
     "title": "One Col Carousel",
     "viewScript": [

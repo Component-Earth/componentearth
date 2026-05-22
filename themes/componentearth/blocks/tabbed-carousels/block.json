@@ -1,11 +1,14 @@
-{
+{      
+    "version": 3,
     "name": "tabbed-carousels",
     "title": "Tabbed Carousels",
     "viewScript": [
         "file:./script.js",
-        "gsap"
+        "flickity",
+        "asset99"
     ],
     "viewStyle": [		
+        "flickity-style"
 	],
 	"acf": {
 		"mode": "edit",

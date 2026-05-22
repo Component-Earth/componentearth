@@ -4,8 +4,8 @@ Donate link: https://yoa.st/1up
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Content analysis, Readability, Schema
-Tested up to: 6.9
-Stable tag: 26.9
+Tested up to: 7.0
+Stable tag: 27.6
 Requires PHP: 7.4
 
 Improve your SEO with real-time feedback, schema, and clear guidance. Upgrade for AI tools, Google Docs integration, and 24/7 support, no hidden fees.
@@ -303,47 +303,40 @@ Your question has most likely been answered on our help center: [yoast.com/help/
 
 == Changelog ==
 
-= 26.9 =
+= 27.6 =
 
-Release date: 2026-02-03
+Release date: 2026-05-12
 
-Yoast SEO 26.9 brings more enhancements and bugfixes. [Find more information about our software releases and updates here](https://yoa.st/releases).
-
-#### Other
-
-* Ensures no deprecated props are used for WordPress components `ToggleControl` and `TextControl` for How-to block.
-* Improves performance in large sites with lots of inbound links by adding appropriate database indices.
-* Improves the general security of the plugin via sanitization and escaping.
-* Replaces deprecated standard WordPress components with their modern variants.
-* WooCommerce introduced a [new logic for permalinks in version 10.5](https://developer.woocommerce.com/2026/01/13/product-permalink-changes-coming-in-woocommerce-10-5/). Since this update could result in mismatching Yoast SEO metadata (such as Schema.org data), this version of Yoast SEO temporarily restores the old behavior. Note that for users of Yoast WooCommerce SEO the new permanent link structure will apply.
-* Sets the minimum supported WordPress version to 6.8.
-* Updates the OAuth2 Client library for improved compatibility with PHP 8.5.
-
-= 26.8 =
-
-Release date: 2026-01-20
-
-Yoast SEO 26.8 brings more enhancements and bugfixes. [Find more information about our software releases and updates here](https://yoa.st/releases).
+Introduces Yoast AI Content Planner to Yoast SEO Premium, giving five site-specific post ideas and a structured starter draft the moment you open a new post. Haven't used your free AI sparks yet? Give it a try on us. [Read the full release post here](https://yoa.st/56n).
 
 #### Enhancements
 
-* Adds a schema settings page to allow users more control over the Yoast Schema Framework API.
-* Implements a new, easy-to-use design for the site features settings.
-
-#### Bugfixes
-
-* Fixes a bug where inserting Yoast blocks via Content blocks collapsible was not possible when editing in `template-locked` mode inside Block Editor.
-* Fixes a bug where the alert for signing up to the newsletter didn't support rtl direction for buttons and inputs in RTL languages.
-* Fixes a bug where the assessments highlighting feature did not work when editing in template-locked mode in the Block Editor.
-* Fixes a bug where the Search and Social appearance modals looked off on WordPress 7.0 or with Gutenberg 22.3.0.
-* Fixes a bug where WordPress link classes were not being recognized when Yoast SEO was active. Props to [benoitchantre](https://github.com/benoitchantre).
+* Adds the Content Planner feature, which allows users to get AI-powered content suggestions and structured outlines for new posts directly from the block editor. This is available as part of the free sparks allowance in Yoast SEO Free.
 
 #### Other
 
-* Adds an opt-in notification for the task list feature on the general page.
-* Improves the translatability of some tasks' title in the task list.
-* Replaces Yoast product logos with new designs across the plugin’s interface.
-* Updates the product URL inside the marker presenter for Yoast SEO and Yoast SEO Premium.
+* Improves documentation in a docblock. Props to [@MukundaKatta](https://github.com/MukundaKatta).
+* Introduces a shared contributor guide for humans and AI coding tools.
+
+= 27.5 =
+
+Release date: 2026-04-28
+
+Introduces Yoast SEO Abilities API, allowing AI tools, dashboards, and automated workflows to automatically read SEO, readability, and inclusive language scores from your most recent posts. Read more in the [release post](https://yoa.st/56j). 
+
+#### Enhancements
+
+* Adds a Yoast ability for retrieving scores for Yoast analyses for recent posts, using the Abilities API.
+* Adds Qatar to the list of available countries for the Semrush related keyphrase suggestions.
+
+#### Bugfixes
+
+* Fixes a bug where the AI Generator's "Generate with AI" feature failed after a site's domain was changed, because stale callback URLs remained registered with the Yoast API from the original domain.
+
+#### Other
+
+* Introduces a performance increase when calculating if the SEO optimization is completed for internal links. Props to [@adconecto](https://github.com/adconecto).
+* Removes the schemamap line from the `robots.txt` file.
 
 = Earlier versions =
 For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).

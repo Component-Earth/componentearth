@@ -9,40 +9,108 @@
     {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-sm" %}
            
     
-    <div class="container relative z-50 xl:px-[10rem]">
-        <div class="{{ pt }} {{ pb }}">         
+    
+        <div class="{{ pt }} {{ pb }}">    
+
+            <div class="flex flex-col items-center gap-sm mx-auto xl:max-w-[59.1875rem] lg:max-w-[67.1875rem]">
+                {% if fields.title %}
+                    <h2 class="text-center text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal">{{ fields.title }}</h2>
+                {% endif %}
+            </div>       
         
             <!-- Tab Navigation -->
-            <div class="tab-controls">
-                <button class="tab-btn active" data-tab="1">Category 1</button>
-                <button class="tab-btn" data-tab="2">Category 2</button>
+            <div class="container relative z-50 xl:px-[10rem] overflow-visible">
+                <div class="tab-controls">
+                    <button class="tab-btn active" data-tab="1">Category 1</button>
+                    <button class="tab-btn" data-tab="2">Category 2</button>
+                </div>
             </div>
 
             <!-- Tab Content Panels -->
             <div class="tab-content">
                 <!-- Tab 1: Carousel -->
-                <div class="tab-pane active" data-tab="1">
-                    <div class="carousel">
-                    <button class="prev-btn">◀</button>
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="image1-a.jpg" alt="Slide 1A"></div>
-                        <div class="carousel-slide"><img src="image2-a.jpg" alt="Slide 2A"></div>
-                    </div>
-                    <button class="next-btn">▶</button>
-                    </div>
+
+                    {# <div class="carousel">
+                        <div class="carousel-cell">
+                            <a href="https://google.com">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange tree" />
+                            </a>
+                        </div>
+                    </div> #}
+
+                    {% if tabs %}
+                        {% set i = 0 %}
+                        {% for tab_main in tabs %}
+                            {% set i = i + 1 %}
+                            {% set i_inner = 0 %}
+
+                            <div class="tab-pane {% if i == 1 %} active {% endif %}" data-tab="{{ i }}">
+                                <div class="contest-examples__list">
+                                    <div data-scrollable="examples">
+                                        <div data-scrollable-inner="" data-size="12600">
+                                            <div class="design-card-list design-card-list--large design-card-list--with-attributions" data-design-card-list="">                                                                                                       
+
+                                                {% for tab in tab_main.tab_content %}    
+                                                    {% set i_inner = i_inner + 1 %}
+
+                                                    {% set custom_block = function('get_field', 'block', tab.ID) %}
+                                                    {% set custom_excerpt = custom_block.excerpt %}
+                                                    {% set post_type = function('get_post_type', tab.ID) %}
+
+                                                    {# {% set excerpt = custom_excerpt ? custom_excerpt : function('get_the_excerpt', tab.ID) %}
+                                                    {% set excerpt_sub = function('substr', excerpt, 0, 1060) %}
+                                                    {% set result = function('substr', excerpt_sub, 0, function('strrpos', excerpt_sub, ' ')) %} #}
+
+                                                    {% set temp_content = tab.post_content %}
+                                                    {% set temp_result = function('wp_trim_words', temp_content, 50) %}
+
+                                                    {% set post_date = function('get_the_date', 'M j, Y', tab.ID ) %}
+                                                    {% set title = function('get_the_title', tab.ID ) %}
+
+                                                    {% set post_thumb_id = function('get_post_thumbnail_id', tab.ID) %}
+                                                    {% set custom_image = function('wp_get_attachment_image_src', post_thumb_id, 'full') %}
+                                                    {% set image = custom_image ? custom_image[0] : function('png', 'preview') %}  
+
+                                                    <div class="design-card-list__item" data-trackable-click-event="design-card-list-item">
+                                                        <div class="design-card design-card--relative design-card--collapse design-card--heavy-shadow" data-design-card="" style="color: #313131">
+                                                            <img alt="black dog custom logo design" src="{{ image }}" title="custom logo design"> <span class="design-card__pill"></span>
+                                                            {# <div class="sticker sticker--chameleon">
+                                                                <span class="design-card__pill"></span>
+                                                                <div class="sticker__content">
+                                                                    <span class="design-card__pill">{{ title }}</span>
+                                                                </div>
+                                                            </div> #}
+                                                            <div class="design-card__meta">
+                                                                <a class="design-card__meta__cta" data-design-card-link="" data-design-card-link-category="logo-design" href="{{ function('get_the_permalink', tab.ID) }}">
+                                                                <div class="design-card__meta__cta__content">
+                                                                    <span class="design-card__meta__cta__content__text">
+                                                                        <span class="marketing-icon marketing-icon--logo-design"></span>
+                                                                    </span>
+                                                                    <div class="heading heading--h4 heading--quarter-margin heading--bleached-as">
+                                                                        {{ title }}
+                                                                    </div>
+                                                                    <div class="paragraph paragraph--narrow">
+                                                                        {{ temp_result }}
+                                                                    </div>
+                                                                </div></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    {% endif %}
                 </div>
 
                 <!-- Tab 2: Carousel -->
-                <div class="tab-pane" data-tab="2">
-                    <div class="carousel">
-                    <button class="prev-btn">◀</button>
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="image1-b.jpg" alt="Slide 1B"></div>
-                        <div class="carousel-slide"><img src="image2-b.jpg" alt="Slide 2B"></div>
-                    </div>
-                    <button class="next-btn">▶</button>
-                    </div>
-                </div>
+                {# <div class="tab-pane" data-tab="2">
+                    CAROUSEL 2
+                </div> #}
             </div>
 
         </div>
