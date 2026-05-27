@@ -1,5 +1,5 @@
 <?php
-
+/*
 add_action( 'wp_enqueue_scripts', function() {
 	wp_register_script( 'ajax-load-service', get_template_directory_uri() . '/blocks/tabbed-content/filter.js', ['jquery'], time(), true );
 	wp_localize_script( 
@@ -111,4 +111,4 @@ function handle_ajax_load_service() {
 
 	die;
 
-}
+}*/

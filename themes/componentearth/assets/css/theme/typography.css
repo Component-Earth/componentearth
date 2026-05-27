@@ -46,6 +46,10 @@
 
 	p {
 		@apply block text-[0.875rem] md:text-[1rem] leading-[150%] font-tertiary;
+
+		b {
+			@apply  font-tertiary;
+		}
 	}
 
 	.text-large {
@@ -75,7 +79,7 @@
 		@apply m-0 pl-[0.5rem] list-none;
 
 		li {
-			@apply pl-[1rem] relative;
+			@apply pl-[1rem] relative font-tertiary;
 
 			&::before {
 					content: "•";

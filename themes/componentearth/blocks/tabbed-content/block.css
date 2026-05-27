@@ -1,12 +1,12 @@
 @layer components {
     .tabbed-content {        
         .tab-pane {
-            @apply hidden;
+            @apply hidden flex-col gap-xs text-[var(--theme-color-dark)];
         }
 
         .tab-pane {
             &.active {
-                @apply block;
+                @apply flex;
             }
         }
 
