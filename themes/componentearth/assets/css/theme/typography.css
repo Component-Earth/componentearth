@@ -45,7 +45,7 @@
 	}
 
 	p {
-		@apply block text-[0.875rem] md:text-[1rem] leading-[150%] font-primary;
+		@apply block text-[0.875rem] md:text-[1rem] leading-[150%] font-tertiary;
 	}
 
 	.text-large {
