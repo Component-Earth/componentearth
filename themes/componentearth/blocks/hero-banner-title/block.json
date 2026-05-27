@@ -1,6 +1,7 @@
 {
+    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
     "apiVersion": 3,
-	"name": "hero-banner-title",
+	"name": "acf/hero-banner-title",
 	"title": "Hero Banner Title",
     "viewScript": [
 		"file:./script.js",
@@ -10,6 +11,8 @@
 		"jarallax-style"
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]

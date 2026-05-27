@@ -1,6 +1,7 @@
 {
+    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
     "apiVersion": 3,
-	"name": "content-form",
+	"name": "acf/content-form",
 	"title": "Content - Form",
     "viewScript": [
 		"file:./script.js"
@@ -8,6 +9,8 @@
     "viewStyle": [			
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]

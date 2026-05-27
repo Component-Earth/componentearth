@@ -1,6 +1,7 @@
 {
+    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
     "apiVersion": 3,
-    "name": "our-team",
+    "name": "acf/our-team",
     "title": "Our Team",
     "viewScript": [
         "file:./script.js",
@@ -9,6 +10,8 @@
     "viewStyle": [		
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]

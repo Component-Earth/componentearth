@@ -1,6 +1,7 @@
 {
+    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
     "apiVersion": 3,
-	"name": "testimonials",
+	"name": "acf/testimonials",
 	"title": "Testimonials",
     "viewScript": [
 		"file:./script.js",
@@ -10,6 +11,8 @@
 		"owl-style"
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]

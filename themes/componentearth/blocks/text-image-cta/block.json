@@ -1,6 +1,7 @@
 {
+    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
     "apiVersion": 3,
-    "name": "text-image-cta",
+    "name": "acf/text-image-cta",
     "title": "Text Image CTA",
     "viewScript": [
         "file:./script.js"
@@ -8,6 +9,8 @@
     "viewStyle": [		
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]
