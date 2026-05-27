@@ -328,5 +328,5 @@ a.link-hover-underline {
 }      
 
 .wp-block-list li {
-	@apply text-[1rem] font-primary leading-[150%]; 
+	@apply text-[1rem] font-tertiary leading-[150%]; 
 }
