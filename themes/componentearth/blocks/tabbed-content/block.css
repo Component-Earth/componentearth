@@ -11,7 +11,7 @@
         }
 
         .tab-controls {
-            @apply flex gap-[3.5rem] items-center justify-center pt-[1.5rem] pb-[3.5rem];
+            @apply flex ~gap-[1rem]/[3.5rem] items-center justify-center pt-[1.5rem] pb-[3.5rem];
         }
 
         .tab-btn {
