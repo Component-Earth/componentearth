@@ -327,6 +327,14 @@ a.link-hover-underline {
 	}
 }      
 
-.wp-block-list li {
-	@apply text-[1rem] font-tertiary leading-[150%]; 
+.wp-block-list {
+	@apply m-0 pl-[0.5rem] list-none flex flex-col gap-[0.5rem];
+	li {
+		@apply pl-[1rem] relative font-tertiary max-lg:text-[.875rem] text-[1rem];
+
+		&::before {
+			content: "•";
+			@apply absolute left-0 top-0;
+		}
+	}
 }

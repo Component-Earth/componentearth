@@ -82,8 +82,8 @@
 			@apply pl-[1rem] relative font-tertiary max-lg:text-[.875rem] text-[1rem];
 
 			&::before {
-					content: "•";
-					@apply absolute left-0 top-0;
+				content: "•";
+				@apply absolute left-0 top-0;
 			}
 		}
 	}
