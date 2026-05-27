@@ -1,0 +1,29 @@
+{      
+    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
+    "apiVersion": 3,
+    "name": "acf/tabbed-content",
+    "title": "Tabbed Carousels",
+    "viewScript": [
+        "file:./script.js",
+        "flickity",
+        "asset99"
+    ],
+    "viewStyle": [		
+        "flickity-style"
+	],
+	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["page"]
+	},
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_help": "preview.png"
+            }
+        }
+    }
+}
