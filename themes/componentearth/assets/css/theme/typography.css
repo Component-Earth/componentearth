@@ -79,7 +79,7 @@
 		@apply m-0 pl-[0.5rem] list-none flex flex-col gap-[0.5rem];
 
 		li {
-			@apply pl-[1rem] relative font-tertiary ~text-[.875rem]/[1rem];
+			@apply pl-[1rem] relative font-tertiary max-lg:text-[.875rem] text-[1rem];
 
 			&::before {
 					content: "•";

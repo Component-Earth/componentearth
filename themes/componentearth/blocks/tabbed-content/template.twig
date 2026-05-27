@@ -47,7 +47,7 @@
                             {% set i_inner = 0 %}
 
                             <div class="tab-pane {% if i == 1 %} active {% endif %}" data-tab="{{ i }}">
-                                <h3>{{ tab_main.tab_title }}</h3>
+                                <h2>{{ tab_main.tab_title }}</h2>
                                 {{ tab_main.tab_content }}
                             </div>
 
@@ -56,9 +56,18 @@
                 </div>
             </div>
 
-            <div id="main-content">
+            {# <div id="main-content">
 
-            </div>
+            </div> #}
+
+            
+            {% if fields.post_description %}
+                <div class="flex flex-col items-center gap-xs  ~pb-[2rem]/[4rem]">
+                    <div class="text-[var(--theme-color-dark)] font-tertiary w-full flex flex-col gap-xs  [&_p]:text-[1rem] [&_p]:leading-normal [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal text-left">
+                        {{ fields.post_description }}
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
     
