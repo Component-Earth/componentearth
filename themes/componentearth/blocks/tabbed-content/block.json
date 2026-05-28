@@ -11,7 +11,8 @@
 	"acf": {
         "blockVersion": 3,
         "hideFieldsInSidebar": true,
-		"mode": "edit",
+        "autoInlineEditing": true,
+        "mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]
 	},
@@ -19,7 +20,7 @@
         "attributes": {
             "mode": "preview",
             "data": {
-                "preview_image_help": "preview.png"
+                "preview_image": "preview.png"
             }
         }
     }
