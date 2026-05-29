@@ -83,7 +83,7 @@ $image = $custom_image ? $custom_image[0] : "";
                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Project
                                 </div>           
                                 <h2 class="text-primary-dark max-w-[50.875rem] ~text-[2.5rem]/[5.625rem]  tracking-[-2%] leading-[90%]"><?php the_title(); ?></h2>        
-                                <div class="font-tertiary font-normal text-primary-dark text-[1.25rem] flex flex-col gap-[1rem] [&_.wp-block-heading]:my-[1rem] [&_.wp-block-heading]:leading-normal"><?php the_content(); ?></div>                                        
+                                <div class="font-tertiary font-normal text-primary-dark text-[1.25rem] flex flex-col gap-[1rem] [&_.wp-block-heading]:my-[1rem] [&_.wp-block-heading]:leading-none"><?php the_content(); ?></div>                                        
                                 
                                 <!-- <div class="[&_p]:~text-[4rem]/[4.5rem] [&_p]:leading-[90%] [&_p]:tracking-[-2%] [&_p]:text-primary-dark [&_strong]:font-normal [&_strong]:p-[0.25rem] [&_strong]:bg-[var(--theme-color-highlight)]">
                                     <p>"Quote from the project and how this <strong>impacted the community & ecosystem"</strong></p>
