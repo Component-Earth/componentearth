@@ -98,23 +98,24 @@
 	@apply bg-[#ffffff] text-dark;
 }
 
-.wp-block-table {
-	@apply font-tertiary my-[2rem];
-	table {
-		@apply mb-[1rem];
+.single {
+	.wp-block-table {
+		@apply font-tertiary my-[2rem];
+		table {
+			@apply mb-[1rem];
+		}
+		td,
+		th {
+			@apply ~text-[.875rem]/[1rem];
+		}
+		strong {
+			@apply font-tertiary;
+		}
 	}
-	td,
-	th {
-		@apply ~text-[.875rem]/[1rem];
-	}
-	strong {
+	.wp-block-paragraph strong,
+	.wp-block-list strong {
 		@apply font-tertiary;
 	}
-}
-
-.wp-block-paragraph strong,
-.wp-block-list strong {
-	@apply font-tertiary;
 }
 
 .rich-content {	
