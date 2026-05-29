@@ -107,6 +107,14 @@
 	th {
 		@apply ~text-[.875rem]/[1rem];
 	}
+	strong {
+		@apply font-tertiary;
+	}
+}
+
+.wp-block-paragraph strong,
+.wp-block-list strong {
+	@apply font-tertiary;
 }
 
 .rich-content {	
