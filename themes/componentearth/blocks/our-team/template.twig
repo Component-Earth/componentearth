@@ -12,11 +12,11 @@
         <div class="{{ pt }} {{ pb }} flex flex-col ~gap-[3.5rem]/[5rem]">                                 
             <div class="flex flex-col items-center gap-sm mx-auto xl:max-w-[59.1875rem] lg:max-w-[67.1875rem]">
                 {% if fields.title %}
-                    <h2 class="text-center text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal">{{ fields.title }}</h2>
+                    <h2 class="text-center text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal [&_p_strong]:italic">{{ fields.title }}</h2>
                 {% endif %}
 
                 {% if fields.paragraph %}
-                    <div class="text-center max-lg:text-left font-normal [&_p]:font-tertiary-500 [&_p]:leading-[110%] [&_p]:text-[1.5rem] flex flex-col gap-[1.25rem] text-[var(--theme-color-dark)] [&_strong]:bg-[var(--theme-color)] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white">{{ fields.paragraph }}</div>
+                    <div class="text-center max-lg:text-left font-normal [&_p]:font-tertiary-500 [&_p]:leading-[110%] [&_p]:text-[1.5rem] flex flex-col gap-[1.25rem] text-[var(--theme-color-dark)] [&_strong]:bg-[var(--theme-color)] [&_strong]:p-[0.25rem] [&_strong]:font-normal [&_strong]:text-white [&_strong]:italic">{{ fields.paragraph }}</div>
                 {% endif %}
             </div>  
             {% set ctr = 0 %}                   
