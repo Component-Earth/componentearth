@@ -1,6 +1,6 @@
 @layer base {
 	.nav {
-		@apply sticky top-0 w-full h-full z-[100] opacity-0;
+		@apply sticky top-0 w-full h-full z-[100];
 
 		.nav__logo {
 			@apply ~w-[12.875rem]/[21.5625rem] h-auto;

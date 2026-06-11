@@ -5,7 +5,7 @@
 
     baunfire.Animation = {
         init() {
-            this.handleNav();
+            //this.handleNav();
             this.handleNavMobile();
             //this.transitionPresets();
             //this.headerAnim();
