@@ -71,7 +71,7 @@ $image = $custom_image ? $custom_image[0] : "";
                             <div class="lg:block hidden text-[10rem] absolute top-[-2rem] left-[-3rem] text-[#025294] opacity-20">
                                 01
                             </div>
-                            <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
+                            <div class="lg:p-[3rem] flex flex-col gap-[1.5rem] items-start">
                                 <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary ~text-[2rem]/[4rem] font-normal tracking-[-2%]">
                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Resource
                                 </div>           
@@ -79,6 +79,13 @@ $image = $custom_image ? $custom_image[0] : "";
                                 <div class="font-tertiary font-normal text-primary-dark text-[1.25rem] flex flex-col gap-[1rem] [&_.wp-block-heading]:my-[1rem] [&_.wp-block-heading]:leading-none"><?php the_content(); ?></div>      
                                 
                                 
+                                <?php if(get_field('file')) : ?>                                                               
+                                    <a class="btn btn-primary font-tertiary font-medium" type="button" href="<?php echo get_field('file')['url']; ?>" target="_blank">
+                                        <div class="transition-all duration-300 ease-in-out">
+                                            Download PDF
+                                        </div>
+                                    </a>
+                                <?php endif; ?>
                                 <!-- <div class="[&_p]:~text-[4rem]/[4.5rem] [&_p]:leading-[90%] [&_p]:tracking-[-2%] [&_p]:text-primary-dark [&_strong]:font-normal [&_strong]:p-[0.25rem] [&_strong]:bg-[var(--theme-color-highlight)]">
                                     <p>"Quote from the project and how this <strong>impacted the community & ecosystem"</strong></p>
                                 </div> -->
