@@ -82,7 +82,7 @@ $image = $custom_image ? $custom_image[0] : "";
                                 <?php if(get_field('file')) : ?>                                                               
                                     <a class="btn btn-primary font-tertiary font-medium" type="button" href="<?php echo get_field('file')['url']; ?>" target="_blank">
                                         <div class="transition-all duration-300 ease-in-out">
-                                            Download PDF
+                                            <?php echo get_field('file')['description'] ?? "Download PDF"; ?>
                                         </div>
                                     </a>
                                 <?php endif; ?>
