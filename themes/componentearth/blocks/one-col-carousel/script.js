@@ -27,6 +27,17 @@ baunfire.addModule({
 
                 });
 
+                // Cache your jQuery elements
+                var $dotGroup = $('.slider-dots');
+                var $dots = $dotGroup.find('.slider-dot');
+
+                // 1. Synchronize dots with Flickity changes
+                flkty.on('change', function(index) {
+                    // Finds the dot matching the current index based on data-ctr and toggles the active class
+                    $dots.removeClass('active');
+                    $dots.filter('[data-ctr="' + index + '"]').addClass('active');
+                });
+
                 function slideAnim(currentSlide, targetSlide) {
                     let tl = gsap.timeline({defaults: {duration: .5, ease: 'power2.in'}});
                     let currentSlideEl = slides[currentSlide];
@@ -44,8 +55,6 @@ baunfire.addModule({
                         tl.revert();
                     }, '+=1')                
                 }
-
-                var $dotGroup = $('.slider-dots');
                 
                 $dotGroup.on( 'click', '.slider-dot', function() {
                     var dot = $(this);
@@ -53,10 +62,29 @@ baunfire.addModule({
                     let currentSlide = flkty.selectedIndex;
                     if(index != currentSlide) {
                         slideAnim(currentSlide, index)
-                        dot.addClass('active');
-                        dot.siblings().removeClass('active');
                     }
                 });
+
+                
+                // 2. Custom Prev/Next Click Event Integrations
+                $('.flickity-button.previous').on('click', function() {
+                    e.preventDefault();
+                    e.stopPropagation(); // Stops Flickity from firing its own event handler
+                    let currentSlide = flkty.selectedIndex;
+                    // Calculate previous index wrapping around if wrapAround: true
+                    let prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+                    slideAnim(currentSlide, prevIndex);
+                });
+
+                $('.flickity-button.next').on('click', function() {
+                    e.preventDefault();
+                    e.stopPropagation(); // Stops Flickity from firing its own event handler
+                    let currentSlide = flkty.selectedIndex;
+                    // Calculate next index wrapping around if wrapAround: true
+                    let nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+                    slideAnim(currentSlide, nextIndex);
+                });
+
 
                 
                 const sliderMobile = document.querySelector('.slider-mobile');
