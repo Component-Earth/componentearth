@@ -74,8 +74,8 @@ $image = $custom_image ? $custom_image[0] : "";
             <div class="max-lg:flex-col flex flex-col items-start relative w-full">        
                 <div class="flex flex-col gap-[1.75rem] items-start">  
                     <div class="flex flex-col gap-[1.75rem]">
-                        <div class="flex flex-col gap-[0.75rem] relative">
-                            <div class="text-[10rem] absolute lg:top-[-2rem] lg:left-[-3rem] left-0 text-[#025294] opacity-20">
+                        <div class="flex flex-col gap-[0.75rem] relative">                            
+                            <div class="text-[10rem] absolute lg:top-[-2rem] top-[-5rem] lg:left-[-3rem] left-[-1rem] text-[#025294] opacity-20">
                                 01
                             </div>
                             <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
