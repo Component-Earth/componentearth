@@ -55,7 +55,7 @@
 			@apply hidden top-[3.5rem] max-lg:top-[4rem] bg-[#dbd5c6] left-0 w-full h-screen overflow-hidden px-[1rem] py-[2.5rem];
 
 			&.active {
-				@apply flex flex-col fixed w-full overflow-hidden h-[calc(100vh-3.5rem)] justify-between;
+				@apply flex flex-col fixed w-full overflow-hidden h-[calc(100vh-3.5rem)] justify-between max-lg:top-[88px];
 				.nav__actions  {
 					@apply flex gap-[1.5rem];
 				}
@@ -204,7 +204,15 @@
 			}
 		}
 		
-		&.dark {			
+		&.dark {		
+			.hamburger a.main-nav-toggle {
+				&::before,
+				&::after,
+				i {
+					border-color: white !important;
+				}
+				
+			}
 			.nav {
 				&__outer {
 					@apply bg-[var(--theme-color-dark)];
