@@ -63,7 +63,7 @@ $image = $custom_image ? $custom_image[0] : "";
         </div>
     <?php endif; ?>
 
-    <div class="container relative z-10">
+    <div class="container relative z-10 max-lg:px-0">
         <?php if($image) : ?>
             <div class="lg:flex hidden w-full flex-col gap-[2rem] md:h-[45rem] h-[31rem] bg-cover bg-no-repeat bg-center overflow-hidden rounded-b-[5rem]" 
                 style="background-image: url(<?php echo $image; ?>)">
@@ -75,15 +75,15 @@ $image = $custom_image ? $custom_image[0] : "";
                 <div class="flex flex-col gap-[1.75rem] items-start">  
                     <div class="flex flex-col gap-[1.75rem]">
                         <div class="flex flex-col gap-[0.75rem] relative">                            
-                            <div class="text-[10rem] absolute lg:top-[-2rem] top-[-5rem] lg:left-[-3rem] left-[-1rem] text-[#025294] opacity-20">
+                            <div class="text-[10rem] absolute lg:top-[-2rem] top-[-5rem] lg:left-[-3rem] left-[0rem] text-[#025294] opacity-20">
                                 01
                             </div>
                             <div class="lg:p-[3rem] flex flex-col gap-[1.5rem]">
-                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary ~text-[2rem]/[4rem] font-normal tracking-[-2%]">
+                                <div class="py-[1rem] flex gap-[2rem] items-center text-primary font-tertiary ~text-[2rem]/[4rem] font-normal tracking-[-2%] max-lg:px-[1.25rem]">
                                     <div class="w-[10rem] h-[2px] bg-primary"></div> Project
                                 </div>           
-                                <h2 class="text-primary-dark max-w-[50.875rem] ~text-[2.5rem]/[5.625rem]  tracking-[-2%] leading-[90%]"><?php the_title(); ?></h2>        
-                                <div class="font-tertiary font-normal text-primary-dark text-[1.25rem] flex flex-col gap-[1rem] [&_.wp-block-heading]:my-[1rem] [&_.wp-block-heading]:leading-none"><?php the_content(); ?></div>                                        
+                                <h2 class="text-primary-dark max-w-[50.875rem] ~text-[2.5rem]/[5.625rem] tracking-[-2%] leading-[90%] max-lg:px-[1.25rem]"><?php the_title(); ?></h2>        
+                                <div class="font-tertiary font-normal text-primary-dark text-[1.25rem] flex flex-col gap-[1rem] [&_.wp-block-heading]:my-[1rem] [&_.wp-block-heading]:leading-none [&_.wp-block-paragraph]:max-lg:px-[1.25rem]"><?php the_content(); ?></div>                                        
                                 
                                 <!-- <div class="[&_p]:~text-[4rem]/[4.5rem] [&_p]:leading-[90%] [&_p]:tracking-[-2%] [&_p]:text-primary-dark [&_strong]:font-normal [&_strong]:p-[0.25rem] [&_strong]:bg-[var(--theme-color-highlight)]">
                                     <p>"Quote from the project and how this <strong>impacted the community & ecosystem"</strong></p>

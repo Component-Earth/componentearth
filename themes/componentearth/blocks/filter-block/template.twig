@@ -8,7 +8,7 @@
     {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-xxl" %}
     {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-xxl" %}
 
-    <div class="filter-container container">                               
+    <div class="filter-container container max-md:!pr-0">                               
         <div class="flex flex-col items-start text-left gap-sm [&_ul]:list-none [&_ul]:flex  [&_ul]:gap-[1rem] [&_ul_li]:p-0 [&_ul_li]:before:hidden [&_ul_li]:font-mono [&_ul_li]:text-[0.75rem] [&_select]:min-w-[10rem]">           
     
             <div id="loading" class="hidden font-mono text-[1rem] text-black">Loading...</div>
@@ -38,7 +38,7 @@
 
                             <div class="gap-[1.75rem] flex max-lg:flex-col items-start justify-between relative group w-full card {% if i % 2 == 0 %} lg:flex-row-reverse {% endif %}" data-id="{{ terms[0].term_id }}">
                                 <a href="{{ function('the_permalink', list.ID) }}" class="absolute top-0 left-0 w-full h-full z-10"></a>
-                                <div class="flex flex-col justify-between gap-[1.75rem] w-full lg:flex-1 lg:pt-[4rem]">
+                                <div class="flex flex-col justify-between gap-[1.75rem] w-full lg:flex-1 lg:pt-[4rem] max-md:pr-[1.25rem]">
                                     <div class="flex flex-col gap-[1.75rem]">
                                         <div class="flex flex-col gap-[0.75rem] relative">
                                             <div class="relative">
