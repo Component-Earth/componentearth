@@ -6,7 +6,7 @@
 	<div class="nav__outer">
 		<div class="container max-lg:w-full max-xl:pt-[1rem] max-xl:pb-[1rem] max-lg:pt-0 max-lg:pb-0 lg:max-h-[50px]">
 			<div class="nav__desktop nav__inner max-md:py-0 relative">
-				<div class="nav__wrap flex gap-[2rem] items-center w-full justify-between lg:h-[52px]">
+				<div class="nav__wrap flex gap-[2rem] items-center w-full justify-between lg:h-[52px] h-[22px]">
 
 					{% if global_nav_theme == 'dark' or global_nav_theme == 'transparent' or function('is_single') %}
 						{% set logo = footer_logo ? footer_logo.url : function('svg', 'block-icon') %}
