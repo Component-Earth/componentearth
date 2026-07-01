@@ -20,7 +20,7 @@ baunfire.addModule({
                     pageDots: false,
                     wrapAround: true,
                     draggable: false,
-                    prevNextButtons: true,
+                    prevNextButtons: false,
                     autoPlay: false,
                     rightToLeft: false,
                     accessibility: false
@@ -67,20 +67,34 @@ baunfire.addModule({
 
                 
                 // 2. Custom Prev/Next Click Event Integrations
-                $('.flickity-button.previous').on('click', function(e) {
+                // $('.flickity-button.previous').on('click', function(e) {
+                //     e.preventDefault();
+                //     e.stopPropagation(); // Stops Flickity from firing its own event handler
+                //     let currentSlide = flkty.selectedIndex;
+                //     // Calculate previous index wrapping around if wrapAround: true
+                //     let prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+                //     slideAnim(currentSlide, prevIndex);
+                // });
+
+                // $('.flickity-button.next').on('click', function(e) {
+                //     e.preventDefault();
+                //     e.stopPropagation(); // Stops Flickity from firing its own event handler
+                //     let currentSlide = flkty.selectedIndex;
+                //     // Calculate next index wrapping around if wrapAround: true
+                //     let nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+                //     slideAnim(currentSlide, nextIndex);
+                // });
+
+                $('.prev-bttn').on('click', function(e) {
                     e.preventDefault();
-                    e.stopPropagation(); // Stops Flickity from firing its own event handler
                     let currentSlide = flkty.selectedIndex;
-                    // Calculate previous index wrapping around if wrapAround: true
                     let prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
                     slideAnim(currentSlide, prevIndex);
                 });
-
-                $('.flickity-button.next').on('click', function(e) {
+                
+                $('.next-bttn').on('click', function(e) {
                     e.preventDefault();
-                    e.stopPropagation(); // Stops Flickity from firing its own event handler
                     let currentSlide = flkty.selectedIndex;
-                    // Calculate next index wrapping around if wrapAround: true
                     let nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
                     slideAnim(currentSlide, nextIndex);
                 });

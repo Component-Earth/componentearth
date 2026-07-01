@@ -74,7 +74,7 @@
         }
 
         .slider {
-            @apply lg:h-[27.875rem] h-[20rem] mb-[2rem];
+            @apply lg:h-[27.875rem] h-[20rem] mb-[2rem] max-lg:h-[470px];
             width: 100%;
             margin-right: 10px;
         }
