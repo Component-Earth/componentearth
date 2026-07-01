@@ -67,7 +67,7 @@ baunfire.addModule({
 
                 
                 // 2. Custom Prev/Next Click Event Integrations
-                $('.flickity-button.previous').on('click', function() {
+                $('.flickity-button.previous').on('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation(); // Stops Flickity from firing its own event handler
                     let currentSlide = flkty.selectedIndex;
@@ -76,7 +76,7 @@ baunfire.addModule({
                     slideAnim(currentSlide, prevIndex);
                 });
 
-                $('.flickity-button.next').on('click', function() {
+                $('.flickity-button.next').on('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation(); // Stops Flickity from firing its own event handler
                     let currentSlide = flkty.selectedIndex;
@@ -87,53 +87,53 @@ baunfire.addModule({
 
 
                 
-                const sliderMobile = document.querySelector('.slider-mobile');
-                const slidesmob = document.querySelectorAll('.slidemob')
-                // const sliderBgMobile = sliderMobile.find('.slider__bg');
-                // const sliderDotMobile = sliderMobile.find('.flickity-page-dot');
+                // const sliderMobile = document.querySelector('.slider-mobile');
+                // const slidesmob = document.querySelectorAll('.slidemob')
+                // // const sliderBgMobile = sliderMobile.find('.slider__bg');
+                // // const sliderDotMobile = sliderMobile.find('.flickity-page-dot');
 
-                const flktyMobile = new Flickity( sliderMobile, {
-                    cellSelector: '.slidemob',
-                    pageDots: false,
-                    wrapAround: false,
-                    draggable: false,
-                    prevNextButtons: false,
-                    autoPlay: false,
-                    rightToLeft: false,
-                    accessibility: false,     
-                    initialIndex: 1           
-                });                
+                // const flktyMobile = new Flickity( sliderMobile, {
+                //     cellSelector: '.slidemob',
+                //     pageDots: false,
+                //     wrapAround: false,
+                //     draggable: false,
+                //     prevNextButtons: false,
+                //     autoPlay: false,
+                //     rightToLeft: false,
+                //     accessibility: false,     
+                //     initialIndex: 1           
+                // });                
 
-                function slideAnimMobile(currentSlide, targetSlide) {
-                    let tl = gsap.timeline({defaults: {duration: 0, ease: 'power2.in'}});
-                    let currentSlideEl = slidesmob[currentSlide];
-                    let year = currentSlideEl.querySelector('.slide__date');
-                    let title = currentSlideEl.querySelector('.slide__title');
-                    let img = currentSlideEl.querySelector('.slide__img');
-                    tl.to(year, {xPercent: 0, autoAlpha: 1});
-                    tl.to(img, {xPercent: 0, autoAlpha: 1}, '-=.3');
-                    tl.to(title, {xPercent: 0, autoAlpha: 1}, '-=.3');
-                    tl.add(() => {
-                        //flkty.next();
-                        flktyMobile.select( targetSlide );                        
-                    })
-                    tl.add(() => {
-                        tl.revert();
-                    }, '+=1')                
-                }
+                // function slideAnimMobile(currentSlide, targetSlide) {
+                //     let tl = gsap.timeline({defaults: {duration: 0, ease: 'power2.in'}});
+                //     let currentSlideEl = slidesmob[currentSlide];
+                //     let year = currentSlideEl.querySelector('.slide__date');
+                //     let title = currentSlideEl.querySelector('.slide__title');
+                //     let img = currentSlideEl.querySelector('.slide__img');
+                //     tl.to(year, {xPercent: 0, autoAlpha: 1});
+                //     tl.to(img, {xPercent: 0, autoAlpha: 1}, '-=.3');
+                //     tl.to(title, {xPercent: 0, autoAlpha: 1}, '-=.3');
+                //     tl.add(() => {
+                //         //flkty.next();
+                //         flktyMobile.select( targetSlide );                        
+                //     })
+                //     tl.add(() => {
+                //         tl.revert();
+                //     }, '+=1')                
+                // }
 
-                var $dotGroupMobile = $('.slider-dots-mobile');
+                // var $dotGroupMobile = $('.slider-dots-mobile');
                 
-                $dotGroupMobile.on( 'click', '.slider-dot', function() {
-                    var dot = $(this);
-                    var index = dot.data('ctr');
-                    let currentSlide = flktyMobile.selectedIndex;
-                    if(index != currentSlide) {
-                        slideAnimMobile(currentSlide, index)
-                        dot.addClass('active');
-                        dot.siblings().removeClass('active');
-                    }
-                });
+                // $dotGroupMobile.on( 'click', '.slider-dot', function() {
+                //     var dot = $(this);
+                //     var index = dot.data('ctr');
+                //     let currentSlide = flktyMobile.selectedIndex;
+                //     if(index != currentSlide) {
+                //         slideAnimMobile(currentSlide, index)
+                //         dot.addClass('active');
+                //         dot.siblings().removeClass('active');
+                //     }
+                // });
 
 
             });
