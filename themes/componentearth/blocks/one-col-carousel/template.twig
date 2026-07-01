@@ -1,4 +1,4 @@
-{% set custom_class = "lg:overflow-visible overflow-hidden" %}
+{% set custom_class = "lg:overflow-visible overflow-hidden max-lg:ml-[20px]" %}
 
 <section class="{{ block.slug ?? 'one-col-carousel' }} {{ custom_class }}">
     {% if fields.anchor|length > 0 or custom_id %}
