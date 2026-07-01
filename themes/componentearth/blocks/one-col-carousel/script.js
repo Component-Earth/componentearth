@@ -31,8 +31,11 @@ baunfire.addModule({
 
                 // Combined change handler: Updates dots immediately on any index shift
                 flkty.on('change', function(index) {
+                    
+                    var originalGalleryLength = flkty.cells.length / 4;
+                    let currentSlide = index % originalGalleryLength;
                     $dots.removeClass('active');
-                    $dots.filter('[data-ctr="' + index + '"]').addClass('active');
+                    $dots.filter('[data-ctr="' + currentSlide + '"]').addClass('active');
                 });
 
                 // Settle handler: Automatically cleans up and resets GSAP states 
@@ -42,6 +45,9 @@ baunfire.addModule({
                         activeTimeline = null;
                     }
                 });        
+                // var originalGalleryLength = flkty.cells.length;
+                // console.log(originalGalleryLength);
+                // let currentSlide = flkty.selectedIndex % originalGalleryLength;
 
                 // INSTANT DOT CLICK (No animation delay)
                 $dotGroup.on('click', '.slider-dot', function() {

@@ -13,19 +13,22 @@
         <div class="{{ pt }} {{ pb }}">                      
             {% if fields.gallery %}
                 <div class="slider !overflow-visible [&_.flickity-viewport]:!overflow-visible">
-                    {% for carousel_item in fields.gallery %}
-                        <div class="slide !h-full lg:px-[20px]">
-                            <div class="w-full h-full lg:rounded-br-[7rem] lg:rounded-bl-none rounded-br-none rounded-bl-[7rem] overflow-hidden">
-                                <img class="object-cover w-full h-full" src="{{ carousel_item.url }}" alt="col-image" />
+                    {% for i in 1..4 %}
+                        {% for carousel_item in fields.gallery %}
+                            <div class="slide !h-full lg:px-[20px]">
+                                <div class="w-full h-full lg:rounded-br-[7rem] lg:rounded-bl-none rounded-br-none rounded-bl-[7rem] overflow-hidden">
+                                    <img class="object-cover w-full h-full" src="{{ carousel_item.url }}" alt="col-image" />
+                                </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     {% endfor %}
-                    {# <button class="custom-bttn prev-bttn">Previous</button>
-                    <button class="custom-bttn next-bttn">Next</button> #}
                 </div>
+                        {# <button class="custom-bttn prev-bttn">Previous</button>
+                        <button class="custom-bttn next-bttn">Next</button> #}
                 {% set ctr = 0 %}
                 <div class="flex items-center justify-center">
                     <div class="slider-dots flex gap-[0.25rem] items-center justify-center w-auto bg-white/30 rounded-[1.875rem] p-[0.25rem]">
+
                         {% for carousel_item in fields.gallery %}
                             <button class="slider-dot {% if ctr == 0 %} active {% endif %}" data-ctr="{{ ctr }}">
                                 <svg class="active" width="45" height="14" viewBox="0 0 45 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +52,7 @@
                                     </filter>
                                     </defs>
                                 </svg>
-                            </button>
+                            </button>                           
                             {% set ctr = ctr + 1 %}
                         {% endfor %}
                     </div>
