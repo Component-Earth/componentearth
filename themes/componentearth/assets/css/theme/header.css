@@ -52,10 +52,10 @@
 		}
 
 		&__mobile {
-			@apply hidden top-[3.5rem] max-lg:top-[4rem] bg-[#dbd5c6] left-0 w-full h-screen overflow-hidden px-[1rem] py-[2.5rem];
+			@apply hidden top-[3.5rem] max-lg:top-[4rem] bg-[#dbd5c6] left-0 w-full h-screen overflow-hidden px-[1rem] py-[.5rem];
 
 			&.active {
-				@apply flex flex-col fixed w-full overflow-hidden h-[calc(100vh-3.5rem)] justify-between max-lg:top-[88px];
+				@apply flex flex-col fixed w-full overflow-hidden h-[calc(100vh-3.5rem)] justify-between max-lg:top-[85px];
 				.nav__actions  {
 					@apply flex gap-[1.5rem];
 				}
