@@ -23,7 +23,8 @@ baunfire.addModule({
                     prevNextButtons: false,
                     autoPlay: false,
                     rightToLeft: false,
-                    accessibility: false
+                    accessibility: false,
+                    draggable: true
 
                 });
 
@@ -56,12 +57,24 @@ baunfire.addModule({
                     }, '+=1')                
                 }
                 
-                $dotGroup.on( 'click', '.slider-dot', function() {
+                // $dotGroup.on( 'click', '.slider-dot', function() {
+                //     var dot = $(this);
+                //     var index = dot.data('ctr');
+                //     let currentSlide = flkty.selectedIndex;
+                //     if(index != currentSlide) {
+                //         slideAnim(currentSlide, index)
+                //     }
+                // });
+
+                // INSTANT DOT CLICK (No animation delay)
+                $dotGroup.on('click', '.slider-dot', function() {
                     var dot = $(this);
                     var index = dot.data('ctr');
                     let currentSlide = flkty.selectedIndex;
+                    
                     if(index != currentSlide) {
-                        slideAnim(currentSlide, index)
+                        // Direct internal selection bypasses the GSAP timeline completely
+                        flkty.select(index); 
                     }
                 });
 
