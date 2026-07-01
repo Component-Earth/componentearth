@@ -11,15 +11,11 @@ baunfire.addModule({
                 /* Add your logic here */            
 
                 const slider = document.querySelector('.slider');
-                const slides = document.querySelectorAll('.slide')
-                const sliderBg = document.querySelector('.slider__bg');
-                const sliderDot = document.querySelector('.flickity-page-dot');
 
                 const flkty = new Flickity( slider, {
                     cellSelector: '.slide',
                     pageDots: false,
                     wrapAround: true,
-                    draggable: false,
                     prevNextButtons: false,
                     autoPlay: false,
                     rightToLeft: false,
@@ -31,31 +27,21 @@ baunfire.addModule({
                 // Cache your jQuery elements
                 var $dotGroup = $('.slider-dots');
                 var $dots = $dotGroup.find('.slider-dot');
+                let activeTimeline = null;
 
-                // 1. Synchronize dots with Flickity changes
+                // Combined change handler: Updates dots immediately on any index shift
                 flkty.on('change', function(index) {
-                    // Finds the dot matching the current index based on data-ctr and toggles the active class
                     $dots.removeClass('active');
                     $dots.filter('[data-ctr="' + index + '"]').addClass('active');
                 });
 
-                function slideAnim(currentSlide, targetSlide) {
-                    let tl = gsap.timeline({defaults: {duration: .5, ease: 'power2.in'}});
-                    let currentSlideEl = slides[currentSlide];
-                    let year = currentSlideEl.querySelector('.slide__date');
-                    let title = currentSlideEl.querySelector('.slide__title');
-                    let img = currentSlideEl.querySelector('.slide__img');
-                    tl.to(year, {xPercent: -80, autoAlpha: 0});
-                    tl.to(img, {xPercent: -80, autoAlpha: 0}, '-=.3');
-                    tl.to(title, {xPercent: -80, autoAlpha: 0}, '-=.3');
-                    tl.add(() => {
-                        //flkty.next();
-                        flkty.select( targetSlide );                        
-                    })
-                    tl.add(() => {
-                        tl.revert();
-                    }, '+=1')                
-                }
+                // Settle handler: Automatically cleans up and resets GSAP states 
+                flkty.on('settle', function(index) {
+                    if (activeTimeline) {
+                        activeTimeline.revert();
+                        activeTimeline = null;
+                    }
+                });        
 
                 // INSTANT DOT CLICK (No animation delay)
                 $dotGroup.on('click', '.slider-dot', function() {
@@ -68,6 +54,34 @@ baunfire.addModule({
                         flkty.select(index); 
                     }
                 });
+
+                // Animation function optimized for cloning/looping
+                function slideAnim(currentSlideIndex, targetSlideIndex) {
+                    if (activeTimeline) {
+                        activeTimeline.revert();
+                    }
+
+                    // FIX: Instead of relying on a global static NodeList, grab the specific 
+                    // visual element that Flickity is interacting with right now.
+                    let currentSlideEl = flkty.selectedElement; 
+                    
+                    if (!currentSlideEl) return;
+
+                    let year = currentSlideEl.querySelector('.slide__date');
+                    let title = currentSlideEl.querySelector('.slide__title');
+                    let img = currentSlideEl.querySelector('.slide__img');
+                    
+                    activeTimeline = gsap.timeline({defaults: {duration: .5, ease: 'power2.in'}});
+                    
+                    // Only animate elements if they exist in the current viewport clone
+                    if (year) activeTimeline.to(year, {xPercent: -80, autoAlpha: 0});
+                    if (img) activeTimeline.to(img, {xPercent: -80, autoAlpha: 0}, '-=.3');
+                    if (title) activeTimeline.to(title, {xPercent: -80, autoAlpha: 0}, '-=.3');
+                    
+                    activeTimeline.add(() => {
+                        flkty.select(targetSlideIndex);                        
+                    });
+                }
 
                 
                 // 2. Custom Prev/Next Click Event Integrations
