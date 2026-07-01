@@ -85,19 +85,19 @@ baunfire.addModule({
                 //     slideAnim(currentSlide, nextIndex);
                 // });
 
-                $('.prev-bttn').on('click', function(e) {
-                    e.preventDefault();
-                    let currentSlide = flkty.selectedIndex;
-                    let prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-                    slideAnim(currentSlide, prevIndex);
-                });
+                // $('.prev-bttn').on('click', function(e) {
+                //     e.preventDefault();
+                //     let currentSlide = flkty.selectedIndex;
+                //     let prevIndex = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+                //     slideAnim(currentSlide, prevIndex);
+                // });
                 
-                $('.next-bttn').on('click', function(e) {
-                    e.preventDefault();
-                    let currentSlide = flkty.selectedIndex;
-                    let nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
-                    slideAnim(currentSlide, nextIndex);
-                });
+                // $('.next-bttn').on('click', function(e) {
+                //     e.preventDefault();
+                //     let currentSlide = flkty.selectedIndex;
+                //     let nextIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+                //     slideAnim(currentSlide, nextIndex);
+                // });
 
 
                 
