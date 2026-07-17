@@ -21,7 +21,7 @@ baunfire.addModule({
                     rightToLeft: false,
                     accessibility: false,
                     draggable: true,
-                    initialIndex: 2 
+                    initialIndex: 1 
                 });
 
                 // Cache your jQuery elements
