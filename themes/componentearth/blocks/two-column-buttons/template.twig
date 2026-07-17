@@ -23,7 +23,7 @@
                     <div class="grid {% if fields.content|length == 2 %} lg:grid-cols-2 {% else %} lg:grid-cols-1 {% endif %} gap-[2rem] w-full">
                         {% for content in fields.content %}
                             {% if content.link.url|length > 0 %}
-                                {% set custom_class = 'btn-primary' %}							
+                                {% set custom_class = 'btn-primary max-w-[20rem] !text-[1.125rem]' %}							
                             
                                 {% include 'components/cta.twig' with {
                                 'class' : custom_class,
