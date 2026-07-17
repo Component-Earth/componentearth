@@ -1,13 +1,12 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-    "name": "acf/filter-block",
+	"apiVersion": 3,
+    "name": "filter-block",
     "title": "Filter Block",
     "viewScript": [
-        "file:./script.js",
+		"file:./script.js",
         "tw-elements"
-    ],
-    "viewStyle": [		
+	],
+    "viewStyle": [
 	],
 	"acf": {
         "blockVersion": 3,

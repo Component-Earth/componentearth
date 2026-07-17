@@ -1,0 +1,10 @@
+@layer components {
+    .two-column-buttons {
+        /* Add your styles here */
+
+    }
+
+    .single .two-column-buttons .container {
+        @apply !max-w-none !w-full;
+    }
+}

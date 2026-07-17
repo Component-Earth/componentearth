@@ -1,14 +1,13 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-    "name": "acf/three-col-carousel",
+	"apiVersion": 3,
+    "name": "three-col-carousel",
     "title": "Three Col Carousel",
     "viewScript": [
-        "file:./script.js",
+		"file:./script.js",
         "gsap",
         "flickity"
-    ],
-    "viewStyle": [		
+	],
+    "viewStyle": [
         "flickity-style"
 	],
 	"acf": {

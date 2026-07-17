@@ -1,37 +1,24 @@
 <?php
 use Timber\Timber;
-
-if ($is_preview && !empty($block['data'])) {
-  $image = get_template_directory_uri() . '/blocks';
-  echo '<img alt="preview" style="width:100%; height:auto;" src="' . $image .  '/filter-block/preview.png">';
+if (isset($is_preview) && $is_preview && !empty($block['data'])) {
+  $image = get_template_directory_uri() . '/blocks'; ?>
+  <div class="" style="padding: 16px; border: #ccd0d4 solid 1px;">
+    <div class="" style="margin-bottom: 16px;">
+      <p style="margin-top:0px;"><?php echo $block['title']; ?></p>
+    </div>
+    <div class="" style="display:inline-block; border: #ccd0d4 solid 1px; padding: 16px;">
+      <img alt="preview" style="width:100%; height:auto; max-width:320px;" src="<?php echo $image ?>/filter-block/preview.png">
+    </div>
+    
+  </div>
+  <?php
   return;
 }
+if(isset($block)) {
 
-acf_setup_meta($block["data"], $block["id"], true);
-$post_type = get_field('post_type');
+  acf_setup_meta($block["data"], $block["id"], true);
+  $post_type = get_field('post_type');
 
-
-// $categories = get_terms(
-//   array(
-//     'taxonomy' => 'resource-type',
-//     'orderby' => 'name',
-//     //'hide_empty' => false
-//   ) 
-// );
-// $industries = get_terms(
-//   array(
-//     'taxonomy' => 'resource-industry',
-//     'orderby' => 'name',
-//     //'hide_empty' => false
-//   ) 
-// );
-
-// $transient_key = TRANSIENT_PREFIX . "_all_res";
-// $custom_query = get_transient($transient_key);
-// echo $post_type;
-// die();
-
-//if (!$custom_query) {
   $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
   $custom_args = [
     'post_type'=> $post_type, 
@@ -41,29 +28,24 @@ $post_type = get_field('post_type');
     'order'   => 'DESC',
     'paged' => $paged
   ];
-  
+
   $custom_query = new WP_Query( $custom_args );
 
-  //set_transient($transient_key, $custom_query, TRANSIENT_DURATION);
-//}
+  $show_filters = false;
 
-$show_filters = false;
+  $context = Timber::context([
+    "block" => $block,
+    "fields" => get_field("block"),  
+    "custom_query" => $custom_query,
+    "show_filters" => $show_filters
+  ]);
 
-$context = Timber::context([
-  "block" => $block,
-  "fields" => get_field("block"),  
-  // "categories" => $categories,
-  // "industries" => $industries,
-  "custom_query" => $custom_query,
-  "show_filters" => $show_filters
-]);
+  $context["block"]["slug"] = sanitize_title($block["title"]);
 
-$context["block"]["slug"] = sanitize_title($block["title"]);
+  acf_reset_meta($block["id"]);
 
-acf_reset_meta($block["id"]);
-
-Timber::render("./template.twig", $context);  ?>
-
+  Timber::render("./template.twig", $context); 
+} ?>
 
 <script>
 var posts_myajax = '<?php echo json_encode( $custom_query->query_vars ) ?>',

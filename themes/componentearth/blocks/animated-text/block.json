@@ -1,12 +1,11 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-    "name": "acf/animated-text",
+	"apiVersion": 3,
+    "name": "animated-text",
     "title": "Animated Text",
     "viewScript": [
-        "file:./script.js"
-    ],
-    "viewStyle": [		
+		"file:./script.js"
+	],
+    "viewStyle": [
 	],
 	"acf": {
         "blockVersion": 3,

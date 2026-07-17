@@ -1,14 +1,13 @@
-{      
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "version": 3,
-    "name": "acf/tabbed-carousels",
+{
+	"apiVersion": 3,
+    "name": "tabbed-carousels",
     "title": "Tabbed Carousels",
     "viewScript": [
-        "file:./script.js",
+		"file:./script.js",
         "flickity",
         "asset99"
-    ],
-    "viewStyle": [		
+	],
+    "viewStyle": [
         "flickity-style"
 	],
 	"acf": {

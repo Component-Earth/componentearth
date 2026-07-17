@@ -1,12 +1,11 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-    "name": "acf/text-image-cta",
+	"apiVersion": 3,
+    "name": "text-image-cta",
     "title": "Text Image CTA",
     "viewScript": [
-        "file:./script.js"
-    ],
-    "viewStyle": [		
+		"file:./script.js"
+	],
+    "viewStyle": [
 	],
 	"acf": {
         "blockVersion": 3,
@@ -24,3 +23,4 @@
         }
     }
 }
+

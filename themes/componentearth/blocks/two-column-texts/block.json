@@ -1,12 +1,11 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-    "name": "acf/two-column-texts",
+	"apiVersion": 3,
+    "name": "two-column-texts",
     "title": "Two Column Texts",
     "viewScript": [
-        "file:./script.js"
-    ],
-    "viewStyle": [		
+		"file:./script.js"
+	],
+    "viewStyle": [
 	],
 	"acf": {
         "blockVersion": 3,

@@ -7,7 +7,7 @@ if (isset($is_preview) && $is_preview && !empty($block['data'])) {
       <p style="margin-top:0px;"><?php echo $block['title']; ?></p>
     </div>
     <div class="" style="display:inline-block; border: #ccd0d4 solid 1px; padding: 16px;">
-      <img alt="preview" style="width:100%; height:auto; max-width:320px;" src="<?php echo $image ?>/our-team/preview.png">
+      <img alt="preview" style="width:100%; height:auto; max-width:320px;" src="<?php echo $image ?>/two-column-buttons/preview.png">
     </div>
     
   </div>

@@ -1,13 +1,12 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-    "name": "acf/our-team",
+	"apiVersion": 3,
+    "name": "our-team",
     "title": "Our Team",
     "viewScript": [
-        "file:./script.js",
+		"file:./script.js",
         "alpine"
-    ],
-    "viewStyle": [		
+	],
+    "viewStyle": [
 	],
 	"acf": {
         "blockVersion": 3,
@@ -25,3 +24,4 @@
         }
     }
 }
+

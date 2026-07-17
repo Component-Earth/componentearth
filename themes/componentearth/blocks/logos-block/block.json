@@ -1,7 +1,6 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-	"name": "acf/logos-block",
+	"apiVersion": 3,
+	"name": "logos-block",
 	"title": "Logos Block",
     "viewScript": [
 		"file:./script.js",

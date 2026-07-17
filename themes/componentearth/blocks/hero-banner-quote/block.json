@@ -1,13 +1,12 @@
 {
-    "$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
-    "apiVersion": 3,
-	"name": "acf/hero-banner-quote",
+	"apiVersion": 3,
+	"name": "hero-banner-quote",
 	"title": "Hero Banner Quote",
     "viewScript": [
 		"file:./script.js",
 		"jarallax"
-	],	
-    "viewStyle": [		
+	],
+    "viewStyle": [
 		"jarallax-style"
 	],
 	"acf": {
