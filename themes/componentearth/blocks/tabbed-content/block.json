@@ -1,0 +1,26 @@
+{
+	"apiVersion": 3,
+    "name": "tabbed-content",
+    "title": "Tabbed Content",
+    "viewScript": [
+		"file:./script.js"
+	],
+    "viewStyle": [
+	],
+	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
+		"mode": "edit",
+		"renderTemplate": "./controller.php",
+        "postTypes": ["page"]
+	},
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_help": "preview.png"
+            }
+        }
+    }
+}
+

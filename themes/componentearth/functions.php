@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package baunfire
+ * @package componentearth
  */
 
 // Ensure this file is being accessed within WordPress
@@ -35,20 +35,6 @@ if (!function_exists('bf_setup')):
         add_theme_support('align-wide');
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
-        add_theme_support('editor-color-palette', [
-            array(
-                array(
-                    'name'  => __( 'Light Blue', 'componentearth' ),
-                    'slug'  => 'light-blue',
-                    'color'	=> '#C0D5EA',
-                ),
-                array(
-                    'name'  => __( 'Sand Cream', 'componentearth' ),
-                    'slug'  => 'sand-cream',
-                    'color' => '#DBD5C6',
-                ),
-            )
-        ]);
     }
 endif;
 
@@ -57,17 +43,16 @@ add_action('after_setup_theme', 'bf_setup');
 require_once 'includes/theme/allow-file-types.php';
 require_once 'includes/theme/disable-comments.php';
 
-// require_once 'includes/theme/setup-timber.php';
 require_once 'includes/theme/setup-shortcodes.php';
 require_once 'includes/theme/setup-admin-branding.php';
 require_once 'includes/theme/setup-wysiwyg.php';
 
 require_once 'includes/theme/support-helpers.php';
 require_once 'includes/theme/support-visual-overrides.php';
-require_once 'includes/theme/support-transients.php';
 
 
 require_once 'blocks/filter-block/functions.php';
+require_once 'blocks/tabbed-carousels/functions.php';
 
 
 
@@ -97,19 +82,11 @@ function front_css_styles()
     wp_register_style('jquery-ui-style', get_template_directory_uri() . '/assets/css/external/jquery-ui.css', array(), _S_VERSION);
     wp_enqueue_style('normalize-style', get_template_directory_uri() . '/assets/css/theme/normalize.css', array(), _S_VERSION);
     wp_enqueue_style('admin-bar-style', get_template_directory_uri() . '/assets/css/admin/bar.css', array(), _S_VERSION);
-    wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme/styles.css', array(), uniqid());
-    //wp_enqueue_style('animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css', array(), _S_VERSION);    
+    wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/theme/styles.css', array(), uniqid());  
     wp_register_style('owl-style', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css', array(), _S_VERSION);    
     wp_register_style('flowbite-style', 'https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css', array(), _S_VERSION);
-    //wp_register_style('swiper-style', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), _S_VERSION);
-    //wp_register_style('splide-style', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), _S_VERSION);
     wp_register_style('jarallax-style', 'https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css', array(), _S_VERSION);
-    //wp_register_style('glightbox-style', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/css/glightbox.min.css', array(), _S_VERSION);
-    wp_register_style('flickity-style', get_template_directory_uri() . '/assets/css/external/flickity.css', array(), _S_VERSION);
-    //wp_register_style('owl-style2', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css', array(), _S_VERSION);
-    // wp_register_style('splitting-style', 'https://unpkg.com/splitting/dist/splitting.css', array(), _S_VERSION);
-    // wp_register_style('splitting-cells', 'https://unpkg.com/splitting/dist/splitting-cells.css', array(), _S_VERSION);
-    //wp_register_style('select2-style', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css', array(), _S_VERSION);
+    wp_register_style('flickity-style', 'https://npmcdn.com/flickity@2/dist/flickity.css', array(), _S_VERSION);
 }
 
 function front_js_scripts()
@@ -122,26 +99,13 @@ function front_js_scripts()
     wp_enqueue_script("scroll-to", 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script("gblaze-smoother-script", get_template_directory_uri() . '/assets/js/external/smooth-scroll-gblaze.min.js', array('jquery'), _S_VERSION, false);
     wp_enqueue_script('alpine', 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js', array(), _S_VERSION, true);
-    //wp_enqueue_script("jquery-ui-script", get_template_directory_uri() . '/assets/js/external/jquery-ui.js', _S_VERSION, true);
-    //wp_enqueue_script("scroll-reveal", "https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js", array('jquery'), _S_VERSION, true);    
-    //wp_enqueue_script("scrollbar", "https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js", array('jquery'), _S_VERSION, true);    
-    //wp_enqueue_script('SplitText', get_template_directory_uri() . '/assets/js/external/SplitText.min.js', array(), _S_VERSION, true);
 
     wp_register_script("owl", get_template_directory_uri() . '/assets/js/external/owl.min.js', array('jquery'), _S_VERSION, true);    
     wp_register_script("jarallax", "https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js", array('jquery'), _S_VERSION, true);
     wp_register_script("jarallax-video", "https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax-video.min.js", array('jquery'), _S_VERSION, true);
-    //wp_register_script("swiper", get_template_directory_uri() . '/assets/js/external/swiper-bundle.min.js', array('jquery'), _S_VERSION, true);
     wp_register_script("flowbite", "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js", array('jquery'), _S_VERSION, true);
-    //wp_register_script("split-type", get_template_directory_uri() . '/assets/js/external/SplitType.min.js', array(), _S_VERSION, true);
-    //wp_register_script('splitting', 'https://unpkg.com/splitting/dist/splitting.min.js', array(), _S_VERSION, true);
-    //wp_register_script('glightbox', get_template_directory_uri() . '/assets/js/external/glightbox-3.3.0/dist/js/glightbox.min.js', array(), _S_VERSION, true);
-    wp_register_script('flickity', 'https://cdnjs.cloudflare.com/ajax/libs/flickity/3.0.0/flickity.pkgd.min.js', array(), _S_VERSION, true);
-    //wp_register_script('locomotive', 'https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js', array(), _S_VERSION, true);
-    //wp_register_script("owl2", get_template_directory_uri() . '/assets/js/external/owl-custom.js', array('jquery'), _S_VERSION, true);    
-    //wp_register_script("splide", "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js", array('jquery'), _S_VERSION, false);
-    //wp_register_script("chart", "https://cdn.jsdelivr.net/npm/chart.js", array(), _S_VERSION, true);
-    //wp_register_script('alpine', 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js', array(), _S_VERSION, true);
-    //wp_register_script('select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js',  array(), _S_VERSION, true);
+    wp_register_script('flickity', 'https://npmcdn.com/flickity@2/dist/flickity.pkgd.js', array(), _S_VERSION, true);
+    wp_register_script('asset99', get_template_directory_uri() . '/assets/js/external/asset99.js', array(), _S_VERSION, true);
 
 
 
@@ -244,7 +208,7 @@ function register_custom_blocks()
     }
 
     $theme_slug = get_field("theme_slug", "option");
-    $theme_slug = $theme_slug ? $theme_slug : "baunfire";
+    $theme_slug = $theme_slug ? $theme_slug : "componentearth";
 
     $blocks_dir = __DIR__ . '/blocks';
 
@@ -264,7 +228,7 @@ function register_custom_blocks()
             continue;
         }
 
-        register_block_type($block_path, [
+        register_block_type($block_path, [      
             'category' => $theme_slug,
             'icon'     => block_icon(true),
             'supports' => [
@@ -279,12 +243,12 @@ add_filter('block_categories_all', 'custom_block_category', 10, 2);
 function custom_block_category($categories, $post)
 {
     $theme_slug = get_field("theme_slug", "option");
-    $theme_slug = $theme_slug ? $theme_slug : "baunfire";
+    $theme_slug = $theme_slug ? $theme_slug : "componentearth";
 
     $custom_category = array(
         array(
             'slug' => $theme_slug,
-            'title' => __(ucfirst(strtolower($theme_slug)) . ' Blocks', 'baunfire')
+            'title' => __(ucfirst(strtolower($theme_slug)) . ' Blocks', 'componentearth')
         ),
     );
 

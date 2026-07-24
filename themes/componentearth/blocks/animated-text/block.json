@@ -1,12 +1,15 @@
 {
+	"apiVersion": 3,
     "name": "animated-text",
     "title": "Animated Text",
     "viewScript": [
-        "file:./script.js"
-    ],
-    "viewStyle": [		
+		"file:./script.js"
+	],
+    "viewStyle": [
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]

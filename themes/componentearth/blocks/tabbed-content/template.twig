@@ -1,0 +1,74 @@
+{% set custom_class = "overflow-visible" %}
+
+<section class="{{ block.slug ?? 'tabbed-content' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-lg" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-lg" %}
+           
+    
+    <div class="container">
+    
+        <div class="{{ pt }} {{ pb }}">    
+
+            <div class="flex flex-col items-center gap-xs mx-auto xl:max-w-[59.1875rem] lg:max-w-[67.1875rem] ~mb-[2rem]/[4rem]">
+                {% if fields.title %}
+                    <h2 class="text-center text-[var(--theme-color-dark)] font-tertiary w-full [&_p]:!~text-[3rem]/[6rem] [&_p]:leading-none [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal [&_p_strong]:italic">{{ fields.title }}</h2>
+                {% endif %}
+
+                {% if fields.description %}
+                    <div class="text-center text-[var(--theme-color-dark)] font-tertiary w-full flex flex-col gap-xs  [&_p]:!~text-[1rem]/[1.125rem] [&_p]:leading-normal [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal [&_p_strong]:italic">{{ fields.description }}</div>
+                {% endif %}
+            </div>       
+        
+            {% if tabs %}
+                {% set i = 0 %}
+                <!-- Tab Navigation -->
+                <div class="container relative z-50 xl:px-[10rem] overflow-visible">
+                    <div class="tab-controls">
+                        {% for tab_main in tabs %}
+                            {% set i = i + 1 %}
+                            <button class="tab-btn {% if i == 1 %} active {% endif %}" data-tab="{{ i }}">{{ tab_main.tab_title }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Tab Content Panels -->
+            <div class="tab-content">
+                <!-- Tab 1: Carousel -->
+
+                    {% if tabs %}
+                        {% set i = 0 %}
+                        {% for tab_main in tabs %}
+                            {% set i = i + 1 %}
+                            {% set i_inner = 0 %}
+
+                            <div class="tab-pane {% if i == 1 %} active {% endif %}" data-tab="{{ i }}">
+                                <h2>{{ tab_main.tab_title }}</h2>
+                                {{ tab_main.tab_content }}
+                            </div>
+
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+            {# <div id="main-content">
+
+            </div> #}
+
+            
+            {% if fields.post_description %}
+                <div class="flex flex-col items-center gap-xs  ~pb-[2rem]/[4rem]">
+                    <div class="[&_a]:text-[var(--theme-color-dark)] [&_a:hover]:underline [&_a:hover]:underline-offset-4 text-[var(--theme-color-dark)] font-tertiary w-full flex flex-col gap-xs  [&_p]:text-[1rem] [&_p]:leading-normal [&_p_strong]:text-[var(--theme-color)] [&_p_strong]:font-normal text-left">
+                        {{ fields.post_description }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+</section>

@@ -1,15 +1,18 @@
 {
+	"apiVersion": 3,
     "name": "three-col-carousel",
     "title": "Three Col Carousel",
     "viewScript": [
-        "file:./script.js",
+		"file:./script.js",
         "gsap",
         "flickity"
-    ],
-    "viewStyle": [		
+	],
+    "viewStyle": [
         "flickity-style"
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]

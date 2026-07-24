@@ -1,13 +1,16 @@
 {
+	"apiVersion": 3,
     "name": "our-team",
     "title": "Our Team",
     "viewScript": [
-        "file:./script.js",
+		"file:./script.js",
         "alpine"
-    ],
-    "viewStyle": [		
+	],
+    "viewStyle": [
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]
@@ -21,3 +24,4 @@
         }
     }
 }
+

@@ -30,7 +30,7 @@
             @apply !hidden;
         }
         .nav__group {
-            @apply !flex max-lg:gap-[0.5rem];
+            @apply !flex max-lg:gap-[0.5rem] max-lg:!flex-wrap max-lg:justify-center;
         }
         .custom-nav-ball {
             @apply block;

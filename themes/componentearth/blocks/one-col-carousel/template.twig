@@ -1,0 +1,62 @@
+{% set custom_class = "lg:overflow-visible overflow-hidden max-lg:ml-[20px]" %}
+
+<section class="{{ block.slug ?? 'one-col-carousel' }} {{ custom_class }}">
+    {% if fields.anchor|length > 0 or custom_id %}
+        <div class="section-anchor" id="{{ custom_id ?? fields.anchor }}"></div>
+    {% endif %}
+
+    {% set pt = fields.padding_top and fields.padding_top != "unset" ? fields.padding_top : "st-sm" %}
+    {% set pb = fields.padding_top and fields.padding_bottom != "unset" ? fields.padding_bottom : "sb-sm" %}
+           
+    
+    <div class="container relative z-50 xl:px-[10rem] px-0">
+        <div class="{{ pt }} {{ pb }}">                      
+            {% if fields.gallery %}
+                <div class="slider !overflow-visible [&_.flickity-viewport]:!overflow-visible">
+                    {% for i in 1..4 %}
+                        {% for carousel_item in fields.gallery %}
+                            <div class="slide !h-full lg:px-[20px]">
+                                <div class="w-full h-full lg:rounded-br-[7rem] lg:rounded-bl-none rounded-br-none rounded-bl-[7rem] overflow-hidden">
+                                    <img class="object-cover w-full h-full" src="{{ carousel_item.url }}" alt="col-image" />
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                {% set ctr = 0 %}
+                <div class="flex items-center justify-center">
+                    <div class="slider-dots flex gap-[0.25rem] items-center justify-center w-auto bg-white/30 rounded-[1.875rem] p-[0.25rem]">
+
+                        {% for carousel_item in fields.gallery %}
+                            <button class="slider-dot {% if ctr == 0 %} active {% endif %}" data-ctr="{{ ctr }}">
+                                <svg class="active" width="45" height="14" viewBox="0 0 45 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 7C0 3.13401 3.13401 0 7 0H38C41.866 0 45 3.13401 45 7C45 10.866 41.866 14 38 14H7C3.13401 14 0 10.866 0 7Z" fill="white"/>
+                                </svg>
+
+                                <svg class="inactive" width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.4" filter="url(#filter0_d_3561_778)">
+                                    <rect x="4" y="4" width="15" height="14" rx="7" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <filter id="filter0_d_3561_778" x="0" y="0" width="23" height="22" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset/>
+                                    <feGaussianBlur stdDeviation="2"/>
+                                    <feComposite in2="hardAlpha" operator="out"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3561_778"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3561_778" result="shape"/>
+                                    </filter>
+                                    </defs>
+                                </svg>
+                            </button>                           
+                            {% set ctr = ctr + 1 %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+</section>

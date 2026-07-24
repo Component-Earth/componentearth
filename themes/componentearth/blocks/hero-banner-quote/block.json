@@ -1,14 +1,17 @@
 {
+	"apiVersion": 3,
 	"name": "hero-banner-quote",
 	"title": "Hero Banner Quote",
     "viewScript": [
 		"file:./script.js",
 		"jarallax"
-	],	
-    "viewStyle": [		
+	],
+    "viewStyle": [
 		"jarallax-style"
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]

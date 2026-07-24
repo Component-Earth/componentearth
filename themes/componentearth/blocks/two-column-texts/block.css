@@ -3,4 +3,8 @@
         /* Add your styles here */
 
     }
+
+    .single .two-column-texts .container {
+        @apply !max-w-none !w-full;
+    }
 }

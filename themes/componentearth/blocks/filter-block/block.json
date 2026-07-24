@@ -1,13 +1,16 @@
 {
+	"apiVersion": 3,
     "name": "filter-block",
     "title": "Filter Block",
     "viewScript": [
-        "file:./script.js",
+		"file:./script.js",
         "tw-elements"
-    ],
-    "viewStyle": [		
+	],
+    "viewStyle": [
 	],
 	"acf": {
+        "blockVersion": 3,
+        "hideFieldsInSidebar": true,
 		"mode": "edit",
 		"renderTemplate": "./controller.php",
         "postTypes": ["page"]
