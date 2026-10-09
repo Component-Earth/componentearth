@@ -3257,6 +3257,10 @@
     border-color: var(--cky-primary);
   }
 
+  .cky\:border-\[var\(--cky-yellow\)\] {
+    border-color: var(--cky-yellow);
+  }
+
   .cky\:border-black\/25 {
     border-color: var(--cky-color-black);
   }
@@ -3457,6 +3461,10 @@
 
   .cky\:bg-\[var\(--cky-primary\)\] {
     background-color: var(--cky-primary);
+  }
+
+  .cky\:bg-\[var\(--cky-yellow\)\] {
+    background-color: var(--cky-yellow);
   }
 
   .cky\:bg-background {
@@ -4671,6 +4679,10 @@
     color: var(--cky-text-secondary-dark, #4a5568);
   }
 
+  .cky\:text-\[var\(--cky-yellow-foreground\)\] {
+    color: var(--cky-yellow-foreground);
+  }
+
   .cky\:text-black {
     color: var(--cky-color-black);
   }
@@ -5185,6 +5197,10 @@
       border-color: #1863dc;
     }
 
+    .cky\:hover\:border-\[var\(--cky-yellow-dark\)\]:hover {
+      border-color: var(--cky-yellow-dark);
+    }
+
     .cky\:hover\:border-blue-500:hover {
       border-color: var(--cky-color-blue-500);
     }
@@ -5227,6 +5243,10 @@
 
     .cky\:hover\:bg-\[var\(--cky-primary-dark\)\]:hover {
       background-color: var(--cky-primary-dark);
+    }
+
+    .cky\:hover\:bg-\[var\(--cky-yellow-dark\)\]:hover {
+      background-color: var(--cky-yellow-dark);
     }
 
     .cky\:hover\:bg-accent:hover {
@@ -6368,6 +6388,9 @@
   --cky-primary-light: #e8f1fe;
   --cky-primary-dark: #1863dc;
   --cky-text-primary: #23282d;
+  --cky-yellow: #ffb333;
+  --cky-yellow-dark: #e6a12e;
+  --cky-yellow-foreground: #27283c;
   --background: #fff;
   --foreground: var(--cky-text-primary);
   --card: #fff;

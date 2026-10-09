@@ -175,6 +175,7 @@ class Dashboard_Widget extends Modules {
                 padding: 8px 16px;
                 line-height: normal;
                 font-size: 15px;
+                min-height: 30px;
             }
         </style>
         <?php

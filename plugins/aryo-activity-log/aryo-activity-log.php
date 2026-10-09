@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Activity Log
+Plugin Name: Activity Log – Monitor User and Agent Changes
 Plugin URI: https://activitylog.io/?utm_source=wp-plugins&utm_campaign=plugin-uri&utm_medium=wp-dash
 Description: This top rated Activity Log plugin helps you monitor & log all changes and actions on your WordPress site, so you can remain secure and organized.
 Author: Activity Log Team
 Author URI: https://activitylog.io/?utm_source=wp-plugins&utm_campaign=author-uri&utm_medium=wp-dash
-Version: 2.11.2
+Version: 2.15.0
 Text Domain: aryo-activity-log
 License: GPLv2 or later
 
@@ -30,12 +30,13 @@ define( 'ACTIVITY_LOG__FILE__', __FILE__ );
 define( 'ACTIVITY_LOG_BASE', plugin_basename( ACTIVITY_LOG__FILE__ ) );
 
 include( 'classes/class-aal-maintenance.php' );
-include( 'classes/class-aal-activity-log-list-table.php' );
+include( 'classes/class-aal-log-query.php' );
+include( 'classes/class-aal-log-presenter.php' );
 include( 'classes/class-aal-admin-ui.php' );
 include( 'classes/class-aal-settings.php' );
 include( 'classes/class-aal-api.php' );
 include( 'classes/class-aal-hooks.php' );
-include( 'classes/class-aal-notifications.php' );
+include( 'classes/class-aal-rest.php' );
 include( 'classes/class-aal-export.php' );
 include( 'classes/class-aal-privacy.php' );
 include( 'classes/abstract-class-aal-exporter.php' );
@@ -77,16 +78,9 @@ final class AAL_Main {
 	public $api;
 
 	/**
-	 * @var \AAL_Notifications
+	 * @var AAL_REST
 	 */
-	public $notifications;
-
-	/**
-	 * Load text domain
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'aryo-activity-log' );
-	}
+	public $rest;
 
 	/**
 	 * Construct
@@ -98,15 +92,13 @@ final class AAL_Main {
 		$this->hooks         = new AAL_Hooks();
 		$this->settings      = new AAL_Settings();
 		$this->api           = new AAL_API();
-		$this->notifications = new AAL_Notifications();
+		$this->rest          = new AAL_REST();
 
 		new AAL_Export();
 		new AAL_Privacy();
 
 		// set up our DB name
 		$wpdb->activity_log = $wpdb->prefix . 'aryo_activity_log';
-
-		add_action( 'plugins_loaded', array( &$this, 'load_textdomain' ) );
 	}
 
 	/**
@@ -119,8 +111,17 @@ final class AAL_Main {
 	 * @return void
 	 */
 	public function __clone() {
-		// Cloning instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'aryo-activity-log' ), '2.0.7' );
+		_doing_it_wrong(
+			__FUNCTION__,
+			esc_html(
+				sprintf(
+					/* translators: %s: Class name. */
+					__( 'Cloning instances of the singleton "%s" class is forbidden.', 'aryo-activity-log' ),
+					get_class( $this )
+				)
+			),
+			'2.0.7'
+		);
 	}
 
 	/**
@@ -130,8 +131,17 @@ final class AAL_Main {
 	 * @return void
 	 */
 	public function __wakeup() {
-		// Unserializing instances of the class is forbidden
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'aryo-activity-log' ), '2.0.7' );
+		_doing_it_wrong(
+			__FUNCTION__,
+			esc_html(
+				sprintf(
+					/* translators: %s: Class name. */
+					__( 'Unserializing instances of the singleton "%s" class is forbidden.', 'aryo-activity-log' ),
+					get_class( $this )
+				)
+			),
+			'2.0.7'
+		);
 	}
 
 	/**
