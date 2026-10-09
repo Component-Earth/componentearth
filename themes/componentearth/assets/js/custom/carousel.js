@@ -9,7 +9,7 @@
             this.processCarousel();
 
             // baunfire.Global.refreshScrollTriggers();
-            //ScrollTrigger.refresh(true);
+            ScrollTrigger.refresh(true);
         },
 
         cards() {
