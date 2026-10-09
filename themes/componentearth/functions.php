@@ -52,7 +52,6 @@ require_once 'includes/theme/support-visual-overrides.php';
 
 
 require_once 'blocks/filter-block/functions.php';
-//require_once 'blocks/tabbed-carousels/functions.php';
 
 
 
@@ -106,21 +105,6 @@ function front_js_scripts()
     wp_register_script("flowbite", "https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js", array('jquery'), _S_VERSION, true);
     wp_register_script('flickity', 'https://npmcdn.com/flickity@2/dist/flickity.pkgd.js', array(), _S_VERSION, true);
     wp_register_script('asset99', get_template_directory_uri() . '/assets/js/external/asset99.js', array(), _S_VERSION, true);
-
-
-
-    // wp_register_script("jquery-ui", get_template_directory_uri() . '/assets/js/external/jquery-ui.js', array(), _S_VERSION, array('strategy'  => 'defer', 'in_footer' => true));
-
-    // $js_dirs = __DIR__ . '/assets/js/custom/';
-    // foreach (scandir($js_dirs) as $k => $js) {
-    //     if ($js === '.' || $js === '..') {
-    //         continue;
-    //     }
-    //     $file = get_template_directory_uri() . '/assets/js/custom/' . $js;
-        
-    //     wp_enqueue_script("custom-js-" . $k, $file, ['jquery'], rand(), array('strategy'  => 'defer', 'in_footer' => true));
-    //     // wp_localize_script("custom-js-" . $k, 'frontendajax', array('ajaxurl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('acf_block_nonce')));
-    // }
 
     wp_enqueue_script("custom-min-js", get_template_directory_uri() . '/assets/js/custom.min.js', ['gsap', 'gblaze-smoother-script', 'jquery'], rand(), array('strategy'  => 'defer', 'in_footer' => true));
     wp_localize_script("custom-min-js", 'frontendajax', array('ajaxurl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('acf_block_nonce')));
